@@ -65,11 +65,46 @@ namespace OmniAPI {
 		}
 
 		/// <summary>
+		/// Convenience method to get a component from our game object.
+		/// </summary>
+		/// <returns>The component.</returns>
+		/// <typeparam name="T">Component type</typeparam>
+		public T GetComponent<T>() {
+			return gameObject.GetComponent<T>();
+		}
+
+		/// <summary>
+		/// Convenience method to get a component from our game object.
+		/// </summary>
+		/// <returns>The component.</returns>
+		/// <param name="type">Component type</param>
+		public Component GetComponent(Type type) {
+			return gameObject.GetComponent(type);
+		}
+
+		/// <summary>
+		/// Convenience method to get components from our game object.
+		/// </summary>
+		/// <returns>The component.</returns>
+		/// <typeparam name="T">Component type</typeparam>
+		public T[] GetComponents<T>() {
+			return gameObject.GetComponents<T>();
+		}
+
+		/// <summary>
 		/// Gets the identifier.
 		/// </summary>
 		/// <returns>The identifier.</returns>
 		public virtual string GetId() {
 			return null;
+		}
+
+		/// <summary>
+		/// Gets the sprite identifier. Typically this will not be different from the item ID.
+		/// </summary>
+		/// <returns>The sprite identifier.</returns>
+		public virtual string GetSpriteId() {
+			return GetId();
 		}
 
 		/// <summary>
@@ -84,6 +119,14 @@ namespace OmniAPI {
 			} else {
 				return GetId() == item.GetId();
 			}
+		}
+
+		/// <summary>
+		/// Serves as a hash function for a <see cref="T:OmniAPI.Item"/> object.
+		/// </summary>
+		/// <returns>A hash code for this instance that is suitable for use in hashing algorithms and data structures such as a hash table.</returns>
+		public override int GetHashCode() {
+			return GetId().GetHashCode();
 		}
 	}
 }
