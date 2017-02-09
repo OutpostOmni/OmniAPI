@@ -41,6 +41,8 @@
     <Compile Include="Components\IContainerComponent.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\IItemManager.cs" />
+    <Compile Include="Rendering\IUIMetered.cs" />
+    <Compile Include="Items\IMiningItem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -48,8 +50,6 @@
     <Folder Include="Mods\" />
     <Folder Include="Items\" />
     <Folder Include="Components\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="README.md" />
+    <Folder Include="Rendering\" />
   </ItemGroup>
 </Project>
