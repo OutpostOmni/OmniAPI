@@ -22,9 +22,9 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI {
-	/**
-	 * Describes a primary Mod class.
-	 */
+	/// <summary>
+	/// Describes a primary Mod class.
+	/// </summary>
 	public interface IMod {
 		/// <summary>
 		/// Called automatically after the game scene has loaded.

@@ -21,37 +21,31 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using UnityEngine;
+
 namespace OmniAPI {
 	/// <summary>
-	/// Describes a container, which holds Items.
+	/// Represents the game world.
 	/// </summary>
-	public interface IContainerComponent {
+	public interface IWorld {
 		/// <summary>
-		/// Add an item to this container.
+		/// Gets a chunk.
 		/// </summary>
-		/// <returns>The slot index this item was placed in.</returns>
-		/// <param name="item">Item.</param>
-		int Add(Item item);
+		/// <returns>The chunk.</returns>
+		/// <param name="chunkVec">Chunk vec.</param>
+		IChunk GetChunk(Vector2 chunkVec);
 
 		/// <summary>
-		/// Has at least one of the specified item.
+		/// Gets a tile by its world vector.
 		/// </summary>
-		/// <returns>If this container has the item.</returns>
-		/// <param name="item">Item.</param>
-		bool Has(Item item);
+		/// <returns>The tile.</returns>
+		/// <param name="worldVec">World vec.</param>
+		ITile GetTile(Vector2 worldVec);
 
 		/// <summary>
-		/// Has at least x quantity of the specified item.
+		/// Gets the time.
 		/// </summary>
-		/// <returns>If this container has enough of the item.</returns>
-		/// <param name="item">Item.</param>
-		bool Has(Item item, int quantity);
-
-		/// <summary>
-		///  Has at least one of the specified item id.
-		/// </summary>
-		/// <returns>The has.</returns>
-		/// <param name="itemId">Item identifier.</param>
-		bool Has(string itemId);
+		/// <returns>The time.</returns>
+		ITime GetTime();
 	}
 }

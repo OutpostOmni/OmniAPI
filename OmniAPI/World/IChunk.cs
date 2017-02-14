@@ -21,37 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using UnityEngine;
+
 namespace OmniAPI {
 	/// <summary>
-	/// Describes a container, which holds Items.
+	/// Represents a chunk of world tiles.
 	/// </summary>
-	public interface IContainerComponent {
+	public interface IChunk {
 		/// <summary>
-		/// Add an item to this container.
+		/// Gets a tile by its local vector.
 		/// </summary>
-		/// <returns>The slot index this item was placed in.</returns>
-		/// <param name="item">Item.</param>
-		int Add(Item item);
-
-		/// <summary>
-		/// Has at least one of the specified item.
-		/// </summary>
-		/// <returns>If this container has the item.</returns>
-		/// <param name="item">Item.</param>
-		bool Has(Item item);
-
-		/// <summary>
-		/// Has at least x quantity of the specified item.
-		/// </summary>
-		/// <returns>If this container has enough of the item.</returns>
-		/// <param name="item">Item.</param>
-		bool Has(Item item, int quantity);
-
-		/// <summary>
-		///  Has at least one of the specified item id.
-		/// </summary>
-		/// <returns>The has.</returns>
-		/// <param name="itemId">Item identifier.</param>
-		bool Has(string itemId);
+		/// <returns>The tile.</returns>
+		/// <param name="localVec">Local vec.</param>
+		ITile GetTile(Vector2 localVec);
 	}
 }

@@ -23,35 +23,19 @@
  */
 namespace OmniAPI {
 	/// <summary>
-	/// Describes a container, which holds Items.
+	/// Represents the current time within a game world.
 	/// </summary>
-	public interface IContainerComponent {
+	public interface ITime {
 		/// <summary>
-		/// Add an item to this container.
+		/// Gets or sets the current time.
 		/// </summary>
-		/// <returns>The slot index this item was placed in.</returns>
-		/// <param name="item">Item.</param>
-		int Add(Item item);
+		/// <value>The current time.</value>
+		int currentTime { get; set; }
 
 		/// <summary>
-		/// Has at least one of the specified item.
+		/// Gets the sun intensity.
 		/// </summary>
-		/// <returns>If this container has the item.</returns>
-		/// <param name="item">Item.</param>
-		bool Has(Item item);
-
-		/// <summary>
-		/// Has at least x quantity of the specified item.
-		/// </summary>
-		/// <returns>If this container has enough of the item.</returns>
-		/// <param name="item">Item.</param>
-		bool Has(Item item, int quantity);
-
-		/// <summary>
-		///  Has at least one of the specified item id.
-		/// </summary>
-		/// <returns>The has.</returns>
-		/// <param name="itemId">Item identifier.</param>
-		bool Has(string itemId);
+		/// <returns>The sun intensity.</returns>
+		float GetSunIntensity();
 	}
 }

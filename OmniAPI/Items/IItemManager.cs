@@ -24,6 +24,9 @@
 using UnityEngine;
 
 namespace OmniAPI {
+	/// <summary>
+	/// Describes the central item manager.
+	/// </summary>
 	public interface IItemManager {
 		/// <summary>
 		/// 	Gets the sprite registered for a specific Item.

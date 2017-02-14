@@ -22,9 +22,9 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI {
-	/**
-	 * Describes an individual player, a human-controller entity.
-	 */
+	/// <summary>
+	/// Describes an individual player, a human-controller entity.
+	/// </summary>
 	public interface IPlayer {
 		/// <summary>
 		/// Get the player's primary container, a.k.a. their inventory.

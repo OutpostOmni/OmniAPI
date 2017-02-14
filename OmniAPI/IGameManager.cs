@@ -22,11 +22,10 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI {
-	/**
-	 * Describes the game manager.
-	 * 
-	 * The game manager is the central authority for all game-related objects and components.
-	 */
+	/// <summary>
+	/// Describes the game manager.
+	/// The game manager is the central authority for all game-related objects and components.
+	/// </summary>
 	public interface IGameManager {
 		/// <summary>
 		/// Gets the item manager.
@@ -39,5 +38,11 @@ namespace OmniAPI {
 		/// </summary>
 		/// <returns>The players.</returns>
 		IPlayer[] GetPlayers();
+
+		/// <summary>
+		/// Gets the game world.
+		/// </summary>
+		/// <returns>The world.</returns>
+		IWorld GetWorld();
 	}
 }

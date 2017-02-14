@@ -43,6 +43,12 @@
     <Compile Include="Items\IItemManager.cs" />
     <Compile Include="Rendering\IUIMetered.cs" />
     <Compile Include="Items\IMiningItem.cs" />
+    <Compile Include="World\IWorld.cs" />
+    <Compile Include="World\ITime.cs" />
+    <Compile Include="World\Weather\IWeather.cs" />
+    <Compile Include="World\Weather\WeatherType.cs" />
+    <Compile Include="World\ITile.cs" />
+    <Compile Include="World\IChunk.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -51,5 +57,7 @@
     <Folder Include="Items\" />
     <Folder Include="Components\" />
     <Folder Include="Rendering\" />
+    <Folder Include="World\" />
+    <Folder Include="World\Weather\" />
   </ItemGroup>
 </Project>
