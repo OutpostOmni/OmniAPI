@@ -23,32 +23,25 @@
  */
 namespace OmniAPI {
 	/// <summary>
-	/// Describes the game manager.
-	/// The game manager is the central authority for all game-related objects and components.
+	/// An event delegate which accepts the event object as a parameter.
 	/// </summary>
-	public interface IGameManager {
+	public delegate void EventDelegate<T> (T e) where T : IEvent;
+
+	/// <summary>
+	/// Represents the event manager.
+	/// </summary>
+	public interface IEventManager {
 		/// <summary>
-		/// Gets the event manager.
+		/// Add a new listener
 		/// </summary>
-		/// <returns>The event manager.</returns>
-		IEventManager GetEventManager();
+		/// <param name="del">Delegate.</param>
+		/// <typeparam name="T">The event type.</typeparam>
+		void AddListener<T>(EventDelegate<T> del) where T : IEvent;
 
 		/// <summary>
-		/// Gets the item manager.
+		/// Triggers a new event.
 		/// </summary>
-		/// <returns>The item manager.</returns>
-		IItemManager GetItemManager();
-
-		/// <summary>
-		/// Get a list of players.
-		/// </summary>
-		/// <returns>The players.</returns>
-		IPlayer[] GetPlayers();
-
-		/// <summary>
-		/// Gets the game world.
-		/// </summary>
-		/// <returns>The world.</returns>
-		IWorld GetWorld();
+		/// <param name="ev">Event</param>
+		void Trigger(IEvent ev);
 	}
 }

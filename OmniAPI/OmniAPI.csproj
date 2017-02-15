@@ -49,6 +49,10 @@
     <Compile Include="World\Weather\WeatherType.cs" />
     <Compile Include="World\ITile.cs" />
     <Compile Include="World\IChunk.cs" />
+    <Compile Include="Events\IEvent.cs" />
+    <Compile Include="Events\IEventManager.cs" />
+    <Compile Include="Events\Components\Containers\IItemConstructEvent.cs" />
+    <Compile Include="Events\Cause.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -59,5 +63,8 @@
     <Folder Include="Rendering\" />
     <Folder Include="World\" />
     <Folder Include="World\Weather\" />
+    <Folder Include="Events\" />
+    <Folder Include="Events\Components\" />
+    <Folder Include="Events\Components\Containers\" />
   </ItemGroup>
 </Project>

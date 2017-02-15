@@ -23,32 +23,45 @@
  */
 namespace OmniAPI {
 	/// <summary>
-	/// Describes the game manager.
-	/// The game manager is the central authority for all game-related objects and components.
+	/// Represents the cause chain of an event.
 	/// </summary>
-	public interface IGameManager {
-		/// <summary>
-		/// Gets the event manager.
-		/// </summary>
-		/// <returns>The event manager.</returns>
-		IEventManager GetEventManager();
+	public class Cause {
+		readonly object[] cause;
 
 		/// <summary>
-		/// Gets the item manager.
+		/// Initializes a new instance of the <see cref="T:OmniAPI.Cause"/> class.
 		/// </summary>
-		/// <returns>The item manager.</returns>
-		IItemManager GetItemManager();
+		/// <param name="cause">Cause.</param>
+		public Cause(object cause) {
+			this.cause = new object[] { cause };
+		}
 
 		/// <summary>
-		/// Get a list of players.
+		/// Get the entire cause chain.
 		/// </summary>
-		/// <returns>The players.</returns>
-		IPlayer[] GetPlayers();
+		/// <returns>All causing objects.</returns>
+		public object[] All() {
+			return cause;
+		}
 
 		/// <summary>
-		/// Gets the game world.
+		/// Get the first cause matching the given type.
 		/// </summary>
-		/// <returns>The world.</returns>
-		IWorld GetWorld();
+		/// <returns>The first.</returns>
+		/// <typeparam name="T">Cause type.</typeparam>
+		public T First<T>() {
+			T match = default(T);
+
+			var t = typeof(T);
+			foreach (object c in cause) {
+				if (t.IsAssignableFrom(c.GetType())) {
+					match = (T) c;
+
+					break;
+				}
+			}
+
+			return match;
+		}
 	}
 }

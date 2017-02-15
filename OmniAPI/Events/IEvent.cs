@@ -23,32 +23,13 @@
  */
 namespace OmniAPI {
 	/// <summary>
-	/// Describes the game manager.
-	/// The game manager is the central authority for all game-related objects and components.
+	/// Represents an event.
 	/// </summary>
-	public interface IGameManager {
+	public interface IEvent {
 		/// <summary>
-		/// Gets the event manager.
+		/// Gets the cause.
 		/// </summary>
-		/// <returns>The event manager.</returns>
-		IEventManager GetEventManager();
-
-		/// <summary>
-		/// Gets the item manager.
-		/// </summary>
-		/// <returns>The item manager.</returns>
-		IItemManager GetItemManager();
-
-		/// <summary>
-		/// Get a list of players.
-		/// </summary>
-		/// <returns>The players.</returns>
-		IPlayer[] GetPlayers();
-
-		/// <summary>
-		/// Gets the game world.
-		/// </summary>
-		/// <returns>The world.</returns>
-		IWorld GetWorld();
+		/// <returns>The cause.</returns>
+		Cause GetCause();
 	}
 }
