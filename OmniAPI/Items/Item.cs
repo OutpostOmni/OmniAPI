@@ -69,8 +69,8 @@ namespace OmniAPI {
 		/// </summary>
 		/// <returns>The component.</returns>
 		/// <typeparam name="T">Component type</typeparam>
-		public T GetComponent<T>() {
-			return gameObject.GetComponent<T>();
+		public Optional<T> GetComponent<T>() {
+			return Optional<T>.From(gameObject.GetComponent<T>());
 		}
 
 		/// <summary>

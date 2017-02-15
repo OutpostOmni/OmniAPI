@@ -21,27 +21,55 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using System.Collections.Generic;
 using UnityEngine;
-
+      
 namespace OmniAPI {
 	/// <summary>
-	/// Describes the central item manager.
+	/// Wrapper for optional values. Null is terrible.
 	/// </summary>
-	public interface IItemManager {
-		/// <summary>
-		/// Gets the sprite registered for a specific Item.
-		/// </summary>
-		/// <returns>The sprite.</returns>
-		/// <param name="item">Item.</param>
-		Sprite GetSprite(Item item);
+	sealed public class Optional<T> {
+		T val;
 
 		/// <summary>
-		/// Register an asset for the given item ID. At this time only Sprites are supported.
+		/// Statically construct a new optional.
 		/// </summary>
-		/// <returns>The register.</returns>
-		/// <param name="owner">Owner.</param>
-		/// <param name="id">Identifier.</param>
-		/// <param name="assetName">Sprite asset name.</param>
-		void Register(IMod owner, string id, string assetName);
+		/// <returns>Optional.</returns>
+		/// <param name="val">Value.</param>
+		public static Optional<T> From(T val) {
+			return new Optional<T>(val);
+		}
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:OmniAPI.Optional`1"/> class.
+		/// </summary>
+		/// <param name="val">Value.</param>
+		public Optional(T val) {
+			this.val = val;
+		}
+
+		/// <summary>
+		/// Get this value.
+		/// </summary>
+		/// <returns>The value.</returns>
+		public T Get() {
+			return val;
+		}
+
+		/// <summary>
+		/// Checks if the value is empty.
+		/// </summary>
+		/// <returns><c>true</c>, if the value is empty, <c>false</c> otherwise.</returns>
+		public bool IsEmpty() {
+			return EqualityComparer<T>.Default.Equals(val, default(T));
+		}
+
+		/// <summary>
+		/// Checks if the value is present.
+		/// </summary>
+		/// <returns><c>true</c>, if value is present, <c>false</c> otherwise.</returns>
+		public bool IsPresent() {
+			return !IsEmpty();
+		}
 	}
 }
