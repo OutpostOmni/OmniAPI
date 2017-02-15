@@ -22,39 +22,28 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI {
-	/// <summary>
-	/// Describes the game manager.
-	/// The game manager is the central authority for all game-related objects and components.
-	/// </summary>
-	public interface IGameManager {
+	public interface IStoryPoint {
 		/// <summary>
-		/// Gets the event manager.
+		/// Gets the identifier.
 		/// </summary>
-		/// <returns>The event manager.</returns>
-		IEventManager GetEventManager();
+		/// <value>The identifier.</value>
+		string id { get; }
 
 		/// <summary>
-		/// Gets the item manager.
+		/// Gets the message pages.
 		/// </summary>
-		/// <returns>The item manager.</returns>
-		IItemManager GetItemManager();
+		/// <value>The messages.</value>
+		string[] messages { get; }
 
 		/// <summary>
-		/// Get a list of players.
+		/// Gets the source identifier.
 		/// </summary>
-		/// <returns>The players.</returns>
-		IPlayer[] GetPlayers();
+		/// <value>The source identifier.</value>
+		string sourceId { get; }
 
 		/// <summary>
-		/// Gets the story manager.
+		/// Executed when this story point has been completed.
 		/// </summary>
-		/// <returns>The story manager.</returns>
-		IStoryManager GetStoryManager();
-
-		/// <summary>
-		/// Gets the game world.
-		/// </summary>
-		/// <returns>The world.</returns>
-		IWorld GetWorld();
+		void OnComplete();
 	}
 }
