@@ -57,6 +57,8 @@
     <Compile Include="Stories\IStoryManager.cs" />
     <Compile Include="Game\GameMode.cs" />
     <Compile Include="Util\Optional.cs" />
+    <Compile Include="Missions\IMissionManager.cs" />
+    <Compile Include="Missions\IMission.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -73,5 +75,6 @@
     <Folder Include="Stories\" />
     <Folder Include="Game\" />
     <Folder Include="Util\" />
+    <Folder Include="Missions\" />
   </ItemGroup>
 </Project>

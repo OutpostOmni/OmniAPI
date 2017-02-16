@@ -32,10 +32,18 @@ namespace OmniAPI {
 		T val;
 
 		/// <summary>
+		/// Creates a new empty-value instance.
+		/// </summary>
+		/// <returns>An empty optional.</returns>
+		public static Optional<T> Empty() {
+			return new Optional<T>();
+		}
+
+		/// <summary>
 		/// Statically construct a new optional.
 		/// </summary>
 		/// <returns>Optional.</returns>
-		/// <param name="val">Value.</param>
+		/// <param name="val">The value.</param>
 		public static Optional<T> From(T val) {
 			return new Optional<T>(val);
 		}
@@ -47,6 +55,11 @@ namespace OmniAPI {
 		public Optional(T val) {
 			this.val = val;
 		}
+
+		/// <summary>
+		/// Initializes a new empty-value instance of the <see cref="T:OmniAPI.Optional`1"/> class.
+		/// </summary>
+		public Optional() {}
 
 		/// <summary>
 		/// Get this value.

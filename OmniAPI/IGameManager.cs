@@ -40,6 +40,12 @@ namespace OmniAPI {
 		IItemManager GetItemManager();
 
 		/// <summary>
+		/// Gets the mission manager.
+		/// </summary>
+		/// <returns>The mission manager.</returns>
+		IMissionManager GetMissionManager();
+
+		/// <summary>
 		/// Get a list of players.
 		/// </summary>
 		/// <returns>The players.</returns>

@@ -23,29 +23,28 @@
  */
 namespace OmniAPI {
 	/// <summary>
-	/// Represents the story manager.
+	/// Represents the mission manager.
 	/// </summary>
-	public interface IStoryManager {
+	public interface IMissionManager {
 		/// <summary>
-		/// Activate a story point. Will fail if a story point is already active.
+		/// Activate the specified mission.
 		/// </summary>
 		/// <returns>The activate.</returns>
-		/// <param name="point">Point.</param>
-		void Activate(IStoryPoint point);
+		/// <param name="mission">Mission.</param>
+		void Activate(IMission mission);
 
 		/// <summary>
-		/// Complete the specified point.
+		/// Offer the specified mission.
 		/// </summary>
-		/// <returns>The complete.</returns>
-		/// <param name="point">Point.</param>
-		void Complete(IStoryPoint point);
+		/// <returns>The offer.</returns>
+		/// <param name="mission">Mission.</param>
+		void Offer(IMission mission);
 
 		/// <summary>
-		/// Register a story type for the given ID. 
+		/// Register a mission type for the given ID. 
 		/// </summary>
-		/// <returns>The register.</returns>
-		/// <param name="pointId">Story point identifier.</param>
-		/// <typeparam name="T">The story type parameter.</typeparam>
-		void Register<T>(string pointId) where T : IStoryPoint;
+		/// <param name="missionId">Mission identifier.</param>
+		/// <typeparam name="T">The mission type parameter.</typeparam>
+		void Register<T>(string missionId) where T : IMission;
 	}
 }
