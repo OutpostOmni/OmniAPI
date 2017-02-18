@@ -40,7 +40,7 @@ namespace OmniAPI {
 		/// <returns>The recipe.</returns>
 		/// <param name="product">The product.</param>
 		/// <param name="ingredients">Any ingredients.</param>
-		IRecipe RecipeFactory(Item product, params Item[] ingredients);
+		IRecipe Create(Item product, params Item[] ingredients);
 
 		/// <summary>
 		/// Lookup a recipe for the given item.

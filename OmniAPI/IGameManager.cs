@@ -34,6 +34,13 @@ namespace OmniAPI {
 		IEventManager GetEventManager();
 
 		/// <summary>
+		/// Get the factory for the specified type.
+		/// </summary>
+		/// <returns>The factory.</returns>
+		/// <typeparam name="T">The factory type.</typeparam>
+		T GetFactory<T>() where T : IFactory;
+
+		/// <summary>
 		/// Gets the item manager.
 		/// </summary>
 		/// <returns>The item manager.</returns>

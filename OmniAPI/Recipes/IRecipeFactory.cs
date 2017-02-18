@@ -22,34 +22,14 @@
  * THE SOFTWARE.
  */
 using System;
-using UnityEngine;
 
 namespace OmniAPI {
-	/// <summary>
-	/// Describes the central item manager.
-	/// </summary>
-	public interface IItemManager {
+	public interface IRecipeFactory : IFactory {
 		/// <summary>
-		/// Gets the sprite registered for a specific Item.
+		/// Create a new recipe builder.
 		/// </summary>
-		/// <returns>The sprite.</returns>
-		/// <param name="item">Item.</param>
-		Sprite GetSprite(Item item);
-
-		/// <summary>
-		/// Register an asset for the given item ID. At this time only Sprites are supported.
-		/// </summary>
-		/// <returns>The register.</returns>
-		/// <param name="owner">Owner.</param>
-		/// <param name="id">Identifier.</param>
-		/// <param name="assetName">Sprite asset name.</param>
-		void RegisterAsset(Mod owner, string id, string assetName);
-
-		/// <summary>
-		/// Register an item type and a reference interface.
-		/// </summary>
-		/// <param name="t">Type of the item class.</param>
-		/// <typeparam name="T">The representative interface</typeparam>
-		void RegisterItem<T>(Type t) where T : IItem;
+		/// <returns>The recipe builder.</returns>
+		/// <param name="r">The recipe builder.</param>
+		IRecipeBuilder Create(Action<IRecipeBuilder> r);
 	}
 }

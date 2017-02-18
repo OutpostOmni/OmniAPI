@@ -21,35 +21,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using System;
-using UnityEngine;
-
 namespace OmniAPI {
 	/// <summary>
-	/// Describes the central item manager.
+	/// Represents a recipe builder.
 	/// </summary>
-	public interface IItemManager {
+	public interface IRecipeBuilder : IBuilder {
 		/// <summary>
-		/// Gets the sprite registered for a specific Item.
+		/// Build the final recipe and automatically register with the RecipeManager.
 		/// </summary>
-		/// <returns>The sprite.</returns>
-		/// <param name="item">Item.</param>
-		Sprite GetSprite(Item item);
+		void BuildAndRegister();
 
 		/// <summary>
-		/// Register an asset for the given item ID. At this time only Sprites are supported.
+		/// Add an ingredient.
 		/// </summary>
-		/// <returns>The register.</returns>
-		/// <param name="owner">Owner.</param>
-		/// <param name="id">Identifier.</param>
-		/// <param name="assetName">Sprite asset name.</param>
-		void RegisterAsset(Mod owner, string id, string assetName);
+		/// <returns>The recipe builder.</returns>
+		/// <param name="ingredient">Ingredient item.</param>
+		IRecipeBuilder AddIngredient(Item ingredient);
 
 		/// <summary>
-		/// Register an item type and a reference interface.
+		/// Set the product item this recipe will produce.
 		/// </summary>
-		/// <param name="t">Type of the item class.</param>
-		/// <typeparam name="T">The representative interface</typeparam>
-		void RegisterItem<T>(Type t) where T : IItem;
+		/// <returns>The recipe builder.</returns>
+		/// <param name="product">Product item.</param>
+		IRecipeBuilder Produce(Item product);
 	}
 }

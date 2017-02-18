@@ -61,6 +61,15 @@
     <Compile Include="Mods\Mod.cs" />
     <Compile Include="Recipes\IRecipeManager.cs" />
     <Compile Include="Recipes\IRecipe.cs" />
+    <Compile Include="Items\Items\IAlkalineBattery.cs" />
+    <Compile Include="Items\IItem.cs" />
+    <Compile Include="Items\Elements\IOxygen.cs" />
+    <Compile Include="Items\IElement.cs" />
+    <Compile Include="IBuilder.cs" />
+    <Compile Include="Recipes\IRecipeBuilder.cs" />
+    <Compile Include="IFactory.cs" />
+    <Compile Include="Recipes\IRecipeFactory.cs" />
+    <Compile Include="Items\IItemFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -79,5 +88,7 @@
     <Folder Include="Util\" />
     <Folder Include="Missions\" />
     <Folder Include="Recipes\" />
+    <Folder Include="Items\Items\" />
+    <Folder Include="Items\Elements\" />
   </ItemGroup>
 </Project>

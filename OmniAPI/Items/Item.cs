@@ -25,7 +25,7 @@ using System;
 using UnityEngine;
 
 namespace OmniAPI {
-	abstract public class Item {
+	abstract public class Item : IItem {
 		// Quantity of items contained in this "stack"
 		private int _quantity = 1;
 		public int quantity {
