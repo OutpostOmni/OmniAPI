@@ -21,27 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using UnityEngine;
-
 namespace OmniAPI {
-	/// <summary>
-	/// Describes the central item manager.
-	/// </summary>
-	public interface IItemManager {
+	abstract public class Mod {
 		/// <summary>
-		/// Gets the sprite registered for a specific Item.
+		/// Called automatically after the game scene has loaded.
 		/// </summary>
-		/// <returns>The sprite.</returns>
-		/// <param name="item">Item.</param>
-		Sprite GetSprite(Item item);
+		/// <param name="gameManager">Game manager.</param>
+		public virtual void OnGameLoad(IGameManager gameManager) {}
 
 		/// <summary>
-		/// Register an asset for the given item ID. At this time only Sprites are supported.
+		/// Called automatically when the mod has been loaded from the assembly. 
+		/// Mods are loaded simultaneously with the main menu.
 		/// </summary>
-		/// <returns>The register.</returns>
-		/// <param name="owner">Owner.</param>
-		/// <param name="id">Identifier.</param>
-		/// <param name="assetName">Sprite asset name.</param>
-		void Register(Mod owner, string id, string assetName);
+		public virtual void OnLoad() {}
 	}
 }
