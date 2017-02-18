@@ -23,50 +23,37 @@
  */
 namespace OmniAPI {
 	/// <summary>
-	/// Describes the game manager.
-	/// The game manager is the central authority for all game-related objects and components.
+	/// Represents an item recipe.
 	/// </summary>
-	public interface IGameManager {
+	public interface IRecipe {
 		/// <summary>
-		/// Gets the event manager.
+		/// Can the player construct this recipe.
 		/// </summary>
-		/// <returns>The event manager.</returns>
-		IEventManager GetEventManager();
+		/// <returns><c>true</c>, if constructable, <c>false</c> otherwise.</returns>
+		bool CanConstruct();
 
 		/// <summary>
-		/// Gets the item manager.
+		/// Construct the product.
 		/// </summary>
-		/// <returns>The item manager.</returns>
-		IItemManager GetItemManager();
+		/// <returns>The product.</returns>
+		Item Construct();
 
 		/// <summary>
-		/// Gets the mission manager.
+		/// Get the energy cost to construct this product.
 		/// </summary>
-		/// <returns>The mission manager.</returns>
-		IMissionManager GetMissionManager();
+		/// <returns>The energy cost.</returns>
+		float EnergyCost();
 
 		/// <summary>
-		/// Get a list of players.
+		/// Get all ingredients.
 		/// </summary>
-		/// <returns>The players.</returns>
-		IPlayer[] GetPlayers();
+		/// <returns>The ingredients.</returns>
+		Item[] Ingredients();
 
 		/// <summary>
-		/// Gets the recipe manager.
+		/// Get a dummy instance of the product.
 		/// </summary>
-		/// <returns>The recipe manager.</returns>
-		IRecipeManager GetRecipeManager();
-
-		/// <summary>
-		/// Gets the story manager.
-		/// </summary>
-		/// <returns>The story manager.</returns>
-		IStoryManager GetStoryManager();
-
-		/// <summary>
-		/// Gets the game world.
-		/// </summary>
-		/// <returns>The world.</returns>
-		IWorld GetWorld();
+		/// <returns>The product.</returns>
+		Item Product();
 	}
 }

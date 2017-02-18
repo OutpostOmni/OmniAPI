@@ -21,52 +21,38 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using System.Collections.Generic;
+
 namespace OmniAPI {
 	/// <summary>
-	/// Describes the game manager.
-	/// The game manager is the central authority for all game-related objects and components.
+	/// Represents the item recipe manager.
 	/// </summary>
-	public interface IGameManager {
+	public interface IRecipeManager {
 		/// <summary>
-		/// Gets the event manager.
+		/// Get all recipes.
 		/// </summary>
-		/// <returns>The event manager.</returns>
-		IEventManager GetEventManager();
+		/// <returns>All recipes.</returns>
+		List<IRecipe> All();
 
 		/// <summary>
-		/// Gets the item manager.
+		/// Factory which creates a new recipe for the given product.
 		/// </summary>
-		/// <returns>The item manager.</returns>
-		IItemManager GetItemManager();
+		/// <returns>The recipe.</returns>
+		/// <param name="product">The product.</param>
+		/// <param name="ingredients">Any ingredients.</param>
+		IRecipe RecipeFactory(Item product, params Item[] ingredients);
 
 		/// <summary>
-		/// Gets the mission manager.
+		/// Lookup a recipe for the given item.
 		/// </summary>
-		/// <returns>The mission manager.</returns>
-		IMissionManager GetMissionManager();
+		/// <returns>The recipe.</returns>
+		/// <param name="item">Item.</param>
+		IRecipe RecipeFor(Item item);
 
 		/// <summary>
-		/// Get a list of players.
+		/// Register a recipe.
 		/// </summary>
-		/// <returns>The players.</returns>
-		IPlayer[] GetPlayers();
-
-		/// <summary>
-		/// Gets the recipe manager.
-		/// </summary>
-		/// <returns>The recipe manager.</returns>
-		IRecipeManager GetRecipeManager();
-
-		/// <summary>
-		/// Gets the story manager.
-		/// </summary>
-		/// <returns>The story manager.</returns>
-		IStoryManager GetStoryManager();
-
-		/// <summary>
-		/// Gets the game world.
-		/// </summary>
-		/// <returns>The world.</returns>
-		IWorld GetWorld();
+		/// <param name="recipe">The recipe.</param>
+		void Register(IRecipe recipe);
 	}
 }

@@ -59,6 +59,8 @@
     <Compile Include="Missions\IMissionManager.cs" />
     <Compile Include="Missions\IMission.cs" />
     <Compile Include="Mods\Mod.cs" />
+    <Compile Include="Recipes\IRecipeManager.cs" />
+    <Compile Include="Recipes\IRecipe.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -76,5 +78,6 @@
     <Folder Include="Game\" />
     <Folder Include="Util\" />
     <Folder Include="Missions\" />
+    <Folder Include="Recipes\" />
   </ItemGroup>
 </Project>
