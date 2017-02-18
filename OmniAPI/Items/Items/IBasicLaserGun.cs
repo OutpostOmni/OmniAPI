@@ -1,4 +1,4 @@
-/**
+﻿/**
  * This file is part of OmniAPI, licensed under the MIT License (MIT).
  *
  * Copyright (c) 2017 Helion3 http://helion3.com/
@@ -21,9 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Items.Elements {
-    /// <summary>
-	/// Represents an oxygen element.
+namespace OmniAPI.Items {
+	/// <summary>
+	/// Represents a charcoal item.
 	/// </summary>
-    public interface IOxygen : IElement {}
+	public interface IBasicLaserGun : IMiningItem {}
 }

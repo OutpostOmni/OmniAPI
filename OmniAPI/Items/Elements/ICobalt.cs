@@ -23,7 +23,7 @@
  */
 namespace OmniAPI.Items.Elements {
     /// <summary>
-	/// Represents an oxygen element.
+	/// Represents an cobalt element.
 	/// </summary>
-    public interface IOxygen : IElement {}
+    public interface ICobalt : IElement {}
 }

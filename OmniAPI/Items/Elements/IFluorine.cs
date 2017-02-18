@@ -23,7 +23,7 @@
  */
 namespace OmniAPI.Items.Elements {
     /// <summary>
-	/// Represents an oxygen element.
+	/// Represents an fluorine element.
 	/// </summary>
-    public interface IOxygen : IElement {}
+    public interface IFluorine : IElement {}
 }
