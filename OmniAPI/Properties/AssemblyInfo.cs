@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle ("OmniAPI")]
 [assembly: AssemblyDescription ("")]
 [assembly: AssemblyConfiguration ("")]
-[assembly: AssemblyCompany ("")]
+[assembly: AssemblyCompany ("Helion3")]
 [assembly: AssemblyProduct ("")]
 [assembly: AssemblyCopyright ("viveleroi")]
 [assembly: AssemblyTrademark ("")]

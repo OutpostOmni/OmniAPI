@@ -192,6 +192,9 @@
     <Compile Include="Items\Elements\IYttrium.cs" />
     <Compile Include="Items\Elements\IZinc.cs" />
     <Compile Include="Items\Elements\IZirconium.cs" />
+    <Compile Include="Components\IEnergyComponent.cs" />
+    <Compile Include="Events\Components\Energy\IEnergyDrawEvent.cs" />
+    <Compile Include="Components\IRechargeableEnergyComponent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -212,5 +215,6 @@
     <Folder Include="Recipes\" />
     <Folder Include="Items\Items\" />
     <Folder Include="Items\Elements\" />
+    <Folder Include="Events\Components\Energy\" />
   </ItemGroup>
 </Project>
