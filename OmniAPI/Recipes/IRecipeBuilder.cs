@@ -39,10 +39,25 @@ namespace OmniAPI {
 		IRecipeBuilder AddIngredient(Item ingredient);
 
 		/// <summary>
+		/// Adds an ingredient.
+		/// </summary>
+		/// <returns>The recipe builder.</returns>
+		/// <param name="quantity">Quantity.</param>
+		/// <typeparam name="T">The item type parameter.</typeparam>
+		IRecipeBuilder AddIngredient<T>(int quantity) where T : IItem;
+
+		/// <summary>
 		/// Set the product item this recipe will produce.
 		/// </summary>
 		/// <returns>The recipe builder.</returns>
 		/// <param name="product">Product item.</param>
 		IRecipeBuilder Produce(Item product);
+
+		/// <summary>
+		/// Set the product item this recipe will produce.
+		/// </summary>
+		/// <returns>The recipe builder.</returns>
+		/// <typeparam name="T">The item type parameter.</typeparam>
+		IRecipeBuilder Produce<T>() where T : IItem;
 	}
 }
