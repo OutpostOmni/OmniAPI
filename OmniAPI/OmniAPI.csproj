@@ -203,6 +203,11 @@
     <Compile Include="Items\Items\Tools\IBasicLaserGun.cs" />
     <Compile Include="Entities\IPlacedEntity.cs" />
     <Compile Include="Entities\Interactable.cs" />
+    <Compile Include="Entities\IEntity.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Components\ITargetingComponent.cs" />
+    <Compile Include="Components\IDurabilityComponent.cs" />
+    <Compile Include="Components\ILootComponent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
