@@ -22,28 +22,7 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI {
-	/// <summary>
-	/// Represents a single world tile.
-	/// </summary>
-	public interface ITile {
-		/// <summary>
-		/// Gets the identifier.
-		/// </summary>
-		/// <value>The identifier.</value>
-		string id { get; }
-
-		/// <summary>
-		/// Sets the entity.
-		/// </summary>
-		/// <param name="id">Identifier.</param>
-		/// <param name="shouldUpdateNeighbors">If set to <c>true</c> should update neighbors.</param>
-		void SetEntity(string id, bool shouldUpdateNeighbors = false);
-
-		/// <summary>
-		/// Sets the type of this tile.
-		/// </summary>
-		/// <param name="id">Tile Identifier.</param>
-		/// <param name="shouldUpdateNeighbors">If set to <c>true</c> should trigger updates for neighbors.</param>
-		void SetType(string id, bool shouldUpdateNeighbors = false);
+	// Represents an item which may be placed into the world as a tile, entity, etc.
+	public interface IPlaceableItem : IItem {
 	}
 }

@@ -21,9 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Items {
+namespace OmniAPI {
 	/// <summary>
-	/// Represents a combustion generator item.
+	/// Represents entities placed by a player or a non-decoration process.
 	/// </summary>
-	public interface ICombustionGenerator : IItem {}
+	public interface IPlacedEntity {
+	}
 }

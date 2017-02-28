@@ -21,29 +21,17 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using UnityEngine;
+
 namespace OmniAPI {
 	/// <summary>
-	/// Represents a single world tile.
+	/// Represents an entity which has a custom UI.
 	/// </summary>
-	public interface ITile {
+	public interface Interactable {
 		/// <summary>
-		/// Gets the identifier.
+		/// Get the custom UI prefab.
 		/// </summary>
-		/// <value>The identifier.</value>
-		string id { get; }
-
-		/// <summary>
-		/// Sets the entity.
-		/// </summary>
-		/// <param name="id">Identifier.</param>
-		/// <param name="shouldUpdateNeighbors">If set to <c>true</c> should update neighbors.</param>
-		void SetEntity(string id, bool shouldUpdateNeighbors = false);
-
-		/// <summary>
-		/// Sets the type of this tile.
-		/// </summary>
-		/// <param name="id">Tile Identifier.</param>
-		/// <param name="shouldUpdateNeighbors">If set to <c>true</c> should trigger updates for neighbors.</param>
-		void SetType(string id, bool shouldUpdateNeighbors = false);
+		/// <returns>The user interface prefab.</returns>
+		GameObject GetUI();
 	}
 }

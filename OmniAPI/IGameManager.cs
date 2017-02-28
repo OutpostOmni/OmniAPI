@@ -28,6 +28,12 @@ namespace OmniAPI {
 	/// </summary>
 	public interface IGameManager {
 		/// <summary>
+		/// Gets the entity manager.
+		/// </summary>
+		/// <returns>The entity manager.</returns>
+		IEntityManager GetEntityManager();
+
+		/// <summary>
 		/// Gets the event manager.
 		/// </summary>
 		/// <returns>The event manager.</returns>
