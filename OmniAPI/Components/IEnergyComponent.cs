@@ -26,7 +26,7 @@ namespace OmniAPI {
 	/// Represents an energy component. Its assumed this component cannot accept new energy
 	/// post-instantiation, leaving those duties to IRechargeableEnergyComponents.
 	/// </summary>
-	public interface IEnergyComponent {
+	public interface IEnergyComponent : IComponent {
 		/// <summary>
 		/// The charge percentage.
 		/// </summary>

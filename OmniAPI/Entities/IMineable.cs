@@ -21,44 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using UnityEngine;
-
 namespace OmniAPI {
-	abstract public class Entity : MonoBehaviour, IEntity {
-		// An ID of the current prefab
-		public string PrefabId;
-
-		// A unique UUID assigned to this specific entity
-		public string UniqueID = System.Guid.NewGuid().ToString();
-
-		// A convenience property caching our parent tile, if any
-		public ITile Tile;
-
-		/// <summary>
-		/// Gets the identifier.
-		/// </summary>
-		/// <returns>The identifier.</returns>
-		public virtual string GetId() {
-			return null;
-		}
-
-		/// <summary>
-		/// Get a new variant, if any. Useful if this entity has to change
-		/// based on updates to neighboring tiles.
-		/// </summary>
-		/// <returns>The variant.</returns>
-		public virtual string GetVariant() {
-			return null;
-		}
-
-		/// <summary>
-		/// Called when the entity is broken by a game object or player.
-		/// </summary>
-		public virtual void OnBreak() {}
-
-		/// <summary>
-		/// Called when a change has been made which might update this entity.
-		/// </summary>
-		public virtual void OnNotify() {}
+	/// <summary>
+	/// Represents a mineable entity.
+	/// 
+	/// Entity MUST have the targetable, durability, and loot components.
+	/// </summary>
+	public interface IMineable {
 	}
 }

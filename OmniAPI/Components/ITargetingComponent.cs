@@ -25,7 +25,7 @@ namespace OmniAPI {
 	/// <summary>
 	/// Represents a component which handles entities when targeted.
 	/// </summary>
-	public interface ITargetingComponent {
+	public interface ITargetingComponent : IComponent {
 		/// <summary>
 		/// Get whether this object is targeted.
 		/// </summary>

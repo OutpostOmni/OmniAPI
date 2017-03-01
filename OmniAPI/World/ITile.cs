@@ -21,6 +21,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using UnityEngine;
+
 namespace OmniAPI {
 	/// <summary>
 	/// Represents a single world tile.
@@ -31,6 +33,12 @@ namespace OmniAPI {
 		/// </summary>
 		/// <value>The identifier.</value>
 		string id { get; }
+
+		/// <summary>
+		/// Gets the world vec.
+		/// </summary>
+		/// <value>The world vec.</value>
+		Vector2 WorldVec { get; }
 
 		/// <summary>
 		/// Sets the entity.

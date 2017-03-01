@@ -27,7 +27,7 @@ namespace OmniAPI {
 	/// <summary>
 	/// Represents an entity's loot drops.
 	/// </summary>
-	public interface ILootComponent {
+	public interface ILootComponent : IComponent {
 		/// <summary>
 		/// Add a loot item with a 100% drop chance.
 		/// </summary>

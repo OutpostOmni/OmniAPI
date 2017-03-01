@@ -27,7 +27,7 @@ namespace OmniAPI {
 	/// <summary>
 	/// Represents a component which gives an entity a durability.
 	/// </summary>
-	public interface IDurabilityComponent {
+	public interface IDurabilityComponent : IComponent {
 		/// <summary>
 		/// Gets or sets the color of the break particles.
 		/// </summary>

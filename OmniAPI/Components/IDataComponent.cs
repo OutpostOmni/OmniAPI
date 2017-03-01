@@ -21,17 +21,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using UnityEngine;
-
 namespace OmniAPI {
 	/// <summary>
-	/// Represents an entity which has a custom UI.
+	/// Represents a component which contains variable typed data.
+	/// 
+	/// This primarily provides components a key/value store which
+	/// can be understood by the game's save manager. 
 	/// </summary>
-	public interface Interactable {
+	public interface IDataComponent {
 		/// <summary>
-		/// Get the custom UI prefab.
+		/// Get the specified key.
 		/// </summary>
-		/// <returns>The user interface prefab.</returns>
-		GameObject GetUI();
+		/// <returns>The get.</returns>
+		/// <param name="key">Key.</param>
+		/// <typeparam name="T">The 1st type parameter.</typeparam>
+		T Get<T>(string key);
+
+		/// <summary>
+		/// Set the specified key and value.
+		/// </summary>
+		/// <returns>The set.</returns>
+		/// <param name="key">Key.</param>
+		/// <param name="value">Value.</param>
+		/// <typeparam name="T">The 1st type parameter.</typeparam>
+		void Set<T>(string key, T value);
 	}
 }

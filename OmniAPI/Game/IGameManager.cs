@@ -21,12 +21,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using System;
+
 namespace OmniAPI {
 	/// <summary>
 	/// Describes the game manager.
 	/// The game manager is the central authority for all game-related objects and components.
 	/// </summary>
 	public interface IGameManager {
+		/// <summary>
+		/// Get a native game component by its interface.
+		/// </summary>
+		/// <returns>The component type.</returns>
+		/// <typeparam name="T">The component type parameter.</typeparam>
+		Type ComponentFor<T>();
+
 		/// <summary>
 		/// Gets the entity manager.
 		/// </summary>

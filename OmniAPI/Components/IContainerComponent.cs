@@ -25,7 +25,7 @@ namespace OmniAPI {
 	/// <summary>
 	/// Describes a container, which holds Items.
 	/// </summary>
-	public interface IContainerComponent {
+	public interface IContainerComponent : IComponent {
 		/// <summary>
 		/// Add an item to this container.
 		/// </summary>

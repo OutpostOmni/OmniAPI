@@ -21,10 +21,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using UnityEngine;
+
 namespace OmniAPI {
 	/// <summary>
 	/// Represents the central entity manager.
 	/// </summary>
 	public interface IEntityManager {
+		/// <summary>
+		/// Register a prefab asset with the given ID. At this time only Prefabs are supported.
+		/// </summary>
+		/// <returns>The GameObject prefab.</returns>
+		/// <param name="owner">Owner.</param>
+		/// <param name="id">Identifier.</param>
+		/// <param name="assetName">Prefab asset name.</param>
+		GameObject RegisterAsset(Mod owner, string id, string assetName);
 	}
 }
