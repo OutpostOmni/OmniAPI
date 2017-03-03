@@ -21,33 +21,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace OmniAPI {
 	/// <summary>
-	/// Represents the game world.
+	/// Represents an entity which displays items, but is not considered a container.
+	/// 
+	/// For example, a berry bush entity may hold berry items which are seen in-game.
 	/// </summary>
-	public interface IWorld {
-		void DropItem(Vector2 parentWorldPos, Vector3 startPos, Item item);
+	public interface IItemDisplayComponent {
+		/// <summary>
+		/// Add the item for display at the given pos.
+		/// </summary>
+		/// <param name="item">The item.</param>
+		/// <param name="pos">The position.</param>
+		void Add(Item item, Vector3 pos);
 
 		/// <summary>
-		/// Gets a chunk.
+		/// Clear all displayed items.
 		/// </summary>
-		/// <returns>The chunk.</returns>
-		/// <param name="chunkVec">Chunk vec.</param>
-		IChunk GetChunk(Vector2 chunkVec);
+		void Clear();
 
 		/// <summary>
-		/// Gets a tile by its world vector.
+		/// Get the list of currently displayed items.
 		/// </summary>
-		/// <returns>The tile.</returns>
-		/// <param name="worldVec">World vec.</param>
-		ITile GetTile(Vector2 worldVec);
-
-		/// <summary>
-		/// Gets the time.
-		/// </summary>
-		/// <returns>The time.</returns>
-		ITime GetTime();
+		/// <returns>The list.</returns>
+		List<Item> Get();
 	}
 }

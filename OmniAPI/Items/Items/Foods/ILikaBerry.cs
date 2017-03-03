@@ -21,33 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using UnityEngine;
-
 namespace OmniAPI {
 	/// <summary>
-	/// Represents the game world.
+	/// Represents a Lika Berry item.
 	/// </summary>
-	public interface IWorld {
-		void DropItem(Vector2 parentWorldPos, Vector3 startPos, Item item);
-
-		/// <summary>
-		/// Gets a chunk.
-		/// </summary>
-		/// <returns>The chunk.</returns>
-		/// <param name="chunkVec">Chunk vec.</param>
-		IChunk GetChunk(Vector2 chunkVec);
-
-		/// <summary>
-		/// Gets a tile by its world vector.
-		/// </summary>
-		/// <returns>The tile.</returns>
-		/// <param name="worldVec">World vec.</param>
-		ITile GetTile(Vector2 worldVec);
-
-		/// <summary>
-		/// Gets the time.
-		/// </summary>
-		/// <returns>The time.</returns>
-		ITime GetTime();
+	public interface ILikaBerry {
 	}
 }

@@ -48,8 +48,9 @@ namespace OmniAPI {
 		// Expired items will be removed from any containers next frame
 		public bool expired = false;
 
-		// Internal-use cache for this gameobject, which may hold components
-		protected GameObject gameObject = new GameObject();
+		// Cache for this gameobject, which may hold components,
+		// and is typically not used externally
+		public GameObject gameObject = new GameObject();
 
 		/// <summary>
 		/// Zero-argument constructor for dynamic instantiation
