@@ -213,6 +213,7 @@
     <Compile Include="Entities\IMineable.cs" />
     <Compile Include="Items\Items\Foods\ILikaBerry.cs" />
     <Compile Include="Components\IItemDisplayComponent.cs" />
+    <Compile Include="Audio\IMusicManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -239,5 +240,6 @@
     <Folder Include="Items\Items\Batteries\" />
     <Folder Include="Items\Items\Tools\" />
     <Folder Include="Items\Items\Foods\" />
+    <Folder Include="Audio\" />
   </ItemGroup>
 </Project>

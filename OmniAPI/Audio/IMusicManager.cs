@@ -21,46 +21,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace OmniAPI {
-	/// <summary>
-	/// Represents the game world.
-	/// </summary>
-	public interface IWorld {
+	public interface IMusicManager {
 		/// <summary>
-		/// Drops an item into the world, with an animation depending on it's start position.
+		/// Play a random game track, excludes the title track.
 		/// </summary>
-		/// <param name="parentWorldPos">Parent world position.</param>
-		/// <param name="startPos">Start position.</param>
-		/// <param name="item">Item.</param>
-		void DropItem(Vector2 parentWorldPos, Vector3 startPos, Item item);
+		void PlayRandomTrack();
 
 		/// <summary>
-		/// Gets a chunk.
+		/// Play the title track.
 		/// </summary>
-		/// <returns>The chunk.</returns>
-		/// <param name="chunkVec">Chunk vec.</param>
-		IChunk GetChunk(Vector2 chunkVec);
+		void PlayTitleTrack();
 
 		/// <summary>
-		/// Gets all items currently in-world.
+		/// Stop any currently playing tracks.
 		/// </summary>
-		/// <returns>The items.</returns>
-		List<Item> GetItems();
-
-		/// <summary>
-		/// Gets a tile by its world vector.
-		/// </summary>
-		/// <returns>The tile.</returns>
-		/// <param name="worldVec">World vec.</param>
-		ITile GetTile(Vector2 worldVec);
-
-		/// <summary>
-		/// Gets the time.
-		/// </summary>
-		/// <returns>The time.</returns>
-		ITime GetTime();
+		void Stop();
 	}
 }
