@@ -45,6 +45,9 @@ namespace OmniAPI {
 		// Set a textual name for this item
 		public string name = "Unknown";
 
+		// A description of this item, shown in item details popups
+		public string description = "";
+
 		// Expired items will be removed from any containers next frame
 		public bool expired = false;
 

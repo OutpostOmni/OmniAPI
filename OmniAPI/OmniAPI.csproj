@@ -214,6 +214,8 @@
     <Compile Include="Items\Items\Foods\ILikaBerry.cs" />
     <Compile Include="Components\IItemDisplayComponent.cs" />
     <Compile Include="Audio\IMusicManager.cs" />
+    <Compile Include="Items\Items\Placeable\Seeds\IMagmaSageSeed.cs" />
+    <Compile Include="Components\IGrowthComponent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -241,5 +243,6 @@
     <Folder Include="Items\Items\Tools\" />
     <Folder Include="Items\Items\Foods\" />
     <Folder Include="Audio\" />
+    <Folder Include="Items\Items\Placeable\Seeds\" />
   </ItemGroup>
 </Project>

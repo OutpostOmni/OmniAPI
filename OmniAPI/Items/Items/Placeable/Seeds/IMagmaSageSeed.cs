@@ -23,8 +23,8 @@
  */
 namespace OmniAPI {
 	/// <summary>
-	/// Represents an item which may be placed as an aluminum wall entity.
+	///Represents an item which places an magma sage plant.
 	/// </summary>
-	public interface IAluminumWall : IPlaceableEntity {
+	public interface IMagmaSageSeed : IPlaceableEntity {
 	}
 }

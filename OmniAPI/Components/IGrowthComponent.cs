@@ -21,49 +21,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using System.Collections.Generic;
-
 namespace OmniAPI {
 	/// <summary>
-	/// Represents an entity's loot drops.
+	/// Represents an entity which grows/matures through phases.
 	/// </summary>
-	public interface ILootComponent : IComponent {
+	public interface IGrowthComponent {
 		/// <summary>
-		/// Add a loot item with a 100% drop chance.
+		/// Gets or sets the game seconds per phase.
 		/// </summary>
-		/// <typeparam name="IItem">The item type.</typeparam>
-		void Add<T>(int quantity = 1) where T : IItem;
+		/// <value>The game seconds per phase.</value>
+		int GameSecondsPerPhase { get; set; }
 
 		/// <summary>
-		/// Adds a loot item with a specific drop chance, between 0-1.
-		/// 
-		/// Chance is met when a Random float between 0-1 and less than or equal to the value.
+		/// Gets a value indicating whether this <see cref="T:OmniAPI.IGrowthComponent"/> is mature.
 		/// </summary>
-		/// <param name="chance">Chance.</param>
-		/// <typeparam name="T">The item type.</typeparam>
-		void AddChanced<T>(float chance = 1) where T : IItem;
+		/// <value><c>true</c> if is mature; otherwise, <c>false</c>.</value>
+		bool IsMature { get; }
 
 		/// <summary>
-		/// Adds guaranteed drops if this is an immature growable entity.
+		/// Refresh growth phases changes if the data has been changed manually.
 		/// </summary>
-		/// <param name="quantity">Quantity.</param>
-		/// <typeparam name="T">The item type.</typeparam>
-		void AddImmature<T>(int quantity = 1) where T : IItem;
-
-		/// <summary>
-		/// Add a loot item with given drop chance.
-		/// 
-		/// Note: currently does not support quantities.
-		/// </summary>
-		/// <param name="weight">Weight.</param>
-		/// <typeparam name="T">The item type.</typeparam>
-		void AddWeighted<T>(int weight) where T : IItem;
-
-		/// <summary>
-		/// Get drops. Will give priority to any non-weighted loot.
-		/// If none exists, a weighted loot item will be returned.
-		/// </summary>
-		/// <returns>The drops.</returns>
-		List<IItem> Drops();
+		void Refresh();
 	}
 }
