@@ -21,67 +21,47 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using System.Collections.Generic;
-      
+using UnityEngine;
+
 namespace OmniAPI {
 	/// <summary>
-	/// Wrapper for optional values. Null is terrible.
+	/// Represents a waypoint on a player's map.
 	/// </summary>
-	sealed public class Optional<T> {
-		T val;
+	public class Waypoint {
+		/// <summary>
+		/// Represents the coordinate this waypoint is assigned to.
+		/// </summary>
+		/// <value>The coordinate.</value>
+		public Vector2 coordinate;
 
 		/// <summary>
-		/// Creates a new empty-value instance.
+		/// The waypoint type, defaults to HOME.
 		/// </summary>
-		/// <returns>An empty optional.</returns>
-		public static Optional<T> Empty() {
-			return new Optional<T>();
+		public WaypointType type = WaypointType.HOME;
+
+		public Waypoint() {}
+
+		/// <summary>
+		/// Initializes a new waypoint.
+		/// </summary>
+		/// <param name="coordinate">Coordinate.</param>
+		public Waypoint(Vector2 coordinate) {
+			this.coordinate = coordinate;
 		}
 
 		/// <summary>
-		/// Statically construct a new optional.
+		/// Determines whether the specified <see cref="object"/> is equal to the current <see cref="T:OmniAPI.Waypoint"/>.
 		/// </summary>
-		/// <returns>Optional.</returns>
-		/// <param name="val">The value.</param>
-		public static Optional<T> From(T val) {
-			return new Optional<T>(val);
-		}
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:OmniAPI.Optional`1"/> class.
-		/// </summary>
-		/// <param name="val">Value.</param>
-		public Optional(T val) {
-			this.val = val;
-		}
-
-		/// <summary>
-		/// Initializes a new empty-value instance of the <see cref="T:OmniAPI.Optional`1"/> class.
-		/// </summary>
-		public Optional() {}
-
-		/// <summary>
-		/// Get this value.
-		/// </summary>
-		/// <returns>The value.</returns>
-		public T Get() {
-			return val;
-		}
-
-		/// <summary>
-		/// Checks if the value is empty.
-		/// </summary>
-		/// <returns><c>true</c>, if the value is empty, <c>false</c> otherwise.</returns>
-		public bool IsEmpty() {
-			return EqualityComparer<T>.Default.Equals(val, default(T));
-		}
-
-		/// <summary>
-		/// Checks if the value is present.
-		/// </summary>
-		/// <returns><c>true</c>, if value is present, <c>false</c> otherwise.</returns>
-		public bool IsPresent() {
-			return !IsEmpty();
+		/// <param name="obj">The <see cref="object"/> to compare with the current <see cref="T:OmniAPI.Waypoint"/>.</param>
+		/// <returns><c>true</c> if the specified <see cref="object"/> is equal to the current <see cref="T:OmniAPI.Waypoint"/>;
+		/// otherwise, <c>false</c>.</returns>
+		public override bool Equals(object obj) {
+			Waypoint waypoint = obj as Waypoint;
+			if (waypoint == null) {
+				return false;
+			} else {
+				return coordinate.Equals(waypoint.coordinate);
+			}
 		}
 	}
 }

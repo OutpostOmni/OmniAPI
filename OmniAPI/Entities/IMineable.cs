@@ -27,6 +27,5 @@ namespace OmniAPI {
 	/// 
 	/// Entity MUST have the targetable, durability, and loot components.
 	/// </summary>
-	public interface IMineable {
-	}
+	public interface IMineable {}
 }

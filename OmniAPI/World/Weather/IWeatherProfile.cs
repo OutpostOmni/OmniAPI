@@ -21,9 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Items {
-	/// <summary>
-	/// Represents a basic laser gun item.
-	/// </summary>
-	public interface IBasicLaserGun : IMiningItem {}
+namespace OmniAPI {
+	public interface IWeatherProfile {
+		/// <summary>
+		/// Gets the intensity of any non-clear weather, or 0 for clear.
+		/// </summary>
+		/// <returns>The intensity.</returns>
+		float GetIntensity();
+	}
 }

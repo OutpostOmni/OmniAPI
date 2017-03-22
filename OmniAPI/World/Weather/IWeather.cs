@@ -26,5 +26,10 @@ namespace OmniAPI {
 	/// Represents the game world's weather.
 	/// </summary>
 	public interface IWeather {
+		/// <summary>
+		/// Gets the current weather profile, if any. If empty, weather is clear.
+		/// </summary>
+		/// <value>The current weather profile.</value>
+		Optional<IWeatherProfile> current { get; }
 	}
 }

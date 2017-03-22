@@ -26,5 +26,9 @@ namespace OmniAPI {
 	/// Represents entities placed by a player or a non-decoration process.
 	/// </summary>
 	public interface IPlacedEntity {
+		/// <summary>
+		/// Called when placed into the world by a player.
+		/// </summary>
+		void OnPlace();
 	}
 }

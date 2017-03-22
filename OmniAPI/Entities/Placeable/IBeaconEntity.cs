@@ -21,9 +21,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Items {
+namespace OmniAPI {
 	/// <summary>
-	/// Represents a basic laser gun item.
+	/// Represents a player-placed beacon.
 	/// </summary>
-	public interface IBasicLaserGun : IMiningItem {}
+	public interface IBeaconEntity : IPlacedEntity {
+		/// <summary>
+		/// Gets the waypoint associated with this beacon.
+		/// </summary>
+		/// <returns>The waypoint.</returns>
+		Waypoint GetWaypoint();
+	}
 }

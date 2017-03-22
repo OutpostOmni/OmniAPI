@@ -21,67 +21,42 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using System.Collections.Generic;
-      
+using UnityEngine;
+
 namespace OmniAPI {
 	/// <summary>
-	/// Wrapper for optional values. Null is terrible.
+	/// Represents the in-game Map.
 	/// </summary>
-	sealed public class Optional<T> {
-		T val;
+	public interface IMap {
+		/// <summary>
+		/// Gets the active waypoint, if any.
+		/// </summary>
+		/// <value>The optional active waypoint.</value>
+		Optional<Waypoint> activeWaypoint { get; }
 
 		/// <summary>
-		/// Creates a new empty-value instance.
+		/// Activates a waypoint.
 		/// </summary>
-		/// <returns>An empty optional.</returns>
-		public static Optional<T> Empty() {
-			return new Optional<T>();
-		}
+		/// <param name="waypoint">Waypoint.</param>
+		void ActivateWaypoint(Waypoint waypoint);
 
 		/// <summary>
-		/// Statically construct a new optional.
+		/// Adds a waypoint.
 		/// </summary>
-		/// <returns>Optional.</returns>
-		/// <param name="val">The value.</param>
-		public static Optional<T> From(T val) {
-			return new Optional<T>(val);
-		}
+		/// <param name="waypoint">Waypoint.</param>
+		void AddWaypoint(Waypoint waypoint);
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="T:OmniAPI.Optional`1"/> class.
+		/// Gets the waypoint for a given vector.
 		/// </summary>
-		/// <param name="val">Value.</param>
-		public Optional(T val) {
-			this.val = val;
-		}
+		/// <returns>The waypoint.</returns>
+		/// <param name="pos">Position.</param>
+		Optional<Waypoint> GetWaypointFor(Vector2 pos);
 
 		/// <summary>
-		/// Initializes a new empty-value instance of the <see cref="T:OmniAPI.Optional`1"/> class.
+		/// Removes a waypoint.
 		/// </summary>
-		public Optional() {}
-
-		/// <summary>
-		/// Get this value.
-		/// </summary>
-		/// <returns>The value.</returns>
-		public T Get() {
-			return val;
-		}
-
-		/// <summary>
-		/// Checks if the value is empty.
-		/// </summary>
-		/// <returns><c>true</c>, if the value is empty, <c>false</c> otherwise.</returns>
-		public bool IsEmpty() {
-			return EqualityComparer<T>.Default.Equals(val, default(T));
-		}
-
-		/// <summary>
-		/// Checks if the value is present.
-		/// </summary>
-		/// <returns><c>true</c>, if value is present, <c>false</c> otherwise.</returns>
-		public bool IsPresent() {
-			return !IsEmpty();
-		}
+		/// <param name="waypoint">Waypoint.</param>
+		void RemoveWaypoint(Waypoint waypoint);
 	}
 }

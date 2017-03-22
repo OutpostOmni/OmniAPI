@@ -21,9 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Items {
-	/// <summary>
-	/// Represents a basic laser gun item.
-	/// </summary>
-	public interface IBasicLaserGun : IMiningItem {}
+namespace OmniAPI {
+	public enum WaypointType {
+		/// <summary>
+		/// Represents a player's home. A player should never have more than one.
+		/// </summary>
+		HOME
+	}
 }

@@ -21,9 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Items {
+namespace OmniAPI {
 	/// <summary>
-	/// Represents a basic laser gun item.
+	/// Represents a basic, "class c general" shield item.
 	/// </summary>
-	public interface IBasicLaserGun : IMiningItem {}
+	public interface IClassCGeneralShield : IItem {}
 }

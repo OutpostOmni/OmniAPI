@@ -45,6 +45,20 @@ namespace OmniAPI {
 		IChunk GetChunk(Vector2 chunkVec);
 
 		/// <summary>
+		/// Gets the current temperature.
+		/// </summary>
+		/// <returns>The current temperature.</returns>
+		/// <param name="worldVec">World vec.</param>
+		double GetCurrentTemperature(Vector2 worldVec);
+
+		/// <summary>
+		/// Gets the current toxicity.
+		/// </summary>
+		/// <returns>The current toxicity.</returns>
+		/// <param name="worldVec">World vec.</param>
+		double GetCurrentToxicity(Vector2 worldVec);
+
+		/// <summary>
 		/// Gets all items currently in-world.
 		/// </summary>
 		/// <returns>The items.</returns>

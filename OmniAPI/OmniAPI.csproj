@@ -68,7 +68,6 @@
     <Compile Include="IFactory.cs" />
     <Compile Include="Recipes\IRecipeFactory.cs" />
     <Compile Include="Items\IItemFactory.cs" />
-    <Compile Include="Items\Items\ICharcoal.cs" />
     <Compile Include="Items\Items\IAsh.cs" />
     <Compile Include="Items\Elements\IActinium.cs" />
     <Compile Include="Items\Elements\IAluminium.cs" />
@@ -216,6 +215,14 @@
     <Compile Include="Audio\IMusicManager.cs" />
     <Compile Include="Items\Items\Placeable\Seeds\IMagmaSageSeed.cs" />
     <Compile Include="Components\IGrowthComponent.cs" />
+    <Compile Include="World\Weather\IWeatherProfile.cs" />
+    <Compile Include="Map\IMap.cs" />
+    <Compile Include="Map\Waypoint.cs" />
+    <Compile Include="Map\WaypointType.cs" />
+    <Compile Include="Items\Items\Fuels\ICharcoal.cs" />
+    <Compile Include="Items\Items\Shields\IClassCGeneralShield.cs" />
+    <Compile Include="Items\Items\Placeable\IBeacon.cs" />
+    <Compile Include="Entities\Placeable\IBeaconEntity.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -244,5 +251,9 @@
     <Folder Include="Items\Items\Foods\" />
     <Folder Include="Audio\" />
     <Folder Include="Items\Items\Placeable\Seeds\" />
+    <Folder Include="Map\" />
+    <Folder Include="Items\Items\Fuels\" />
+    <Folder Include="Items\Items\Shields\" />
+    <Folder Include="Entities\Placeable\" />
   </ItemGroup>
 </Project>
