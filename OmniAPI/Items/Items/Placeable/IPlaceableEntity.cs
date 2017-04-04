@@ -31,7 +31,8 @@ namespace OmniAPI {
 		/// <summary>
 		/// Spawn this item's entity at the given world vector.
 		/// </summary>
+		/// <param name="cause">Cause.</param>
 		/// <param name="worldVec">World vec.</param>
-		void SpawnEntity(Vector2 worldVec);
+		void SpawnEntity(Cause cause, Vector2 worldVec);
 	}
 }

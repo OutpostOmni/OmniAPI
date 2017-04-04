@@ -29,6 +29,6 @@ namespace OmniAPI {
 		/// <summary>
 		/// Called when placed into the world by a player.
 		/// </summary>
-		void OnPlace();
+		void OnPlace(Cause cause);
 	}
 }

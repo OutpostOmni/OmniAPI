@@ -41,13 +41,6 @@ namespace OmniAPI {
 		Vector2 WorldVec { get; }
 
 		/// <summary>
-		/// Sets the entity.
-		/// </summary>
-		/// <param name="id">Identifier.</param>
-		/// <param name="shouldUpdateNeighbors">If set to <c>true</c> should update neighbors.</param>
-		void SetEntity(string id, bool shouldUpdateNeighbors = false);
-
-		/// <summary>
 		/// Sets the type of this tile.
 		/// </summary>
 		/// <param name="id">Tile Identifier.</param>

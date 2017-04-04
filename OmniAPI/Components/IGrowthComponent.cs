@@ -39,8 +39,25 @@ namespace OmniAPI {
 		bool IsMature { get; }
 
 		/// <summary>
+		/// Gets the stage count.
+		/// </summary>
+		/// <value>The stage count.</value>
+		int StageCount { get; }
+
+		/// <summary>
 		/// Refresh growth phases changes if the data has been changed manually.
 		/// </summary>
 		void Refresh();
+
+		/// <summary>
+		/// Sets the growth stage.
+		/// </summary>
+		/// <param name="stage">Stage.</param>
+		void SetGrowthStage(int stage);
+
+		/// <summary>
+		/// Sets a random growth stage.
+		/// </summary>
+		void SetRandomGrowthStage();
 	}
 }

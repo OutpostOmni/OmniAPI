@@ -76,5 +76,22 @@ namespace OmniAPI {
 		/// </summary>
 		/// <returns>The time.</returns>
 		ITime GetTime();
+
+		/// <summary>
+		/// Spawn an entity.
+		/// </summary>
+		/// <param name="cause">Cause.</param>
+		/// <param name="worldVec">World vec.</param>
+		/// <param name="entityPrefabId">Entity prefab identifier.</param>
+		void SpawnEntity(Cause cause, Vector2 worldVec, string entityPrefabId);
+
+		/// <summary>
+		/// Spawn an entity.
+		/// </summary>
+		/// <param name="cause">Cause.</param>
+		/// <param name="worldVec">World vec.</param>
+		/// <param name="entityPrefabId">Entity prefab identifier.</param>
+		/// <param name="shouldNotifyNeighbors">If set to <c>true</c> should notify neighbors.</param>
+		void SpawnEntity(Cause cause, Vector2 worldVec, string entityPrefabId, bool shouldNotifyNeighbors);
 	}
 }

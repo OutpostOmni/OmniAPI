@@ -21,27 +21,40 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using System.Collections.Generic;
+
 namespace OmniAPI {
 	/// <summary>
 	/// Represents the cause chain of an event.
 	/// </summary>
 	public class Cause {
-		readonly object[] cause;
+		readonly List<object> causes = new List<object>();
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="T:OmniAPI.Cause"/> class.
 		/// </summary>
 		/// <param name="cause">Cause.</param>
 		public Cause(object cause) {
-			this.cause = new object[] { cause };
+			Add(cause);
+		}
+
+		/// <summary>
+		/// Add a new cause entry.
+		/// </summary>
+		/// <returns>The cause.</returns>
+		/// <param name="cause">Cause.</param>
+		public Cause Add(object cause) {
+			causes.Add(cause);
+
+			return this;
 		}
 
 		/// <summary>
 		/// Get the entire cause chain.
 		/// </summary>
 		/// <returns>All causing objects.</returns>
-		public object[] All() {
-			return cause;
+		public List<object> All() {
+			return causes;
 		}
 
 		/// <summary>
@@ -49,19 +62,24 @@ namespace OmniAPI {
 		/// </summary>
 		/// <returns>The first.</returns>
 		/// <typeparam name="T">Cause type.</typeparam>
-		public T First<T>() {
-			T match = default(T);
-
+		public Optional<T> First<T>() {
 			var t = typeof(T);
-			foreach (object c in cause) {
+			foreach (object c in causes) {
 				if (t.IsAssignableFrom(c.GetType())) {
-					match = (T) c;
-
-					break;
+					return Optional<T>.From((T) c);
 				}
 			}
 
-			return match;
+			return Optional<T>.Empty();
+		}
+
+		/// <summary>
+		/// Create a new cause from the specified object.
+		/// </summary>
+		/// <returns>The cause.</returns>
+		/// <param name="cause">Object.</param>
+		public static Cause Of(object cause) {
+			return new Cause(cause);
 		}
 	}
 }

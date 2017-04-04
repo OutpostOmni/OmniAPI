@@ -60,5 +60,11 @@ namespace OmniAPI {
 		/// Called when a change has been made which might update this entity.
 		/// </summary>
 		public virtual void OnNotify() {}
+
+		/// <summary>
+		/// Called when the entity has been rendered.
+		/// </summary>
+		/// <param name="cause">Spawn cause.</param>
+		public virtual void OnRender(Cause cause) {}
 	}
 }
