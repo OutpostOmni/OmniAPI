@@ -21,24 +21,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using System;
-
-namespace OmniAPI {
-	public interface IItemFactory : IFactory {
-		/// <summary>
-		/// Create an item registered to the provided type, with the specified quantity.
-		/// </summary>
-		/// <returns>The item.</returns>
-		/// <param name="quantity">The desired quantity.</param>
-		/// <typeparam name="T">The item type</typeparam>
-		Item Create<T>(int quantity = 1) where T : IItem;
+namespace OmniAPI.Economy {
+    public interface IMerchandiseBuilder : IBuilder {
+        /// <summary>
+        /// Build the final merchandise object.
+        /// </summary>
+        Merchandise Build();
 
         /// <summary>
-        /// Create the specified item and quantity.
+        /// Sets the cost.
         /// </summary>
-        /// <returns>The item.</returns>
-        /// <param name="type">Type.</param>
+        /// <returns>The merchandise builder.</returns>
+        /// <param name="cost">The cost.</param>
+        IMerchandiseBuilder SetCost(float cost);
+
+        /// <summary>
+        /// Set the merchandise item.
+        /// </summary>
+        /// <returns>The merchandise builder.</returns>
+        /// <typeparam name="T">The item type parameter.</typeparam>
+        IMerchandiseBuilder SetItem<T>() where T : IItem;
+
+        /// <summary>
+        /// Sets the quantity.
+        /// </summary>
+        /// <returns>The merchandise builder.</returns>
         /// <param name="quantity">Quantity.</param>
-        Item Create(Type type, int quantity = 1);
-	}
+        IMerchandiseBuilder SetQuantity(int quantity);
+    }
 }

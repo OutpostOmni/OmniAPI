@@ -21,24 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using System;
-
-namespace OmniAPI {
-	public interface IItemFactory : IFactory {
-		/// <summary>
-		/// Create an item registered to the provided type, with the specified quantity.
-		/// </summary>
-		/// <returns>The item.</returns>
-		/// <param name="quantity">The desired quantity.</param>
-		/// <typeparam name="T">The item type</typeparam>
-		Item Create<T>(int quantity = 1) where T : IItem;
-
+namespace OmniAPI.Entities.Creatures {
+    public interface ICreature {
         /// <summary>
-        /// Create the specified item and quantity.
+        /// Cause this creature to say something (uses text bubble).
         /// </summary>
-        /// <returns>The item.</returns>
-        /// <param name="type">Type.</param>
-        /// <param name="quantity">Quantity.</param>
-        Item Create(Type type, int quantity = 1);
-	}
+        /// <param name="message">Message.</param>
+        void Say(string message);
+    }
 }

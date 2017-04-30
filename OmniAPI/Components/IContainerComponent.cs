@@ -48,10 +48,19 @@ namespace OmniAPI {
 		bool Has(Item item, int quantity);
 
 		/// <summary>
-		///  Has at least one of the specified item id.
+		/// Has at least one of the specified item id.
 		/// </summary>
 		/// <returns>The has.</returns>
 		/// <param name="itemId">Item identifier.</param>
 		bool Has(string itemId);
+
+        /// <summary>
+        /// Remove the specified quantity of item. If the user doesn't have enough,
+        /// none are removed.
+        /// </summary>
+        /// <returns>Whether enough items were removed.</returns>
+        /// <param name="item">Item.</param>
+        /// <param name="minQuantity">Quantity.</param>
+        bool RemoveAtLeast(Item item, int minQuantity = 1);
 	}
 }

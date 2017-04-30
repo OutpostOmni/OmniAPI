@@ -23,22 +23,13 @@
  */
 using System;
 
-namespace OmniAPI {
-	public interface IItemFactory : IFactory {
-		/// <summary>
-		/// Create an item registered to the provided type, with the specified quantity.
-		/// </summary>
-		/// <returns>The item.</returns>
-		/// <param name="quantity">The desired quantity.</param>
-		/// <typeparam name="T">The item type</typeparam>
-		Item Create<T>(int quantity = 1) where T : IItem;
-
+namespace OmniAPI.Economy {
+    public interface IMerchandiseFactory : IFactory {
         /// <summary>
-        /// Create the specified item and quantity.
+        /// Create a new merchandise builder.
         /// </summary>
-        /// <returns>The item.</returns>
-        /// <param name="type">Type.</param>
-        /// <param name="quantity">Quantity.</param>
-        Item Create(Type type, int quantity = 1);
-	}
+        /// <returns>The merchandise builder.</returns>
+        /// <param name="m">The merchandise builder.</param>
+        IMerchandiseBuilder Create(Action<IMerchandiseBuilder> m);
+    }
 }

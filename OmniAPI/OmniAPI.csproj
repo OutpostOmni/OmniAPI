@@ -223,6 +223,17 @@
     <Compile Include="Items\Items\Shields\IClassCGeneralShield.cs" />
     <Compile Include="Items\Items\Placeable\IBeacon.cs" />
     <Compile Include="Entities\Placeable\IBeaconEntity.cs" />
+    <Compile Include="Rendering\IPoolListener.cs" />
+    <Compile Include="Entities\Creatures\IProfession.cs" />
+    <Compile Include="Economy\Merchandise.cs" />
+    <Compile Include="Economy\IMerchandiseBuilder.cs" />
+    <Compile Include="Economy\IMerchandiseFactory.cs" />
+    <Compile Include="Economy\IEconomyService.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="Economy\IWallet.cs" />
+    <Compile Include="Entities\Creatures\IMerchantProfession.cs" />
+    <Compile Include="Entities\Creatures\ICreature.cs" />
+    <Compile Include="Events\Game\IGameLoadEvent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -255,5 +266,9 @@
     <Folder Include="Items\Items\Fuels\" />
     <Folder Include="Items\Items\Shields\" />
     <Folder Include="Entities\Placeable\" />
+    <Folder Include="Entities\Creatures\" />
+    <Folder Include="Economy\" />
+    <Folder Include="Services\" />
+    <Folder Include="Events\Game\" />
   </ItemGroup>
 </Project>

@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Services;
 using System;
 
 namespace OmniAPI {
@@ -79,6 +80,13 @@ namespace OmniAPI {
 		/// <returns>The recipe manager.</returns>
 		IRecipeManager GetRecipeManager();
 
+        /// <summary>
+        /// Get a service.
+        /// </summary>
+        /// <returns>The optional service.</returns>
+        /// <typeparam name="T">The service type.</typeparam>
+        Optional<T> GetService<T>() where T : IService;
+
 		/// <summary>
 		/// Gets the story manager.
 		/// </summary>
@@ -90,5 +98,11 @@ namespace OmniAPI {
 		/// </summary>
 		/// <returns>The world.</returns>
 		IWorld GetWorld();
+
+        /// <summary>
+        /// Register a service.
+        /// </summary>
+        /// <param name="service">Service.</param>
+        void RegisterService(IService service);
 	}
 }
