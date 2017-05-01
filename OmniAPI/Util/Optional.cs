@@ -23,7 +23,7 @@
  */
 using System.Collections.Generic;
       
-namespace OmniAPI {
+namespace OmniAPI.Util {
 	/// <summary>
 	/// Wrapper for optional values. Null is terrible.
 	/// </summary>

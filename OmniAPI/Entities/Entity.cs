@@ -21,9 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Services.Event;
+using OmniAPI.World;
 using UnityEngine;
 
-namespace OmniAPI {
+namespace OmniAPI.Entities {
 	abstract public class Entity : MonoBehaviour, IEntity {
 		// An ID of the current prefab
 		public string PrefabId;

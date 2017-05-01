@@ -21,10 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI {
+using OmniAPI.Items;
+
+namespace OmniAPI.Items {
 	/// <summary>
 	/// Represents a Lika Berry item.
 	/// </summary>
-	public interface ILikaBerry {
+	public interface ILikaBerry : IItem {
 	}
 }

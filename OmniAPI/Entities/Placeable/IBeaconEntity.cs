@@ -21,7 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI {
+using OmniAPI.Services.Map;
+
+namespace OmniAPI.Entities {
 	/// <summary>
 	/// Represents a player-placed beacon.
 	/// </summary>

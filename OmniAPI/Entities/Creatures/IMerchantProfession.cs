@@ -21,7 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Entities.Creatures {
+namespace OmniAPI.Entities.Creature {
+    /// <summary>
+    /// Represents a merchant.
+    /// </summary>
     public interface IMerchantProfession : IProfession {
     }
 }

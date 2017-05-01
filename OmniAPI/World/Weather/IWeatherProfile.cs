@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI {
+namespace OmniAPI.World.Weather {
 	public interface IWeatherProfile {
 		/// <summary>
 		/// Gets the intensity of any non-clear weather, or 0 for clear.

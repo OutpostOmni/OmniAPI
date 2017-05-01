@@ -21,10 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Items;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace OmniAPI {
+namespace OmniAPI.Components {
 	/// <summary>
 	/// Represents an entity which displays items, but is not considered a container.
 	/// 

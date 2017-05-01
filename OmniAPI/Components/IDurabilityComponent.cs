@@ -23,7 +23,7 @@
  */
 using UnityEngine;
 
-namespace OmniAPI {
+namespace OmniAPI.Components {
 	/// <summary>
 	/// Represents a component which gives an entity a durability.
 	/// </summary>

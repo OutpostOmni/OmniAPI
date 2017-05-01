@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI {
+namespace OmniAPI.Components {
 	/// <summary>
 	/// Represents an energy component. Its assumed this component cannot accept new energy
 	/// post-instantiation, leaving those duties to IRechargeableEnergyComponents.

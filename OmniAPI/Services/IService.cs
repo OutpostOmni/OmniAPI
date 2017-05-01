@@ -22,6 +22,9 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI.Services {
+    /// <summary>
+    /// Represents an application or game-level service.
+    /// </summary>
     public interface IService {
     }
 }

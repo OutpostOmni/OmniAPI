@@ -21,7 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI {
+using OmniAPI.Services.Event;
+
+namespace OmniAPI.Entities {
 	/// <summary>
 	/// Represents entities placed by a player or a non-decoration process.
 	/// </summary>

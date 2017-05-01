@@ -21,9 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Items;
 using System.Collections.Generic;
 
-namespace OmniAPI {
+namespace OmniAPI.Components {
 	/// <summary>
 	/// Represents an entity's loot drops.
 	/// </summary>

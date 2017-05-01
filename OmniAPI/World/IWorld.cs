@@ -21,14 +21,44 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Items;
+using OmniAPI.Services.Event;
+using OmniAPI.World.Decoration;
+using OmniAPI.World.Weather;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace OmniAPI {
+namespace OmniAPI.World {
 	/// <summary>
 	/// Represents the game world.
 	/// </summary>
 	public interface IWorld {
+        /// <summary>
+        /// Gets or sets the decorator.
+        /// </summary>
+        /// <value>The decorator.</value>
+        IDecorator Decorator { get; set; }
+
+        /// <summary>
+        /// Gets the time.
+        /// </summary>
+        /// <returns>The time.</returns>
+        ITime Time { get; }
+
+        /// <summary>
+        /// Gets the weather.
+        /// </summary>
+        /// <value>The weather.</value>
+        IWeather Weather { get; }
+
+        /// <summary>
+        /// Check if a coordinate allows tile placement, meaning there are 
+        /// no non-placed entities present.
+        /// </summary>
+        /// <returns>True if tile may be placed.</returns>
+        /// <param name="worldVec">World position.</param>
+        bool AllowsTilePlacement(Vector2 worldVec);
+
 		/// <summary>
 		/// Drops an item into the world, with an animation depending on it's start position.
 		/// </summary>
@@ -36,6 +66,13 @@ namespace OmniAPI {
 		/// <param name="startPos">Start position.</param>
 		/// <param name="item">Item.</param>
 		void DropItem(Vector2 parentWorldPos, Vector3 startPos, Item item);
+
+        /// <summary>
+        /// Check if a coordinate is clear of entities.
+        /// </summary>
+        /// <returns>True if tile is clear.</returns>
+        /// <param name="worldVec">World position.</param>
+        bool IsClear(Vector2 worldVec);
 
 		/// <summary>
 		/// Gets a chunk.
@@ -70,12 +107,6 @@ namespace OmniAPI {
 		/// <returns>The tile.</returns>
 		/// <param name="worldVec">World vec.</param>
 		ITile GetTile(Vector2 worldVec);
-
-		/// <summary>
-		/// Gets the time.
-		/// </summary>
-		/// <returns>The time.</returns>
-		ITime GetTime();
 
 		/// <summary>
 		/// Spawn an entity.

@@ -21,7 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI {
+using OmniAPI.Components;
+
+namespace OmniAPI.Players {
 	/// <summary>
 	/// Describes an individual player, a human-controller entity.
 	/// </summary>

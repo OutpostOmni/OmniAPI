@@ -23,7 +23,7 @@
  */
 using UnityEngine;
 
-namespace OmniAPI {
+namespace OmniAPI.Entities {
 	/// <summary>
 	/// Represents an entity which has a custom UI.
 	/// </summary>

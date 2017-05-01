@@ -21,14 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI {
+namespace OmniAPI.Entities.Creature {
 	/// <summary>
 	/// Represents a creature's profession.
 	/// </summary>
-	public interface IProfession {
-		/// <summary>
-		/// Called when something interacts with the profession owner.
-		/// </summary>
-		void OnInteract();
+    public interface IProfession : IInteractable {
 	}
 }

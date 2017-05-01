@@ -21,9 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Services;
 using System;
 
-namespace OmniAPI {
+namespace OmniAPI.Items {
+    /// <summary>
+    /// Item factory.
+    /// </summary>
 	public interface IItemFactory : IFactory {
 		/// <summary>
 		/// Create an item registered to the provided type, with the specified quantity.

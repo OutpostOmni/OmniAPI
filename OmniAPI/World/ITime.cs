@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI {
+namespace OmniAPI.World {
 	/// <summary>
 	/// Represents the current time within a game world.
 	/// </summary>
@@ -30,7 +30,7 @@ namespace OmniAPI {
 		/// Gets or sets the current time.
 		/// </summary>
 		/// <value>The current time.</value>
-		int currentTime { get; set; }
+		int CurrentTime { get; set; }
 
 		/// <summary>
 		/// Gets the sun intensity.

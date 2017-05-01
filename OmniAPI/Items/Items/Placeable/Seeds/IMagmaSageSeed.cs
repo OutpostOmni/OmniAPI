@@ -21,7 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI {
+using OmniAPI.Items;
+
+namespace OmniAPI.Items.Seeds {
 	/// <summary>
 	///Represents an item which places an magma sage plant.
 	/// </summary>

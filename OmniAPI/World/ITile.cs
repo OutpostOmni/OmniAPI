@@ -23,7 +23,7 @@
  */
 using UnityEngine;
 
-namespace OmniAPI {
+namespace OmniAPI.World {
 	/// <summary>
 	/// Represents a single world tile.
 	/// </summary>

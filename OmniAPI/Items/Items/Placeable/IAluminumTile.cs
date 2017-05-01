@@ -21,7 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI {
+using OmniAPI.Items;
+
+namespace OmniAPI.Items {
 	/// <summary>
 	/// Represents an aluminum tile.
 	/// </summary>

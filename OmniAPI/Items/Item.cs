@@ -21,10 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Util;
 using System;
 using UnityEngine;
 
-namespace OmniAPI {
+namespace OmniAPI.Items {
 	abstract public class Item : IItem {
 		// Quantity of items contained in this "stack"
 		private int _quantity = 1;
