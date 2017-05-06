@@ -21,10 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Entities.Creature {
-	/// <summary>
-	/// Represents a creature's profession.
-	/// </summary>
-    public interface IProfession : IInteractable {
-	}
+namespace OmniAPI.Entities.Traits {
+    /// <summary>
+    /// Describes an optional trait belonging to any entity.
+    /// </summary>
+    public interface ITrait {
+    }
 }

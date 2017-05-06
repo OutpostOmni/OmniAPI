@@ -21,8 +21,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Entities.Traits;
 using OmniAPI.Services.Event;
+using OmniAPI.Util;
 using OmniAPI.World;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace OmniAPI.Entities {
@@ -36,6 +40,18 @@ namespace OmniAPI.Entities {
 		// A convenience property caching our parent tile, if any
 		public ITile Tile;
 
+        // Cache list of all traits
+        Dictionary<Type, ITrait> traits = new Dictionary<Type, ITrait>();
+
+        /// <summary>
+        /// Adds a trait.
+        /// </summary>
+        /// <param name="trait">Trait.</param>
+        /// <typeparam name="T">The trait type parameter.</typeparam>
+        public void AddTrait<T>(ITrait trait) where T : ITrait {
+            traits.Add(typeof(T), trait);
+        }
+
 		/// <summary>
 		/// Gets the identifier.
 		/// </summary>
@@ -43,6 +59,19 @@ namespace OmniAPI.Entities {
 		public virtual string GetId() {
             return UniqueID;
 		}
+
+        /// <summary>
+        /// Gets the trait.
+        /// </summary>
+        /// <returns>The trait.</returns>
+        /// <typeparam name="T">The trait type parameter.</typeparam>
+        public Optional<T> GetTrait<T>() where T : ITrait {
+            if (HasTrait<T>()) {
+                return Optional<T>.From((T) traits[typeof(T)]);
+            } else {
+                return Optional<T>.Empty();
+            }
+        }
 
 		/// <summary>
 		/// Get a new variant, if any. Useful if this entity has to change
@@ -52,6 +81,15 @@ namespace OmniAPI.Entities {
 		public virtual string GetVariant() {
 			return null;
 		}
+
+        /// <summary>
+        /// Get whether this entity has the given trait.
+        /// </summary>
+        /// <returns><c>true</c>, if has the trait, <c>false</c> otherwise.</returns>
+        /// <typeparam name="T">The trait type parameter.</typeparam>
+        public bool HasTrait<T>() where T : ITrait {
+            return traits.ContainsKey(typeof(T));
+        }
 
 		/// <summary>
 		/// Called when the entity is broken by a game object or player.

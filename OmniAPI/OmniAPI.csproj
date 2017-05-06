@@ -212,8 +212,6 @@
     <Compile Include="Services\IFactory.cs" />
     <Compile Include="Services\Audio\IMusicService.cs" />
     <Compile Include="Entities\Creatures\ICreature.cs" />
-    <Compile Include="Entities\Creatures\IMerchantProfession.cs" />
-    <Compile Include="Entities\Creatures\IProfession.cs" />
     <Compile Include="Entities\Placeable\IBeaconEntity.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\IEntity.cs" />
@@ -251,6 +249,8 @@
     <Compile Include="Services\Audio\IAtmosphericAudioBuilder.cs" />
     <Compile Include="Services\Audio\IAtmosphericAudio.cs" />
     <Compile Include="Services\Audio\ClipPlayMode.cs" />
+    <Compile Include="Entities\Traits\ITrait.cs" />
+    <Compile Include="Entities\Traits\IMerchantTrait.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -286,5 +286,6 @@
     <Folder Include="Services\Map\" />
     <Folder Include="Services\Mod\" />
     <Folder Include="World\Decoration\" />
+    <Folder Include="Entities\Traits\" />
   </ItemGroup>
 </Project>
