@@ -28,12 +28,26 @@ namespace OmniAPI.Services.Economy {
     /// Represents merchandise - an item with an associated currency value.
     /// </summary>
     public class Merchandise {
-        public readonly Item item;
-        public readonly float cost;
+        /// <summary>
+        /// The item available for trade. The currently available quantity
+        /// is maintained as the quantity field on this Item.
+        /// </summary>
+        public readonly Item Item;
 
-        public Merchandise(Item item, float cost) {
-            this.item = item;
-            this.cost = cost;
+        /// <summary>
+        /// The cost paid *TO* someone selling this item to this merchant.
+        /// </summary>
+        public readonly float BuyCost;
+
+        /// <summary>
+        /// The price paid *BY* someone buying this item from this merchant.
+        /// </summary>
+        public readonly float SellCost;
+
+        public Merchandise(Item item, float buyCost, float sellCost) {
+            this.Item = item;
+            this.BuyCost = buyCost;
+            this.SellCost = sellCost;
         }
     }
 }

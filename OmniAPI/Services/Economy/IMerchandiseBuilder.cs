@@ -34,11 +34,20 @@ namespace OmniAPI.Services.Economy {
         Merchandise Build();
 
         /// <summary>
-        /// Sets the cost.
+        /// Sets the buy cost.
+        /// (The cost paid *TO* someone selling this item to this merchant.)
         /// </summary>
         /// <returns>The merchandise builder.</returns>
         /// <param name="cost">The cost.</param>
-        IMerchandiseBuilder SetCost(float cost);
+        IMerchandiseBuilder Buy(float cost);
+
+        /// <summary>
+        /// Sell the sell cost.
+        /// (The price paid *BY* someone buying this item from this merchant.)
+        /// </summary>
+        /// <returns>The sell.</returns>
+        /// <param name="cost">Cost.</param>
+        IMerchandiseBuilder Sell(float cost);
 
         /// <summary>
         /// Set the merchandise item.
