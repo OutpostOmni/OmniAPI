@@ -1,4 +1,4 @@
-﻿﻿/**
+﻿/**
  * This file is part of OmniAPI, licensed under the MIT License (MIT).
  *
  * Copyright (c) 2017 Helion3 http://helion3.com/
@@ -21,31 +21,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Services.Audio;
-using UnityEngine;
-
-namespace OmniAPI.Catalogues {
+namespace OmniAPI.Services.Audio {
     /// <summary>
-    /// Audio catalogue.
+    /// Describes how an audio track is played.
     /// </summary>
-    public interface IAudioCatalogue : ICatalogue {
+    public enum ClipPlayMode {
         /// <summary>
-        /// Get an audio source for the given ID.
+        /// Plays an audio source as long as CanPlayNow is true.
         /// </summary>
-        /// <returns>The audio source.</returns>
-        /// <param name="id">Identifier.</param>
-        AudioSource Get(string id);
+        DURATION,
 
         /// <summary>
-        /// Returns all registered atmospheric audio.
+        /// Randomly plays the audio source when CanPlayNow is true.
         /// </summary>
-        /// <returns>The atmospheric audio.</returns>
-        IAtmosphericAudio[] AllAtmosphericAudio();
-
-        /// <summary>
-        /// Register the specified atmoshpheric audio.
-        /// </summary>
-        /// <param name="atmoshphericAudio">Atmoshpheric audio.</param>
-        void Register(IAtmosphericAudio atmoshphericAudio);
+        RANDOM
     }
 }

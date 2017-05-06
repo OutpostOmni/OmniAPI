@@ -247,6 +247,10 @@
     <Compile Include="World\Decoration\IDecorator.cs" />
     <Compile Include="World\CoordinateProfile.cs" />
     <Compile Include="World\Biome.cs" />
+    <Compile Include="Services\Audio\IAtmosphericAudioFactory.cs" />
+    <Compile Include="Services\Audio\IAtmosphericAudioBuilder.cs" />
+    <Compile Include="Services\Audio\IAtmosphericAudio.cs" />
+    <Compile Include="Services\Audio\ClipPlayMode.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

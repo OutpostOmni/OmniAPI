@@ -1,4 +1,4 @@
-﻿﻿/**
+﻿/**
  * This file is part of OmniAPI, licensed under the MIT License (MIT).
  *
  * Copyright (c) 2017 Helion3 http://helion3.com/
@@ -21,31 +21,30 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Services.Audio;
 using UnityEngine;
 
-namespace OmniAPI.Catalogues {
-    /// <summary>
-    /// Audio catalogue.
-    /// </summary>
-    public interface IAudioCatalogue : ICatalogue {
-        /// <summary>
-        /// Get an audio source for the given ID.
-        /// </summary>
-        /// <returns>The audio source.</returns>
-        /// <param name="id">Identifier.</param>
-        AudioSource Get(string id);
+namespace OmniAPI.Services.Audio {
+/// <summary>
+/// Represents audio which plays automatically in the background as environment noise.
+/// </summary>
+public class AtmosphericAudio {
+    public readonly AudioSource audioSource;
 
-        /// <summary>
-        /// Returns all registered atmospheric audio.
-        /// </summary>
-        /// <returns>The atmospheric audio.</returns>
-        IAtmosphericAudio[] AllAtmosphericAudio();
-
-        /// <summary>
-        /// Register the specified atmoshpheric audio.
-        /// </summary>
-        /// <param name="atmoshphericAudio">Atmoshpheric audio.</param>
-        void Register(IAtmosphericAudio atmoshphericAudio);
+    public AtmosphericAudio(AudioSource audioSource) {
+        this.audioSource = audioSource;
     }
+
+    /// <summary>
+    /// Can this clip play.
+    /// </summary>
+    /// <returns><c>true</c>, if audio can play, <c>false</c> otherwise.</returns>
+    public virtual bool CanPlay() {
+        return true;
+    }
+
+    /// <summary>
+    /// Called when this audio source is played.
+    /// </summary>
+    public virtual void OnPlay() {}
+}
 }

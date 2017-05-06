@@ -1,4 +1,4 @@
-﻿﻿/**
+﻿/**
  * This file is part of OmniAPI, licensed under the MIT License (MIT).
  *
  * Copyright (c) 2017 Helion3 http://helion3.com/
@@ -21,31 +21,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Services.Audio;
-using UnityEngine;
+using System;
 
-namespace OmniAPI.Catalogues {
-    /// <summary>
-    /// Audio catalogue.
-    /// </summary>
-    public interface IAudioCatalogue : ICatalogue {
+namespace OmniAPI.Services.Audio {
+    public interface IAtmosphericAudioFactory  : IFactory {
         /// <summary>
-        /// Get an audio source for the given ID.
+        /// Create an atmospheric audio builder.
         /// </summary>
-        /// <returns>The audio source.</returns>
-        /// <param name="id">Identifier.</param>
-        AudioSource Get(string id);
+        /// <returns>The atmospheric audio builder.</returns>
+        IAtmosphericAudioBuilder Create();
 
         /// <summary>
-        /// Returns all registered atmospheric audio.
+        /// Create an atmospheric audio builder.
         /// </summary>
-        /// <returns>The atmospheric audio.</returns>
-        IAtmosphericAudio[] AllAtmosphericAudio();
-
-        /// <summary>
-        /// Register the specified atmoshpheric audio.
-        /// </summary>
-        /// <param name="atmoshphericAudio">Atmoshpheric audio.</param>
-        void Register(IAtmosphericAudio atmoshphericAudio);
+        /// <returns>The atmospheric audio builder.</returns>
+        /// <param name="a">The audio builder.</param>
+        IAtmosphericAudioBuilder Create(Action<IAtmosphericAudioBuilder> a);
     }
 }

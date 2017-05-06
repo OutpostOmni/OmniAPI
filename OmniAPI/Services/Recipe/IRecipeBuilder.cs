@@ -29,7 +29,7 @@ namespace OmniAPI.Services.Recipe {
 	/// </summary>
 	public interface IRecipeBuilder : IBuilder {
 		/// <summary>
-		/// Build the final recipe and automatically register with the RecipeManager.
+		/// Build the final recipe and automatically register with the RecipeService.
 		/// </summary>
 		void BuildAndRegister();
 

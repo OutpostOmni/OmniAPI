@@ -21,45 +21,45 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.World {
-	/// <summary>
-	/// Represents the current time within a game world.
-	/// </summary>
-	public interface ITime {
-		/// <summary>
-		/// Gets or sets the current time.
-		/// </summary>
-		/// <value>The current time.</value>
-		int CurrentTime { get; set; }
+namespace OmniAPI.Services.Audio {
+    public interface IAtmosphericAudioBuilder {
+        /// <summary>
+        /// Enable audio to play at day.
+        /// </summary>
+        /// <returns>The builder.</returns>
+        /// <param name="allow">If set to <c>true</c> allow.</param>
+        IAtmosphericAudioBuilder AllowDay(bool allow);
 
         /// <summary>
-        /// Gets a value indicating whether this <see cref="T:OmniAPI.World.ITime"/> is day.
+        /// Enable audio to play at night.
         /// </summary>
-        /// <value><c>true</c> if is day; otherwise, <c>false</c>.</value>
-        bool IsDay { get; }
+        /// <returns>The builder.</returns>
+        /// /// <param name="allow">If set to <c>true</c> allow.</param>
+        IAtmosphericAudioBuilder AllowNight(bool allow);
 
         /// <summary>
-        /// Gets a value indicating whether this <see cref="T:OmniAPI.World.ITime"/> is evening.
+        /// Build the final atmospheric audio object and automatically register with the AudioCatalogue.
         /// </summary>
-        /// <value><c>true</c> if is evening; otherwise, <c>false</c>.</value>
-        bool IsEvening { get; }
+        void BuildAndRegister();
 
         /// <summary>
-        /// Gets a value indicating whether this <see cref="T:OmniAPI.World.ITime"/> is morning.
+        /// Build the atmospheric audio.
         /// </summary>
-        /// <value><c>true</c> if is morning; otherwise, <c>false</c>.</value>
-        bool IsMorning { get; }
+        /// <returns>The audio.</returns>
+        IAtmosphericAudio Build();
 
         /// <summary>
-        /// Gets a value indicating whether this <see cref="T:OmniAPI.World.ITime"/> is night.
+        /// Sets the play mode. Defaults to PlayMode.RANDOM
         /// </summary>
-        /// <value><c>true</c> if is night; otherwise, <c>false</c>.</value>
-        bool IsNight { get; }
+        /// <returns>The mode.</returns>
+        /// <param name="mode">Mode.</param>
+        IAtmosphericAudioBuilder ClipPlayMode(ClipPlayMode mode);
 
-		/// <summary>
-		/// Gets the sun intensity.
-		/// </summary>
-		/// <returns>The sun intensity.</returns>
-        float GetSunIntensity();
-	}
+        /// <summary>
+        /// Sets an audio source from a string ID.
+        /// </summary>
+        /// <returns>The builder.</returns>
+        /// <param name="id">Audio identifier.</param>
+        IAtmosphericAudioBuilder SetId(string id);
+    }
 }

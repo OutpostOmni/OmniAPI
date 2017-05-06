@@ -21,45 +21,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.World {
-	/// <summary>
-	/// Represents the current time within a game world.
-	/// </summary>
-	public interface ITime {
-		/// <summary>
-		/// Gets or sets the current time.
-		/// </summary>
-		/// <value>The current time.</value>
-		int CurrentTime { get; set; }
+using UnityEngine;
+
+namespace OmniAPI.Services.Audio {
+    /// <summary>
+    /// Represents background in-world audio.
+    /// </summary>
+    public interface IAtmosphericAudio {
+        /// <summary>
+        /// Gets the audio source.
+        /// </summary>
+        /// <value>The audio source.</value>
+        AudioSource AudioSource { get; }
 
         /// <summary>
-        /// Gets a value indicating whether this <see cref="T:OmniAPI.World.ITime"/> is day.
+        /// Gets the clip play mode.
         /// </summary>
-        /// <value><c>true</c> if is day; otherwise, <c>false</c>.</value>
-        bool IsDay { get; }
+        /// <value>The clip play mode.</value>
+        ClipPlayMode ClipPlayMode { get; }
 
         /// <summary>
-        /// Gets a value indicating whether this <see cref="T:OmniAPI.World.ITime"/> is evening.
+        /// Can the audio play now. Does not check if audio is already playing.
         /// </summary>
-        /// <value><c>true</c> if is evening; otherwise, <c>false</c>.</value>
-        bool IsEvening { get; }
-
-        /// <summary>
-        /// Gets a value indicating whether this <see cref="T:OmniAPI.World.ITime"/> is morning.
-        /// </summary>
-        /// <value><c>true</c> if is morning; otherwise, <c>false</c>.</value>
-        bool IsMorning { get; }
-
-        /// <summary>
-        /// Gets a value indicating whether this <see cref="T:OmniAPI.World.ITime"/> is night.
-        /// </summary>
-        /// <value><c>true</c> if is night; otherwise, <c>false</c>.</value>
-        bool IsNight { get; }
-
-		/// <summary>
-		/// Gets the sun intensity.
-		/// </summary>
-		/// <returns>The sun intensity.</returns>
-        float GetSunIntensity();
-	}
+        /// <returns><c>true</c>, if audio may play now, <c>false</c> otherwise.</returns>
+        bool CanPlayNow();
+    }
 }

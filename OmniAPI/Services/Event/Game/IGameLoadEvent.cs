@@ -25,6 +25,6 @@ namespace OmniAPI.Services.Event.Game {
     /// <summary>
     /// Called when a game and all assets/objects have been loaded.
     /// </summary>
-    public interface IGameLoadEvent {
+    public interface IGameLoadEvent : IEvent {
     }
 }
