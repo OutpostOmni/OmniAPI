@@ -25,5 +25,11 @@ namespace OmniAPI.Items {
 	/// <summary>
 	/// Represents an Item.
 	/// </summary>
-	public interface IItem {}
+	public interface IItem {
+        /// <summary>
+        /// Gets the identifier.
+        /// </summary>
+        /// <returns>The identifier.</returns>
+        string GetId();
+    }
 }

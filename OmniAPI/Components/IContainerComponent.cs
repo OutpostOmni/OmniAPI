@@ -22,18 +22,38 @@
  * THE SOFTWARE.
  */
 using OmniAPI.Items;
+using OmniAPI.Util;
 
 namespace OmniAPI.Components {
 	/// <summary>
 	/// Describes a container, which holds Items.
 	/// </summary>
 	public interface IContainerComponent : IComponent {
+        /// <summary>
+        /// Gets or sets the number of slots.
+        /// </summary>
+        /// <value>The slots.</value>
+        int Slots { get; set; }
+
 		/// <summary>
 		/// Add an item to this container.
 		/// </summary>
 		/// <returns>The slot index this item was placed in.</returns>
 		/// <param name="item">Item.</param>
 		int Add(Item item);
+
+        /// <summary>
+        /// Returns the index of the first empty slot.
+        /// </summary>
+        /// <returns>The index.</returns>
+        int FirstEmpty();
+
+        /// <summary>
+        /// Get any item in the given slot.
+        /// </summary>
+        /// <returns>The get.</returns>
+        /// <param name="slot">Slot.</param>
+        Optional<IItem> Get(int slot);
 
 		/// <summary>
 		/// Has at least one of the specified item.
@@ -57,6 +77,13 @@ namespace OmniAPI.Components {
 		bool Has(string itemId);
 
         /// <summary>
+        /// Remove any item in a given slot.
+        /// </summary>
+        /// <returns>The item, if any.</returns>
+        /// <param name="slot">Slot.</param>
+        Optional<IItem> Remove(int slot);
+
+        /// <summary>
         /// Remove the specified quantity of item. If the user doesn't have enough,
         /// none are removed.
         /// </summary>
@@ -64,5 +91,13 @@ namespace OmniAPI.Components {
         /// <param name="item">Item.</param>
         /// <param name="minQuantity">Quantity.</param>
         bool RemoveAtLeast(Item item, int minQuantity = 1);
+
+        /// <summary>
+        /// Place an item at the specified slot.
+        /// </summary>
+        /// <returns>The set.</returns>
+        /// <param name="slot">Slot.</param>
+        /// <param name="item">Item.</param>
+        void Set(int slot, IItem item);
 	}
 }

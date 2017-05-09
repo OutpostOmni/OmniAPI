@@ -7,7 +7,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>OmniAPI</RootNamespace>
     <AssemblyName>OmniAPI</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,6 +32,7 @@
     <Reference Include="UnityEngine">
       <HintPath>..\..\..\..\..\Applications\Unity\Unity.app\Contents\Managed\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -251,6 +252,16 @@
     <Compile Include="Services\Audio\ClipPlayMode.cs" />
     <Compile Include="Entities\Traits\ITrait.cs" />
     <Compile Include="Entities\Traits\IMerchantTrait.cs" />
+    <Compile Include="UI\IGameUI.cs" />
+    <Compile Include="Rendering\IInventoryRenderer.cs" />
+    <Compile Include="Rendering\IInventoryRendererBuilder.cs" />
+    <Compile Include="Rendering\IInventoryUI.cs" />
+    <Compile Include="Services\Event\UI\IUIModalShownEvent.cs" />
+    <Compile Include="Services\Event\UI\IUIModalClearedEvent.cs" />
+    <Compile Include="Items\Items\Placeable\IAluminumContainer.cs" />
+    <Compile Include="UI\UITab.cs" />
+    <Compile Include="Rendering\IModalUI.cs" />
+    <Compile Include="Services\Input\Actions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -287,5 +298,8 @@
     <Folder Include="Services\Mod\" />
     <Folder Include="World\Decoration\" />
     <Folder Include="Entities\Traits\" />
+    <Folder Include="UI\" />
+    <Folder Include="Services\Event\UI\" />
+    <Folder Include="Services\Input\" />
   </ItemGroup>
 </Project>

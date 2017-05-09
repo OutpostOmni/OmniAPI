@@ -40,6 +40,14 @@ namespace OmniAPI.Components {
 		/// <param name="max">Max.</param>
 		float Draw(float max);
 
+        /// <summary>
+        /// Draws a required amount of energy. If there's not enough to satisfy
+        /// the requirement, return false.
+        /// </summary>
+        /// <returns><c>true</c>, if minimum was drawn, <c>false</c> otherwise.</returns>
+        /// <param name="min">Minimum.</param>
+        bool DrawAtLeast(float min);
+
 		/// <summary>
 		/// Get how much of the max capacity is empty.
 		/// </summary>

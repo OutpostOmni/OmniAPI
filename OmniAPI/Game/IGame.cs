@@ -24,6 +24,7 @@
 using OmniAPI.Catalogues;
 using OmniAPI.Players;
 using OmniAPI.Services;
+using OmniAPI.UI;
 using OmniAPI.Util;
 using OmniAPI.World;
 using System;
@@ -34,6 +35,18 @@ namespace OmniAPI.Game {
 	/// The game manager is the central authority for all game-related objects and components.
 	/// </summary>
 	public interface IGame {
+		/// <summary>
+		/// Gets a value indicating whether the game is paused.
+		/// </summary>
+		/// <value><c>true</c> if the game is paused; otherwise, <c>false</c>.</value>
+		bool IsPaused { get; }
+
+        /// <summary>
+        /// Gets the user interface.
+        /// </summary>
+        /// <value>The user interface.</value>
+        IGameUI UI { get; }
+
 		/// <summary>
 		/// Get a native game component by its interface.
 		/// </summary>
@@ -74,6 +87,11 @@ namespace OmniAPI.Game {
 		/// <returns>The world.</returns>
 		IWorld GetWorld();
 
+		/// <summary>
+		/// Pause the game.
+		/// </summary>
+		void Pause();
+
         /// <summary>
         /// Register a catalogue.
         /// </summary>
@@ -85,5 +103,10 @@ namespace OmniAPI.Game {
         /// </summary>
         /// <param name="service">Service.</param>
         void RegisterService(IService service);
+
+		/// <summary>
+		/// Unpause the game.
+		/// </summary>
+		void Unpause();
 	}
 }

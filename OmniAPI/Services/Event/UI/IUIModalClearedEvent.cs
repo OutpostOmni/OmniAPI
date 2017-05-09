@@ -21,29 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Components;
-
-namespace OmniAPI.Players {
+namespace OmniAPI.Services.Event.UI {
 	/// <summary>
-	/// Describes an individual player, a human-controller entity.
+	/// Called when a modal is shown.
 	/// </summary>
-	public interface IPlayer {
-        /// <summary>
-        /// Get the player's element container.
-        /// </summary>
-        /// <returns>The container.</returns>
-        IContainerComponent GetElementInventory();
-
-        /// <summary>
-        /// Gets the energy component.
-        /// </summary>
-        /// <returns>The energy component.</returns>
-        IEnergyComponent GetEnergy();
-
-		/// <summary>
-		/// Get the player's primary container, a.k.a. their inventory.
-		/// </summary>
-		/// <returns>The container.</returns>
-        IContainerComponent GetInventory();
+	public interface IUIModalClearedEvent : IEvent {
 	}
 }

@@ -22,28 +22,38 @@
  * THE SOFTWARE.
  */
 using OmniAPI.Components;
+using OmniAPI.Items;
+using OmniAPI.Util;
 
-namespace OmniAPI.Players {
-	/// <summary>
-	/// Describes an individual player, a human-controller entity.
-	/// </summary>
-	public interface IPlayer {
-        /// <summary>
-        /// Get the player's element container.
-        /// </summary>
-        /// <returns>The container.</returns>
-        IContainerComponent GetElementInventory();
-
-        /// <summary>
-        /// Gets the energy component.
-        /// </summary>
-        /// <returns>The energy component.</returns>
-        IEnergyComponent GetEnergy();
+namespace OmniAPI.Rendering {
+    /// <summary>
+    /// Represents a UI controller for an inventory.
+    /// </summary>
+	public interface IInventoryUI : IModalUI {
+		/// <summary>
+		/// Gets the container.
+		/// </summary>
+		/// <value>The container.</value>
+		IContainerComponent Container { get; }
 
 		/// <summary>
-		/// Get the player's primary container, a.k.a. their inventory.
+		/// Gets or sets a value indicating whether this UI has focus.
+		/// 
+		/// When focused, this UI will cause other UI to ignore input.
 		/// </summary>
-		/// <returns>The container.</returns>
-        IContainerComponent GetInventory();
-	}
+		/// <value><c>true</c> if this instance has focus; otherwise, <c>false</c>.</value>
+		bool HasFocus { get; set; }
+
+		/// <summary>
+		/// Gets or sets the selected slot.
+		/// </summary>
+		/// <value>The selected slot.</value>
+		int SelectedSlot { get; set; }
+
+        /// <summary>
+        /// Return the currently selected item, if any.
+        /// </summary>
+        /// <returns>The item.</returns>
+        Optional<IItem> GetSelectedItem();
+    }
 }

@@ -21,29 +21,35 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Components;
-
-namespace OmniAPI.Players {
-	/// <summary>
-	/// Describes an individual player, a human-controller entity.
-	/// </summary>
-	public interface IPlayer {
-        /// <summary>
-        /// Get the player's element container.
-        /// </summary>
-        /// <returns>The container.</returns>
-        IContainerComponent GetElementInventory();
-
-        /// <summary>
-        /// Gets the energy component.
-        /// </summary>
-        /// <returns>The energy component.</returns>
-        IEnergyComponent GetEnergy();
-
-		/// <summary>
-		/// Get the player's primary container, a.k.a. their inventory.
-		/// </summary>
-		/// <returns>The container.</returns>
-        IContainerComponent GetInventory();
+namespace OmniAPI.Services.Input {
+	public static class Actions {
+		public const int Move_Horizontal = 0;
+		public const int Move_Vertical = 1;
+		public const int Pause = 2;
+		public const int Cycle_Left = 3;
+		public const int Cycle_Right = 4;
+		public const int Escape = 5;
+		public const int Selection_Down = 6;
+		public const int Selection_Up = 7;
+		public const int Selection_Left = 8;
+		public const int Selection_Right = 9;
+		public const int Execute = 10;
+		public const int Open = 11;
+		public const int Inventory = 12;
+		public const int _1 = 13;
+		public const int _2 = 14;
+		public const int _3 = 15;
+		public const int _4 = 16;
+		public const int _5 = 17;
+		public const int _6 = 18;
+		public const int _7 = 19;
+		public const int _8 = 20;
+		public const int _9 = 21;
+		public const int Construction = 22;
+		public const int Accept = 23;
+		public const int UIHorizontal = 24;
+		public const int UIVertical = 25;
+		public const int UISubmit = 26;
+		public const int UICancel = 27;
 	}
 }
