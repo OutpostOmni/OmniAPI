@@ -123,6 +123,6 @@ namespace OmniAPI.World {
 		/// <param name="worldVec">World vec.</param>
 		/// <param name="entityPrefabId">Entity prefab identifier.</param>
 		/// <param name="shouldNotifyNeighbors">If set to <c>true</c> should notify neighbors.</param>
-		void SpawnEntity(Cause cause, Vector2 worldVec, string entityPrefabId, bool shouldNotifyNeighbors);
+		void SpawnTileEntity(Cause cause, Vector2 worldVec, string entityPrefabId, bool shouldNotifyNeighbors);
 	}
 }

@@ -30,10 +30,10 @@ namespace OmniAPI.Items {
 	/// </summary>
 	public interface IPlaceableEntity : IPlaceableItem {
 		/// <summary>
-		/// Spawn this item's entity at the given world vector.
+		/// Spawn this item's entity at the given world vector, as a tile entity.
 		/// </summary>
 		/// <param name="cause">Cause.</param>
 		/// <param name="worldVec">World vec.</param>
-		void SpawnEntity(Cause cause, Vector2 worldVec);
+		void SpawnTileEntity(Cause cause, Vector2 worldVec);
 	}
 }
