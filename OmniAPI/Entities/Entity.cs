@@ -22,6 +22,7 @@
  * THE SOFTWARE.
  */
 using OmniAPI.Entities.Traits;
+using OmniAPI.Rendering;
 using OmniAPI.Services.Event;
 using OmniAPI.Util;
 using OmniAPI.World;
@@ -33,6 +34,9 @@ namespace OmniAPI.Entities {
 	abstract public class Entity : MonoBehaviour, IEntity {
 		// An ID of the current prefab
 		public string PrefabId;
+
+		// Sets the rendering layer.
+		public RenderLayer RenderLayer = RenderLayer.Entities;
 
 		// A unique UUID assigned to this specific entity
 		public string UniqueID = System.Guid.NewGuid().ToString();

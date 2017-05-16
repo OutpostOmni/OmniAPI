@@ -48,7 +48,6 @@
     <Compile Include="Game\GameMode.cs" />
     <Compile Include="Util\Optional.cs" />
     <Compile Include="Items\Elements\IOxygen.cs" />
-    <Compile Include="Items\Items\IAsh.cs" />
     <Compile Include="Items\Elements\IActinium.cs" />
     <Compile Include="Items\Elements\IAluminium.cs" />
     <Compile Include="Items\Elements\IAmericium.cs" />
@@ -269,6 +268,12 @@
     <Compile Include="Entities\Living\ILivingEntity.cs" />
     <Compile Include="Entities\Living\IIntelligentEntity.cs" />
     <Compile Include="Entities\Living\IFlyingEntity.cs" />
+    <Compile Include="Components\IShieldComponent.cs" />
+    <Compile Include="Items\Items\Misc\IStoneShard.cs" />
+    <Compile Include="Items\Items\Misc\IAsh.cs" />
+    <Compile Include="Items\Items\Placeable\IStonePath.cs" />
+    <Compile Include="Rendering\RenderLayer.cs" />
+    <Compile Include="Items\Items\Shields\IClassBGeneralShield.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -310,5 +315,6 @@
     <Folder Include="Services\Command\" />
     <Folder Include="Services\Command\Exceptions\" />
     <Folder Include="Entities\Living\" />
+    <Folder Include="Items\Items\Misc\" />
   </ItemGroup>
 </Project>

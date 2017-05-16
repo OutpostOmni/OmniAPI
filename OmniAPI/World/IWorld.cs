@@ -76,10 +76,19 @@ namespace OmniAPI.World {
 
 		/// <summary>
 		/// Gets a chunk.
+		/// 
+		/// If it doesn't exist, it will be created.
 		/// </summary>
 		/// <returns>The chunk.</returns>
 		/// <param name="chunkVec">Chunk vec.</param>
 		IChunk GetChunk(Vector2 chunkVec);
+
+		/// <summary>
+		/// Gets the chunk containing a world coordinate.
+		/// </summary>
+		/// <returns>The chunk for world coordinate.</returns>
+		/// <param name="worldVec">World vec.</param>
+		IChunk GetChunkForWorldCoord(Vector2 worldVec);
 
 		/// <summary>
 		/// Gets the current temperature.
@@ -107,6 +116,15 @@ namespace OmniAPI.World {
 		/// <returns>The tile.</returns>
 		/// <param name="worldVec">World vec.</param>
 		ITile GetTile(Vector2 worldVec);
+
+		/// <summary>
+		/// Loads the chunk for a given chunk vec. Will not load an already-loaded chunk.
+		/// 
+		/// If saved, will load from disk, otherwise it will generate the chunk for the first time.
+		/// </summary>
+		/// <returns>The chunk.</returns>
+		/// <param name="chunkVec">Chunk vec.</param>
+		IChunk LoadChunk(Vector2 chunkVec);
 
 		/// <summary>
 		/// Spawn an entity.
