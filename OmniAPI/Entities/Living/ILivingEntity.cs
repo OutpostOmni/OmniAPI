@@ -21,21 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Entities.Creature {
+namespace OmniAPI.Entities.Living {
     /// <summary>
-    /// Represents a living creature.
+    /// Represents a living entity.
     /// </summary>
-    public interface ICreature {
-        /// <summary>
-        /// Cause this creature to say something (uses speech bubble).
-        /// </summary>
-        /// <param name="message">Message.</param>
-        void Say(string message);
-
-        /// <summary>
-        /// Cause this creature to think something (uses thought bubble).
-        /// </summary>
-        /// <param name="message">Message.</param>
-        void Think(string message);
-    }
+	public interface ILivingEntity {}
 }

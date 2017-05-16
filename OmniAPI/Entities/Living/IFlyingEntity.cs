@@ -21,30 +21,25 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Components;
-using OmniAPI.Entities.Living;
-
-namespace OmniAPI.Players {
+namespace OmniAPI.Entities.Living {
 	/// <summary>
-	/// Describes an individual player, a human-controller entity.
+	/// Represents a flying entity.
 	/// </summary>
-	public interface IPlayer : IIntelligentEntity {
-        /// <summary>
-        /// Get the player's element container.
-        /// </summary>
-        /// <returns>The container.</returns>
-        IContainerComponent GetElementInventory();
-
-        /// <summary>
-        /// Gets the energy component.
-        /// </summary>
-        /// <returns>The energy component.</returns>
-        IEnergyComponent GetEnergy();
+	public interface IFlyingEntity : ILivingEntity {
+		/// <summary>
+		/// Check if this entity is currently flying.
+		/// </summary>
+		/// <value><c>true</c> if flying; otherwise, <c>false</c>.</value>
+		bool IsFlying { get; }
 
 		/// <summary>
-		/// Get the player's primary container, a.k.a. their inventory.
+		/// Start flying.
 		/// </summary>
-		/// <returns>The container.</returns>
-        IContainerComponent GetInventory();
+		void Fly();
+
+		/// <summary>
+		/// Land.
+		/// </summary>
+		void Land();
 	}
 }

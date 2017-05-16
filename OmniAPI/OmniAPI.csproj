@@ -212,7 +212,6 @@
     <Compile Include="Services\IBuilder.cs" />
     <Compile Include="Services\IFactory.cs" />
     <Compile Include="Services\Audio\IMusicService.cs" />
-    <Compile Include="Entities\Creatures\ICreature.cs" />
     <Compile Include="Entities\Placeable\IBeaconEntity.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\IEntity.cs" />
@@ -267,6 +266,9 @@
     <Compile Include="Services\Command\ICommandBuilder.cs" />
     <Compile Include="Services\Command\ICommand.cs" />
     <Compile Include="Services\Command\CommandResult.cs" />
+    <Compile Include="Entities\Living\ILivingEntity.cs" />
+    <Compile Include="Entities\Living\IIntelligentEntity.cs" />
+    <Compile Include="Entities\Living\IFlyingEntity.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -295,7 +297,6 @@
     <Folder Include="Services\Economy\" />
     <Folder Include="Services\Audio\" />
     <Folder Include="Entities\" />
-    <Folder Include="Entities\Creatures\" />
     <Folder Include="Entities\Placeable\" />
     <Folder Include="Catalogues\" />
     <Folder Include="Services\Save\" />
@@ -308,5 +309,6 @@
     <Folder Include="Services\Input\" />
     <Folder Include="Services\Command\" />
     <Folder Include="Services\Command\Exceptions\" />
+    <Folder Include="Entities\Living\" />
   </ItemGroup>
 </Project>

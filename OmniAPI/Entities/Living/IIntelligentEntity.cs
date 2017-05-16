@@ -21,30 +21,22 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Components;
-using OmniAPI.Entities.Living;
-
-namespace OmniAPI.Players {
+namespace OmniAPI.Entities.Living {
 	/// <summary>
-	/// Describes an individual player, a human-controller entity.
+	/// Represents an intelligent entity.
 	/// </summary>
-	public interface IPlayer : IIntelligentEntity {
-        /// <summary>
-        /// Get the player's element container.
-        /// </summary>
-        /// <returns>The container.</returns>
-        IContainerComponent GetElementInventory();
-
-        /// <summary>
-        /// Gets the energy component.
-        /// </summary>
-        /// <returns>The energy component.</returns>
-        IEnergyComponent GetEnergy();
+	public interface IIntelligentEntity : ILivingEntity {
+		/// <summary>
+		/// Cause this creature to say something (uses speech bubble).
+		/// </summary>
+		/// <param name="message">Message.</param>
+		void Say(string message);
 
 		/// <summary>
-		/// Get the player's primary container, a.k.a. their inventory.
+		/// Cause this creature to think something (uses thought bubble).
 		/// </summary>
-		/// <returns>The container.</returns>
-        IContainerComponent GetInventory();
+		/// <param name="message">Message.</param>
+		void Think(string message);
 	}
 }
+

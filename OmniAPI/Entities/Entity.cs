@@ -60,6 +60,17 @@ namespace OmniAPI.Entities {
             return UniqueID;
 		}
 
+		/// <summary>
+		/// Gets the tile coordinate, which is our world positioned "floored" to the current tile coordinate.
+		/// </summary>
+		/// <returns>The tile coordinate.</returns>
+		public Vector2 GetTileCoordinate() {
+			var pos = transform.position;
+
+			// Round, because tiles are positioned via the center pivot, so tile 2,0 includes 1.5,0 - 2.5,0
+			return new Vector2(Mathf.RoundToInt(pos.x), Mathf.RoundToInt(pos.y));
+		}
+
         /// <summary>
         /// Gets the trait.
         /// </summary>
