@@ -23,6 +23,7 @@
  */
 using OmniAPI.Items;
 using OmniAPI.Services.Mod;
+using OmniAPI.Util;
 using System;
 using UnityEngine;
 
@@ -31,6 +32,13 @@ namespace OmniAPI.Catalogues {
 	/// Item catalogue.
 	/// </summary>
     public interface IItemCatalogue : ICatalogue {
+		/// <summary>
+		/// Finds an item by the identifier.
+		/// </summary>
+		/// <returns>The item, if any.</returns>
+		/// <param name="id">Identifier.</param>
+		Optional<IItem> FindById(string id);
+
 		/// <summary>
 		/// Gets the sprite registered for a specific Item.
 		/// </summary>
