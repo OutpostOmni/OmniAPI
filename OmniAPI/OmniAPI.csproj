@@ -262,6 +262,11 @@
     <Compile Include="UI\UITab.cs" />
     <Compile Include="Rendering\IModalUI.cs" />
     <Compile Include="Services\Input\Actions.cs" />
+    <Compile Include="Services\Command\ICommandService.cs" />
+    <Compile Include="Services\Command\Exceptions\UnknownCommandException.cs" />
+    <Compile Include="Services\Command\ICommandBuilder.cs" />
+    <Compile Include="Services\Command\ICommand.cs" />
+    <Compile Include="Services\Command\CommandResult.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -301,5 +306,7 @@
     <Folder Include="UI\" />
     <Folder Include="Services\Event\UI\" />
     <Folder Include="Services\Input\" />
+    <Folder Include="Services\Command\" />
+    <Folder Include="Services\Command\Exceptions\" />
   </ItemGroup>
 </Project>

@@ -103,9 +103,16 @@ namespace OmniAPI.UI {
         /// <summary>
         /// Show a modal.
         /// </summary>
-        /// <returns>The modal.</returns>
-        /// <param name="prefab">Prefab.</param>
-		GameObject ShowModal(GameObject prefab);
+        /// <returns>The modal object.</returns>
+		/// <param name="modalGameObject">Modal GameObject.</param>
+		GameObject ShowModal(GameObject modalGameObject);
+
+		/// <summary>
+		/// Shows a modal prefab.
+		/// </summary>
+		/// <returns>The modal game object.</returns>
+		/// <param name="prefab">Prefab.</param>
+		GameObject ShowModalPrefab(GameObject prefab);
 
         /// <summary>
         /// Shows or hides the modal header.
