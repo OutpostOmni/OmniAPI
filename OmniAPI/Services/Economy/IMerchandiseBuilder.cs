@@ -56,6 +56,13 @@ namespace OmniAPI.Services.Economy {
         /// <typeparam name="T">The item type parameter.</typeparam>
         IMerchandiseBuilder SetItem<T>() where T : IItem;
 
+		/// <summary>
+		/// Sets the merchandise item.
+		/// </summary>
+		/// <returns>The item.</returns>
+		/// <param name="item">Item.</param>
+		IMerchandiseBuilder SetItem(IItem item);
+
         /// <summary>
         /// Sets the quantity.
         /// </summary>

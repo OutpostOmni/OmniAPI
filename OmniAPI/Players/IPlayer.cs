@@ -23,12 +23,20 @@
  */
 using OmniAPI.Components;
 using OmniAPI.Entities.Living;
+using OmniAPI.Services.Recipe;
+using System.Collections.Generic;
 
 namespace OmniAPI.Players {
 	/// <summary>
 	/// Describes an individual player, a human-controller entity.
 	/// </summary>
 	public interface IPlayer : IIntelligentEntity {
+		/// <summary>
+		/// Gets the list of learned recipes.
+		/// </summary>
+		/// <value>The learned recipes.</value>
+		string[] LearnedRecipes { get; }
+
         /// <summary>
         /// Get the player's element container.
         /// </summary>
@@ -46,5 +54,18 @@ namespace OmniAPI.Players {
 		/// </summary>
 		/// <returns>The container.</returns>
         IContainerComponent GetInventory();
+
+		/// <summary>
+		/// Determines whether this player has learned the given recipe.
+		/// </summary>
+		/// <returns><c>true</c> if player has learned the specified recipe; otherwise, <c>false</c>.</returns>
+		/// <param name="recipe">Recipe.</param>
+		bool HasLearned(IRecipe recipe);
+
+		/// <summary>
+		/// Learn a recipe.
+		/// </summary>
+		/// <param name="recipeId">Recipe.</param>
+		void LearnRecipe(IRecipe recipe);
 	}
 }

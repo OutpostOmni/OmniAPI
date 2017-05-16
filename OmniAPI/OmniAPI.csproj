@@ -275,6 +275,7 @@
     <Compile Include="Items\Items\Shields\IClassBGeneralShield.cs" />
     <Compile Include="Items\Items\Batteries\ILeadAcidRechargeableBattery.cs" />
     <Compile Include="Items\Items\Batteries\INickelCadmiumBattery.cs" />
+    <Compile Include="Items\Items\Misc\IBlueprint.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

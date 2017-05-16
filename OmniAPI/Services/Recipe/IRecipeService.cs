@@ -22,6 +22,8 @@
  * THE SOFTWARE.
  */
 using OmniAPI.Items;
+using OmniAPI.Players;
+using OmniAPI.Util;
 using System.Collections.Generic;
 
 namespace OmniAPI.Services.Recipe {
@@ -34,6 +36,13 @@ namespace OmniAPI.Services.Recipe {
 		/// </summary>
 		/// <returns>All recipes.</returns>
 		List<IRecipe> All();
+
+		/// <summary>
+		/// Gets a blueprint holding the recipe for the given item.
+		/// </summary>
+		/// <returns>The blueprint, if recipe found.</returns>
+		/// <param name="item">Item.</param>
+		Optional<IBlueprint> BlueprintFor(Item item);
 
 		/// <summary>
 		/// Factory which creates a new recipe for the given product.
@@ -55,5 +64,12 @@ namespace OmniAPI.Services.Recipe {
 		/// </summary>
 		/// <param name="recipe">The recipe.</param>
 		void Register(IRecipe recipe);
+
+		/// <summary>
+		/// Register a recipe, player immediately "learns" it.
+		/// </summary>
+		/// <param name="recipe">Recipe.</param>
+		/// <param name="player">Player.</param>
+		void RegisterAndLearn(IRecipe recipe, IPlayer player);
 	}
 }

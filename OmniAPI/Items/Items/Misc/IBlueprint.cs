@@ -21,48 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Components;
 using OmniAPI.Items;
+using OmniAPI.Services.Recipe;
 
-namespace OmniAPI.Services.Recipe {
+namespace OmniAPI.Items {
 	/// <summary>
-	/// Represents an item recipe.
+	/// Represents a blueprint item.
 	/// </summary>
-	public interface IRecipe {
+	public interface IBlueprint : IItem {
 		/// <summary>
-		/// Get a unique ID for this recipe.
+		/// Gets or sets the recipe.
 		/// </summary>
-		/// <value>The identifier.</value>
-		string Id { get; }
-
-		/// <summary>
-		/// Can the player construct this recipe.
-		/// </summary>
-		/// <returns><c>true</c>, if constructable, <c>false</c> otherwise.</returns>
-        bool CanConstruct(IContainerComponent[] sourceContainers);
-
-		/// <summary>
-		/// Construct the product.
-		/// </summary>
-		/// <returns>The product.</returns>
-        Item Construct(IContainerComponent[] sourceContainers);
-
-		/// <summary>
-		/// Get the energy cost to construct this product.
-		/// </summary>
-		/// <returns>The energy cost.</returns>
-		float EnergyCost();
-
-		/// <summary>
-		/// Get all ingredients.
-		/// </summary>
-		/// <returns>The ingredients.</returns>
-        Item[] Ingredients();
-
-		/// <summary>
-		/// Get a dummy instance of the product.
-		/// </summary>
-		/// <returns>The product.</returns>
-        Item Product();
+		/// <value>The recipe.</value>
+		IRecipe Recipe { get; set; }
 	}
 }
