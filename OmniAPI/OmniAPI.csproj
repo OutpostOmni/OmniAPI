@@ -171,7 +171,6 @@
     <Compile Include="Items\Items\Placeable\IAluminumWall.cs" />
     <Compile Include="Items\Items\Placeable\ICombustionGenerator.cs" />
     <Compile Include="Items\Items\Batteries\IAlkalineBattery.cs" />
-    <Compile Include="Items\Items\Batteries\IRechargeableBattery.cs" />
     <Compile Include="Items\Items\Tools\IBasicLaserGun.cs" />
     <Compile Include="Components\ITargetingComponent.cs" />
     <Compile Include="Components\IDurabilityComponent.cs" />
@@ -274,6 +273,8 @@
     <Compile Include="Items\Items\Placeable\IStonePath.cs" />
     <Compile Include="Rendering\RenderLayer.cs" />
     <Compile Include="Items\Items\Shields\IClassBGeneralShield.cs" />
+    <Compile Include="Items\Items\Batteries\ILeadAcidRechargeableBattery.cs" />
+    <Compile Include="Items\Items\Batteries\INickelCadmiumBattery.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

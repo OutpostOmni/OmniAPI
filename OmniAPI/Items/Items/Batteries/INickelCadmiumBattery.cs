@@ -25,7 +25,7 @@ using OmniAPI.Items;
 
 namespace OmniAPI.Items {
 	/// <summary>
-	/// Represents a rechargeable battery item.
+	/// Represents a nickel cadmium rechargeable battery item.
 	/// </summary>
-	public interface IRechargeableBattery : IItem {}
+	public interface INickelCadmiumBattery : IItem {}
 }
