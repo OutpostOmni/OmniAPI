@@ -31,6 +31,22 @@ namespace OmniAPI.Util {
 		T val;
 
 		/// <summary>
+		/// Checks if the value is empty.
+		/// </summary>
+		/// <returns><c>true</c>, if the value is empty, <c>false</c> otherwise.</returns>
+		public bool IsEmpty {
+			get { return EqualityComparer<T>.Default.Equals(val, default(T)); }
+		}
+
+		/// <summary>
+		/// Checks if the value is present.
+		/// </summary>
+		/// <returns><c>true</c>, if value is present, <c>false</c> otherwise.</returns>
+		public bool IsPresent {
+			get { return !IsEmpty; }
+		}
+
+		/// <summary>
 		/// Creates a new empty-value instance.
 		/// </summary>
 		/// <returns>An empty optional.</returns>
@@ -66,22 +82,6 @@ namespace OmniAPI.Util {
 		/// <returns>The value.</returns>
 		public T Get() {
 			return val;
-		}
-
-		/// <summary>
-		/// Checks if the value is empty.
-		/// </summary>
-		/// <returns><c>true</c>, if the value is empty, <c>false</c> otherwise.</returns>
-		public bool IsEmpty() {
-			return EqualityComparer<T>.Default.Equals(val, default(T));
-		}
-
-		/// <summary>
-		/// Checks if the value is present.
-		/// </summary>
-		/// <returns><c>true</c>, if value is present, <c>false</c> otherwise.</returns>
-		public bool IsPresent() {
-			return !IsEmpty();
 		}
 	}
 }
