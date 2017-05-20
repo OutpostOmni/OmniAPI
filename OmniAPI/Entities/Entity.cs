@@ -119,7 +119,8 @@ namespace OmniAPI.Entities {
 		/// <summary>
 		/// Called when the entity has been rendered.
 		/// </summary>
+		/// <param name="holder">Holder.</param>
 		/// <param name="cause">Spawn cause.</param>
-		public virtual void OnRender(Cause cause) {}
+		public virtual void OnRender(IEntityHolder holder, Cause cause) {}
 	}
 }

@@ -21,10 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Items {
-	/// <summary>
-	/// Represents an item which may be placed as an aluminum wall entity.
-	/// </summary>
-	public interface IAluminumWall : IPlaceableEntity {
+using OmniAPI.Items;
+
+namespace OmniAPI.Items.Seeds {
+	public interface ISeed : IPlaceableEntity {
 	}
 }

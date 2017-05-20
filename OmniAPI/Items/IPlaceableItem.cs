@@ -21,6 +21,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.World;
+
 namespace OmniAPI.Items {
 	/// <summary>
     /// Represents an item which may be placed into the world as a tile, entity, etc.

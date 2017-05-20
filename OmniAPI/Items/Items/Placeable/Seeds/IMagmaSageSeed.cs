@@ -27,6 +27,6 @@ namespace OmniAPI.Items.Seeds {
 	/// <summary>
 	///Represents an item which places an magma sage plant.
 	/// </summary>
-	public interface IMagmaSageSeed : IPlaceableEntity {
+	public interface IMagmaSageSeed : ISeed {
 	}
 }

@@ -21,13 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Entities;
 using UnityEngine;
 
 namespace OmniAPI.World {
 	/// <summary>
 	/// Represents a single world tile.
 	/// </summary>
-	public interface ITile {
+	public interface ITile : IEntityHolder {
 		/// <summary>
 		/// Gets the identifier.
 		/// </summary>

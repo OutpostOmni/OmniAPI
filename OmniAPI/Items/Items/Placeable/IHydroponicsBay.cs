@@ -23,8 +23,8 @@
  */
 namespace OmniAPI.Items {
 	/// <summary>
-	/// Represents an item which may be placed as an aluminum wall entity.
+	/// Represents a hydroponics bay item.
 	/// </summary>
-	public interface IAluminumWall : IPlaceableEntity {
+	public interface IHydroponicsBay : IPlaceableEntity {
 	}
 }

@@ -21,10 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Items {
+namespace OmniAPI.Entities {
 	/// <summary>
-	/// Represents an item which may be placed as an aluminum wall entity.
+	/// Represents objects which are capable of holding entities.
 	/// </summary>
-	public interface IAluminumWall : IPlaceableEntity {
+	public interface IEntityHolder {
 	}
 }

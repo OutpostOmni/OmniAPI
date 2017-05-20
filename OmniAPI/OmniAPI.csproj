@@ -276,6 +276,11 @@
     <Compile Include="Items\Items\Batteries\ILeadAcidRechargeableBattery.cs" />
     <Compile Include="Items\Items\Batteries\INickelCadmiumBattery.cs" />
     <Compile Include="Items\Items\Misc\IBlueprint.cs" />
+    <Compile Include="Entities\Placeable\IHydroponicsBay.cs" />
+    <Compile Include="Items\Items\Placeable\IHydroponicsBay.cs" />
+    <Compile Include="Components\IEntityHolderComponent.cs" />
+    <Compile Include="Items\Items\Placeable\Seeds\ISeed.cs" />
+    <Compile Include="Entities\IEntityHolder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
