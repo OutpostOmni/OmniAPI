@@ -44,6 +44,12 @@ namespace OmniAPI.Services.Save {
         /// <param name="chunkVec">Chunk vec.</param>
         bool ChunkSaveExists(Vector2 chunkVec);
 
+		/// <summary>
+		/// Deletes data for enhanced entity saves.
+		/// </summary>
+		/// <param name="entity">Entity.</param>
+		void DeleteEntity(Entity entity);
+
         /// <summary>
         /// Loads a chunk.
         /// </summary>

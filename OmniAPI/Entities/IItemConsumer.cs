@@ -21,9 +21,25 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Items {
+using OmniAPI.Components;
+using OmniAPI.Items;
+
+namespace OmniAPI.Entities {
 	/// <summary>
-	/// Represents a basic, "class c general" shield item.
+	/// Represents an entity which accepts "deposits" of items, without having a UI to manage it.
 	/// </summary>
-	public interface IClassCGeneralShield : IItem {}
+	public interface IItemConsumer {
+		/// <summary>
+		/// Check if this consumer accepts the given item.
+		/// </summary>
+		/// <returns><c>true</c>, if item is accepted, <c>false</c> otherwise.</returns>
+		/// <param name="item">Item.</param>
+		bool AcceptsItem(IItem item);
+
+		/// <summary>
+		/// Deposit an item.
+		/// </summary>
+		/// <param name="item">Item.</param>
+		void DepositItem(IContainerComponent source, IItem item);
+	}
 }

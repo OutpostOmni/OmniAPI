@@ -21,9 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Items {
+namespace OmniAPI.Entities {
 	/// <summary>
-	/// Represents a basic, "class c general" shield item.
+	/// Represents a fish tank.
 	/// </summary>
-	public interface IClassCGeneralShield : IItem {}
+	public interface IFishTankEntity : IPlacedEntity {
+	}
 }

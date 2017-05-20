@@ -60,6 +60,13 @@ namespace OmniAPI.World {
         bool AllowsTilePlacement(Vector2 worldVec);
 
 		/// <summary>
+		/// Drops an item into the world, with a slight animation from the base of the current tile.
+		/// </summary>
+        /// <param name="worldPos">World position.</param>
+		/// <param name="item">Item.</param>
+		void DropItem(Vector2 worldPos, Item item);
+
+		/// <summary>
 		/// Drops an item into the world, with an animation depending on it's start position.
 		/// </summary>
 		/// <param name="parentWorldPos">Parent world position.</param>

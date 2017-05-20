@@ -21,9 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Items {
-	/// <summary>
-	/// Represents a basic, "class c general" shield item.
-	/// </summary>
-	public interface IClassCGeneralShield : IItem {}
+namespace OmniAPI.Entities {
+	public interface IHydroponicsBayEntity : IInteractable, IItemConsumer, IPlacedEntity {
+	}
 }

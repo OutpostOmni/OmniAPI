@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Components;
 using OmniAPI.Util;
 using System;
 using UnityEngine;
@@ -133,5 +134,10 @@ namespace OmniAPI.Items {
 		public override int GetHashCode() {
 			return GetId().GetHashCode();
 		}
+
+		/// <summary>
+		/// Raises the expiration event.
+		/// </summary>
+		public virtual void OnExpiration(IContainerComponent container) {}
 	}
 }

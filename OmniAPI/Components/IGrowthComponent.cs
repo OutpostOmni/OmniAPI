@@ -33,6 +33,13 @@ namespace OmniAPI.Components {
 		int GameSecondsPerPhase { get; set; }
 
 		/// <summary>
+		/// Sets the growth speed modifier.
+		/// </summary>
+		/// <returns>The speed modifier.</returns>
+		/// <param name="">.</param>
+		float GrothSpeedModifier { get; set; }
+
+		/// <summary>
 		/// Gets a value indicating whether this <see cref="T:OmniAPI.IGrowthComponent"/> is mature.
 		/// </summary>
 		/// <value><c>true</c> if is mature; otherwise, <c>false</c>.</value>

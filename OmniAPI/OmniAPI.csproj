@@ -276,11 +276,23 @@
     <Compile Include="Items\Items\Batteries\ILeadAcidRechargeableBattery.cs" />
     <Compile Include="Items\Items\Batteries\INickelCadmiumBattery.cs" />
     <Compile Include="Items\Items\Misc\IBlueprint.cs" />
-    <Compile Include="Entities\Placeable\IHydroponicsBay.cs" />
     <Compile Include="Items\Items\Placeable\IHydroponicsBay.cs" />
     <Compile Include="Components\IEntityHolderComponent.cs" />
     <Compile Include="Items\Items\Placeable\Seeds\ISeed.cs" />
     <Compile Include="Entities\IEntityHolder.cs" />
+    <Compile Include="Catalogues\IResourceCatalogue.cs" />
+    <Compile Include="Services\Resource\IResource.cs" />
+    <Compile Include="Services\Resource\IResourceFactory.cs" />
+    <Compile Include="Components\IVolumeComponent.cs" />
+    <Compile Include="Entities\IItemConsumer.cs" />
+    <Compile Include="Entities\Placeable\IHydroponicsBayEntity.cs" />
+    <Compile Include="Items\Items\Cells\IWaterCell.cs" />
+    <Compile Include="Items\Items\Cells\ICell.cs" />
+    <Compile Include="Items\Items\Cells\IEmptyCell.cs" />
+    <Compile Include="Entities\Placeable\IFishTankEntity.cs" />
+    <Compile Include="Items\Items\Placeable\IFishTank.cs" />
+    <Compile Include="Entities\Misc\IDirtPileEntity.cs" />
+    <Compile Include="Items\Items\Treasure\IKaiRingOfSiva.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -323,5 +335,9 @@
     <Folder Include="Services\Command\Exceptions\" />
     <Folder Include="Entities\Living\" />
     <Folder Include="Items\Items\Misc\" />
+    <Folder Include="Services\Resource\" />
+    <Folder Include="Items\Items\Cells\" />
+    <Folder Include="Entities\Misc\" />
+    <Folder Include="Items\Items\Treasure\" />
   </ItemGroup>
 </Project>

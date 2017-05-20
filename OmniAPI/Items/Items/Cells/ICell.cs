@@ -21,9 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Components;
+using OmniAPI.Services.Resource;
+
 namespace OmniAPI.Items {
 	/// <summary>
-	/// Represents a basic, "class c general" shield item.
+	/// Represents a cell, which holds a volume of a resource.
 	/// </summary>
-	public interface IClassCGeneralShield : IItem {}
+	public interface ICell : IItem {
+		/// <summary>
+		/// Get the resource currently being held in the volume.
+		/// </summary>
+		/// <value>The resource.</value>
+		IResource Resource { get; }
+	}
 }

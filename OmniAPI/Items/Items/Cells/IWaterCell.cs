@@ -23,7 +23,9 @@
  */
 namespace OmniAPI.Items {
 	/// <summary>
-	/// Represents a basic, "class c general" shield item.
+	/// Represents water cell.
 	/// </summary>
-	public interface IClassCGeneralShield : IItem {}
+	public interface IWaterCell : ICell {
+	}
 }
+

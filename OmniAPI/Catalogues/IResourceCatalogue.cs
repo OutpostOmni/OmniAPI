@@ -21,9 +21,24 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Items {
+using OmniAPI.Services.Resource;
+using OmniAPI.Util;
+
+namespace OmniAPI.Catalogues {
 	/// <summary>
-	/// Represents a basic, "class c general" shield item.
+	/// Represents a catalogue of named "resources".
 	/// </summary>
-	public interface IClassCGeneralShield : IItem {}
+	public interface IResourceCatalogue : ICatalogue {
+		/// <summary>
+		/// Get a resource by its id, if any.
+		/// </summary>
+		/// <param name="id">Identifier.</param>
+		Optional<IResource> Get(string id);
+
+		/// <summary>
+		/// Registers a new resource to the catalogue.
+		/// </summary>
+		/// <param name="resource">Resource.</param>
+		void Register(IResource resource);
+	}
 }

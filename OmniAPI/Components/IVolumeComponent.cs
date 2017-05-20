@@ -21,62 +21,53 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Entities;
-using OmniAPI.Items;
-using OmniAPI.Services.Event;
-using System;
-using System.Collections.Generic;
-using UnityEngine;
+using OmniAPI.Services.Resource;
 
 namespace OmniAPI.Components {
-	public interface IEntityHolderComponent : IComponent, IEntityHolder {
+	/// <summary>
+	/// Represents a volume of a named resource.
+	/// </summary>
+	public interface IVolumeComponent {
 		/// <summary>
-		/// Gets or sets the capacity of entities. No entities may be spawned if full.
+		/// Gets or sets the capacity.
 		/// </summary>
 		/// <value>The capacity.</value>
-		int Capacity { get; set; }
+		float Capacity { get; set; }
 
 		/// <summary>
-		/// Set a callback for custom verification of item.
+		/// Gets a value indicating whether this volume is full.
 		/// </summary>
-		Func<IPlaceableItem, bool> VerifyItem { get; set; }
+		/// <value><c>true</c> if this volume is full; otherwise, <c>false</c>.</value>
+		bool IsFull { get; }
 
 		/// <summary>
-		/// Get if this holder accepts the given item.
+		/// Gets or sets the max rate per second.
 		/// </summary>
-		/// <returns><c>true</c>, if placeable item was accepted, <c>false</c> otherwise.</returns>
-		/// <param name="item">Item.</param>
-		bool AcceptsPlaceableItem(IPlaceableItem item);
+		/// <value>The max rate per second.</value>
+		float MaxRatePerSecond { get; set; }
 
 		/// <summary>
-		/// Adds a spawned entity instance.
+		/// Gets or sets the resource.
 		/// </summary>
-		/// <param name="entityInstance">Entity instance.</param>
-		void AddEntity(GameObject entityInstance);
+		/// <value>The resource.</value>
+		IResource Resource { get; set; }
 
 		/// <summary>
-		/// Breaks the entity and returns any drops.
+		/// Gets the volume.
 		/// </summary>
-		/// <returns>The entity.</returns>
-		/// <param name="Entity">Entity.</param>
-		List<IItem> BreakEntity(Entity Entity);
+		/// <value>The volume.</value>
+		float Volume { get; }
 
 		/// <summary>
-		/// Gets the entities.
+		/// Drain the amount or as much up to the amount is available.
 		/// </summary>
-		/// <returns>The entities.</returns>
-		Entity[] GetEntities();
+		/// <param name="amountRequested">Amount requested.</param>
+		float Drain(float amountRequested);
 
 		/// <summary>
-		/// Determines whether this holder has an entity.
+		/// Fill the volume with the given amount of the resource.
 		/// </summary>
-		/// <returns><c>true</c> if this holder has an entity; otherwise, <c>false</c>.</returns>
-		bool HasEntity();
-
-		/// <summary>
-		/// Determines whether this holder is full.
-		/// </summary>
-		/// <returns><c>true</c> if this golder is full; otherwise, <c>false</c>.</returns>
-		bool IsFull();
+		/// <param name="amount">Amount.</param>
+		void Fill(float amount);
 	}
 }

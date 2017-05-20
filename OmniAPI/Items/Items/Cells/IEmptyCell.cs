@@ -21,7 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Entities {
-	public interface IHydroponicsBay : IPlacedEntity, IInteractable {
+namespace OmniAPI.Items {
+	/// <summary>
+	/// Represents an empty cell.
+	/// </summary>
+	public interface IEmptyCell : IItem {
 	}
 }

@@ -23,7 +23,8 @@
  */
 namespace OmniAPI.Items {
 	/// <summary>
-	/// Represents a basic, "class c general" shield item.
+	/// Represents a fish tank item.
 	/// </summary>
-	public interface IClassCGeneralShield : IItem {}
+	public interface IFishTank : IPlaceableEntity {
+	}
 }
