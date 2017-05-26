@@ -21,7 +21,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Items.Seeds {
-	public interface ISeed : IPlaceableEntity {
-	}
+using OmniAPI.Items;
+
+namespace OmniAPI.Services.Event.Services.Economy {
+    public interface IItemPurchaseEvent {
+        /// <summary>
+        /// Gets the item.
+        /// </summary>
+        /// <value>The item.</value>
+        IItem item { get; }
+
+        /// <summary>
+        /// Gets the quantity.
+        /// </summary>
+        /// <value>The quantity.</value>
+        int quantity { get; }
+
+        /// <summary>
+        /// Gets the cost.
+        /// </summary>
+        /// <value>The cost.</value>
+        float cost { get; }
+    }
 }

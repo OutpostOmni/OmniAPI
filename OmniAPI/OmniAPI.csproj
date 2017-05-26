@@ -293,6 +293,11 @@
     <Compile Include="Items\Items\Placeable\IFishTank.cs" />
     <Compile Include="Entities\Misc\IDirtPileEntity.cs" />
     <Compile Include="Items\Items\Treasure\IKaiRingOfSiva.cs" />
+    <Compile Include="Entities\Plants\ITomoPlant.cs" />
+    <Compile Include="Items\Items\Placeable\Seeds\ITomoPlantSeed.cs" />
+    <Compile Include="Items\Items\Misc\ITomoFiber.cs" />
+    <Compile Include="Services\Event\Services\Economy\IItemSaleEvent.cs" />
+    <Compile Include="Services\Event\Services\Economy\IItemPurchaseEvent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -339,5 +344,8 @@
     <Folder Include="Items\Items\Cells\" />
     <Folder Include="Entities\Misc\" />
     <Folder Include="Items\Items\Treasure\" />
+    <Folder Include="Entities\Plants\" />
+    <Folder Include="Services\Event\Services\" />
+    <Folder Include="Services\Event\Services\Economy\" />
   </ItemGroup>
 </Project>

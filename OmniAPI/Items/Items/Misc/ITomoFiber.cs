@@ -21,7 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Items.Seeds {
-	public interface ISeed : IPlaceableEntity {
-	}
+namespace OmniAPI.Items {
+    /// <summary>
+    /// Represents a tomo fiber item.
+    /// </summary>
+    public interface ITomoFiber : IItem {}
 }

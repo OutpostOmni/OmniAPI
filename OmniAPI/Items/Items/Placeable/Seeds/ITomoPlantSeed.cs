@@ -22,6 +22,9 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI.Items.Seeds {
-	public interface ISeed : IPlaceableEntity {
-	}
+    /// <summary>
+    /// Represents a tomo plant seed.
+    /// </summary>
+    public interface ITomoPlantSeed : ISeed {
+    }
 }
