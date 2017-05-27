@@ -114,10 +114,10 @@ namespace OmniAPI.Entities {
 		/// </summary>
 		public virtual void OnBreak() {}
 
-		/// <summary>
-		/// Called when a change has been made which might update this entity.
-		/// </summary>
-		public virtual void OnNotify() {}
+        /// <summary>
+        /// A neighbor tile has been updated and notifications sent.
+        /// </summary>
+        public virtual void OnNeighborUpdate() {}
 
 		/// <summary>
 		/// Called when the entity has been rendered.

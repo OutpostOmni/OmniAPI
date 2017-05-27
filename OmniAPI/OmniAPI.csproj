@@ -298,6 +298,14 @@
     <Compile Include="Items\Items\Misc\ITomoFiber.cs" />
     <Compile Include="Services\Event\Services\Economy\IItemSaleEvent.cs" />
     <Compile Include="Services\Event\Services\Economy\IItemPurchaseEvent.cs" />
+    <Compile Include="Items\Items\Misc\ISplinteredWood.cs" />
+    <Compile Include="Items\Items\Placeable\IWoodenWindmill.cs" />
+    <Compile Include="Entities\Placeable\IWoodenWindmillEntity.cs" />
+    <Compile Include="Items\Items\Placeable\IFluxStorageUnit.cs" />
+    <Compile Include="Entities\Placeable\IFluxStorageUnitEntity.cs" />
+    <Compile Include="Items\Items\Placeable\ICopperWire.cs" />
+    <Compile Include="Entities\Placeable\ICopperWireEntity.cs" />
+    <Compile Include="Entities\Placeable\ICombustionGeneratorEntity.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
