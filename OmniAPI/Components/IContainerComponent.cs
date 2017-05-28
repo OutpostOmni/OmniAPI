@@ -43,6 +43,13 @@ namespace OmniAPI.Components {
 		int Add(Item item);
 
         /// <summary>
+        /// Count total quantity of a given item.
+        /// </summary>
+        /// <returns>The count.</returns>
+        /// <param name="item">Item.</param>
+        int Count(Item item);
+
+        /// <summary>
         /// Returns the index of the first empty slot.
         /// </summary>
         /// <returns>The index.</returns>

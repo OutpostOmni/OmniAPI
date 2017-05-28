@@ -23,6 +23,7 @@
  */
 using OmniAPI.Components;
 using OmniAPI.Items;
+using OmniAPI.Util;
 
 namespace OmniAPI.Services.Recipe {
 	/// <summary>
@@ -45,7 +46,7 @@ namespace OmniAPI.Services.Recipe {
 		/// Construct the product.
 		/// </summary>
 		/// <returns>The product.</returns>
-        Item Construct(IContainerComponent[] sourceContainers);
+        Optional<Item> Construct(IContainerComponent[] sourceContainers);
 
 		/// <summary>
 		/// Get the energy cost to construct this product.
