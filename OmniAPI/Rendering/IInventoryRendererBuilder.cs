@@ -99,6 +99,20 @@ namespace OmniAPI.Rendering {
 		/// <param name="render">If set to <c>true</c> render.</param>
 		IInventoryRendererBuilder SetRenderSlotBackgrounds(bool render);
 
+        /// <summary>
+        /// Sets the length of the row.
+        /// </summary>
+        /// <returns>The builder.</returns>
+        /// <param name="rowLength">Row length.</param>
+        IInventoryRendererBuilder SetRowLength(int rowLength);
+
+        /// <summary>
+        /// Set whether to show the modal header. This will likely be replaced.
+        /// </summary>
+        /// <returns>The show modal header.</returns>
+        /// <param name="show">If set to <c>true</c> show.</param>
+        IInventoryRendererBuilder SetShowModalHeader(bool show);
+
 		/// <summary>
 		/// Sets the slot limit. Defaults to -1, which shows all container slots.
 		/// </summary>

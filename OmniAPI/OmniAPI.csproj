@@ -306,6 +306,13 @@
     <Compile Include="Items\Items\Placeable\ICopperWire.cs" />
     <Compile Include="Entities\Placeable\ICopperWireEntity.cs" />
     <Compile Include="Entities\Placeable\ICombustionGeneratorEntity.cs" />
+    <Compile Include="Items\Items\Tools\IWrench.cs" />
+    <Compile Include="Components\ICharacterContainerComponent.cs" />
+    <Compile Include="Items\Items\Shields\IShield.cs" />
+    <Compile Include="Items\Items\Upgrades\IUpgrade.cs" />
+    <Compile Include="Items\Items\Energy Cores\IEnergyCore.cs" />
+    <Compile Include="Items\Items\Energy Cores\IEnergyCoreAlpha.cs" />
+    <Compile Include="UI\UINotifcationType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -355,5 +362,7 @@
     <Folder Include="Entities\Plants\" />
     <Folder Include="Services\Event\Services\" />
     <Folder Include="Services\Event\Services\Economy\" />
+    <Folder Include="Items\Items\Upgrades\" />
+    <Folder Include="Items\Items\Energy Cores\" />
   </ItemGroup>
 </Project>

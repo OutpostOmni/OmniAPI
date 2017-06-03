@@ -21,24 +21,17 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Util;
+using OmniAPI.Components;
 
 namespace OmniAPI.Items {
-	/// <summary>
-	/// Represents an Item.
-	/// </summary>
-	public interface IItem {
+    /// <summary>
+    /// Represents an item which protects the player from the environment and/or damage.
+    /// </summary>
+    public interface IShield : IItem {
         /// <summary>
-        /// Convenience method to get a component from our game object.
+        /// Gets the shielding.
         /// </summary>
-        /// <returns>The component.</returns>
-        /// <typeparam name="T">Component type</typeparam>
-        Optional<T> GetComponent<T>();
-
-        /// <summary>
-        /// Gets the identifier.
-        /// </summary>
-        /// <returns>The identifier.</returns>
-        string GetId();
+        /// <value>The shielding.</value>
+        IShieldComponent Shielding { get; }
     }
 }

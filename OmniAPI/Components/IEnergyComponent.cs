@@ -27,6 +27,12 @@ namespace OmniAPI.Components {
 	/// post-instantiation, leaving those duties to IRechargeableEnergyComponents.
 	/// </summary>
 	public interface IEnergyComponent : IComponent {
+        /// <summary>
+        /// Gets the current charge.
+        /// </summary>
+        /// <value>The charge.</value>
+        float Charge { get; }
+
 		/// <summary>
 		/// The charge percentage.
 		/// </summary>

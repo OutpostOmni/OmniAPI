@@ -38,16 +38,16 @@ namespace OmniAPI.Players {
 		string[] LearnedRecipes { get; }
 
         /// <summary>
+        /// Gets the character inventory.
+        /// </summary>
+        /// <returns>The character inventory.</returns>
+        ICharacterContainerComponent GetCharacterInventory();
+
+        /// <summary>
         /// Get the player's element container.
         /// </summary>
         /// <returns>The container.</returns>
         IContainerComponent GetElementInventory();
-
-        /// <summary>
-        /// Gets the energy component.
-        /// </summary>
-        /// <returns>The energy component.</returns>
-        IEnergyComponent GetEnergy();
 
 		/// <summary>
 		/// Get the player's primary container, a.k.a. their inventory.
@@ -65,7 +65,7 @@ namespace OmniAPI.Players {
 		/// <summary>
 		/// Learn a recipe.
 		/// </summary>
-		/// <param name="recipeId">Recipe.</param>
+        /// <param name="recipe">Recipe.</param>
 		void LearnRecipe(IRecipe recipe);
 	}
 }

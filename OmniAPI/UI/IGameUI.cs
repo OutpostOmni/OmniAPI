@@ -40,6 +40,12 @@ namespace OmniAPI.UI {
         /// </summary>
         void ClearModals();
 
+        /// <summary>
+        /// Clears the notification.
+        /// </summary>
+        /// <param name="">.</param>
+        void ClearNotification(GameObject gameObject);
+
 		/// <summary>
 		/// Gets the next modal, if any.
 		/// </summary>
@@ -113,6 +119,14 @@ namespace OmniAPI.UI {
 		/// <returns>The modal game object.</returns>
 		/// <param name="prefab">Prefab.</param>
 		GameObject ShowModalPrefab(GameObject prefab);
+
+        /// <summary>
+        /// Shows a notification.
+        /// </summary>
+        /// <returns>The notification game object.</returns>
+        /// <param name="type">Type.</param>
+        /// <param name="message">Message.</param>
+        GameObject ShowNotification(UINotifcationType type, string message);
 
         /// <summary>
         /// Shows or hides the modal header.

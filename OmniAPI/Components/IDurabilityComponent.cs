@@ -34,11 +34,35 @@ namespace OmniAPI.Components {
 		/// <value>The color of the break particles.</value>
 		Color BreakParticleColor { get; set; }
 
+        /// <summary>
+        /// Gets or sets the cold damage.
+        /// </summary>
+        /// <value>The cold damage.</value>
+        float ColdDamage { get; set; }
+
+        /// <summary>
+        /// Gets or sets generic damage.
+        /// </summary>
+        /// <value>The damage.</value>
+        float Damage { get; set; }
+
+        /// <summary>
+        /// Gets or sets the heat damage.
+        /// </summary>
+        /// <value>The heat damage.</value>
+        float HeatDamage { get; set; }
+
 		/// <summary>
-		/// Gets or sets the damage.
+		/// Gets the total damage.
 		/// </summary>
 		/// <value>The damage.</value>
-		float Damage { get; set; }
+		float TotalDamage { get; }
+
+        /// <summary>
+        /// Gets or sets the toxin damage.
+        /// </summary>
+        /// <value>The toxin damage.</value>
+        float ToxinDamage { get; set; }
 
 		/// <summary>
 		/// Gets or sets the durability.

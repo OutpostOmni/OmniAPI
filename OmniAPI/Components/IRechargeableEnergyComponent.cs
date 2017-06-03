@@ -27,10 +27,9 @@ namespace OmniAPI.Components {
 	/// </summary>
 	public interface IRechargeableEnergyComponent : IEnergyComponent {
 		/// <summary>
-		/// Add charge to this energy component.
-		/// </summary>
-		/// <returns>The charge.</returns>
-		/// <param name="charge">Charge.</param>
-		void Charge(float charge);
+        /// Gets or sets the charge.
+        /// </summary>
+        /// <value>The charge.</value>
+        new float Charge { get; set; }
 	}
 }

@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Items;
 using OmniAPI.Services.Event;
 
 namespace OmniAPI.Entities {
@@ -28,6 +29,12 @@ namespace OmniAPI.Entities {
 	/// Represents entities placed by a player or a non-decoration process.
 	/// </summary>
 	public interface IPlacedEntity {
+        /// <summary>
+        /// Gets the original item which can place this entity.
+        /// </summary>
+        /// <returns>The placeable entity.</returns>
+        IPlaceableEntity GetSourceItem();
+
 		/// <summary>
 		/// Called when placed into the world by a player.
 		/// </summary>

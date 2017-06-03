@@ -84,6 +84,17 @@ namespace OmniAPI.Rendering {
 		/// <value><c>true</c> if render slot backgrounds; otherwise, <c>false</c>.</value>
 		bool RenderSlotBackgrounds { get; }
 
+        /// <summary>
+        /// Gets the length of the row.
+        /// </summary>
+        /// <value>The length of the row.</value>
+        int RowLength { get; }
+
+        /// <summary>
+        /// Whether to show the modal header.
+        /// </summary>
+        bool ShowModalHeader { get; }
+
 		/// <summary>
 		/// Limit rendered slot count. For example the Hotbar only renders 9 slots but the player in might be larger.
 		/// </summary>

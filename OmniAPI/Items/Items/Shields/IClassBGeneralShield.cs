@@ -25,5 +25,5 @@ namespace OmniAPI.Items {
 	/// <summary>
 	/// Represents an average, "class b general" shield item.
 	/// </summary>
-	public interface IClassBGeneralShield : IItem {}
+    public interface IClassBGeneralShield : IShield {}
 }

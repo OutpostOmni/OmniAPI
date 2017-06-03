@@ -21,24 +21,45 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Items;
 using OmniAPI.Util;
 
-namespace OmniAPI.Items {
-	/// <summary>
-	/// Represents an Item.
-	/// </summary>
-	public interface IItem {
+namespace OmniAPI.Components {
+    /// <summary>
+    /// Represents a character's container, holding 
+    /// wearable items, components, and upgrades.
+    /// </summary>
+    public interface ICharacterContainerComponent : IContainerComponent {
         /// <summary>
-        /// Convenience method to get a component from our game object.
+        /// Gets the energy core, if any.
         /// </summary>
-        /// <returns>The component.</returns>
-        /// <typeparam name="T">Component type</typeparam>
-        Optional<T> GetComponent<T>();
+        /// <returns>The energy core.</returns>
+        Optional<IEnergyCore> GetEnergyCore();
 
         /// <summary>
-        /// Gets the identifier.
+        /// Gets the current shield item, if any.
         /// </summary>
-        /// <returns>The identifier.</returns>
-        string GetId();
+        /// <returns>The shield.</returns>
+        Optional<IShield> GetShield();
+
+        /// <summary>
+        /// Gets all upgrade slots. They may be null if empty.
+        /// </summary>
+        /// <returns>The upgrades.</returns>
+        IUpgrade[] GetUpgrades();
+
+        /// <summary>
+        /// Sets the energy core and returns the previous one, if any.
+        /// </summary>
+        /// <returns>The energy core.</returns>
+        /// <param name="energyCore">Energy core.</param>
+        Optional<IEnergyCore> SetEnergyCore(IEnergyCore energyCore);
+
+        /// <summary>
+        /// Sets a shield and returns the previous shield, if any.
+        /// </summary>
+        /// <returns>The shield.</returns>
+        /// <param name="shield">Shield.</param>
+        Optional<IShield> SetShield(IShield shield);
     }
 }

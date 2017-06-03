@@ -35,11 +35,23 @@ namespace OmniAPI.Game {
 	/// The game manager is the central authority for all game-related objects and components.
 	/// </summary>
 	public interface IGame {
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="T:OmniAPI.Game.IGame"/> is loading.
+        /// </summary>
+        /// <value><c>true</c> if is currently loading; otherwise, <c>false</c>.</value>
+        bool IsLoading { get; }
+
 		/// <summary>
 		/// Gets a value indicating whether the game is paused.
 		/// </summary>
 		/// <value><c>true</c> if the game is paused; otherwise, <c>false</c>.</value>
 		bool IsPaused { get; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="T:OmniAPI.Game.IGame"/> game is over.
+        /// </summary>
+        /// <value><c>true</c> if game over; otherwise, <c>false</c>.</value>
+        bool GameOver { get; set; }
 
         /// <summary>
         /// Gets the user interface.
