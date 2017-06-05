@@ -21,35 +21,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Catalogues;
-using OmniAPI.Game;
-using OmniAPI.Services;
 using OmniAPI.Util;
+using UnityEngine;
 
-namespace OmniAPI {
+namespace OmniAPI.Services.Input {
     /// <summary>
-    /// The primary application interface.
+    /// Controller service.
     /// </summary>
-    public interface IOmni {
+    public interface IControllerService : IService {
         /// <summary>
-        /// Gets the game.
-        /// If the game scene is not currently loaded, returns null.
+        /// Gets the sprite for a given action name, if any.
         /// </summary>
-        /// <value>The game.</value>
-        IGame Game { get; }
-
-        /// <summary>
-        /// Get an application-level catalogue, or a game-level catalogue if a game is loaded.
-        /// </summary>
-        /// <returns>The optional catalogue.</returns>
-        /// <typeparam name="T">The catalogue type.</typeparam>
-        Optional<T> GetCatalogue<T>() where T : ICatalogue;
-
-        /// <summary>
-        /// Get an application-level service, or a game-level service if a game is loaded.
-        /// </summary>
-        /// <returns>The optional service.</returns>
-        /// <typeparam name="T">The service type.</typeparam>
-        Optional<T> GetService<T>() where T : IService;
+        /// <returns>The sprite for action.</returns>
+        /// <param name="actionName">Action name.</param>
+        Optional<Sprite> GetSpriteForAction(string actionName);
     }
 }

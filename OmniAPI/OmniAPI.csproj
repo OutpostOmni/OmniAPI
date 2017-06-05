@@ -313,6 +313,8 @@
     <Compile Include="Items\Items\Energy Cores\IEnergyCore.cs" />
     <Compile Include="Items\Items\Energy Cores\IEnergyCoreAlpha.cs" />
     <Compile Include="UI\UINotifcationType.cs" />
+    <Compile Include="Services\Input\IControllerService.cs" />
+    <Compile Include="Services\Input\IControllerCatalogue.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

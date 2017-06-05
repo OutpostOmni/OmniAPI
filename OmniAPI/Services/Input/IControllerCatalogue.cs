@@ -22,34 +22,28 @@
  * THE SOFTWARE.
  */
 using OmniAPI.Catalogues;
-using OmniAPI.Game;
-using OmniAPI.Services;
 using OmniAPI.Util;
+using System;
+using UnityEngine;
 
-namespace OmniAPI {
+namespace OmniAPI.Services.Input {
     /// <summary>
-    /// The primary application interface.
+    /// Controller catalogue.
     /// </summary>
-    public interface IOmni {
+    public interface IControllerCatalogue : ICatalogue {
         /// <summary>
-        /// Gets the game.
-        /// If the game scene is not currently loaded, returns null.
+        /// Gets the sprite for gamepad.
         /// </summary>
-        /// <value>The game.</value>
-        IGame Game { get; }
+        /// <returns>The sprite for gamepad.</returns>
+        /// <param name="guid">GUID.</param>
+        /// <param name="elementIdentifierName">Element identifier name.</param>
+        Optional<Sprite> GetSpriteForGamepad(Guid guid, string elementIdentifierName);
 
         /// <summary>
-        /// Get an application-level catalogue, or a game-level catalogue if a game is loaded.
+        /// Gets the sprite for a key code, if any.
         /// </summary>
-        /// <returns>The optional catalogue.</returns>
-        /// <typeparam name="T">The catalogue type.</typeparam>
-        Optional<T> GetCatalogue<T>() where T : ICatalogue;
-
-        /// <summary>
-        /// Get an application-level service, or a game-level service if a game is loaded.
-        /// </summary>
-        /// <returns>The optional service.</returns>
-        /// <typeparam name="T">The service type.</typeparam>
-        Optional<T> GetService<T>() where T : IService;
+        /// <returns>The sprite for key code.</returns>
+        /// <param name="keyCode">Key code.</param>
+        Optional<Sprite> GetSpriteForKeyCode(KeyCode keyCode);
     }
 }
