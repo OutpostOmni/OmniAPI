@@ -21,13 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Services.Save;
 using OmniAPI.Util;
 
 namespace OmniAPI.Items {
 	/// <summary>
 	/// Represents an Item.
 	/// </summary>
-	public interface IItem {
+    public interface IItem {
         /// <summary>
         /// Convenience method to get a component from our game object.
         /// </summary>

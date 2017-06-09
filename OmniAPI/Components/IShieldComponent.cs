@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI.Components {
-	public interface IShieldComponent {
+    public interface IShieldComponent : IComponent {
 		/// <summary>
 		/// Gets the energy cost per second.
 		/// 

@@ -21,13 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Services.Save;
 using UnityEngine;
 
 namespace OmniAPI.Components {
 	/// <summary>
 	/// Represents a component which gives an entity a durability.
 	/// </summary>
-	public interface IDurabilityComponent : IComponent {
+    public interface IDurabilityComponent : IComponent, IPersistanceTarget {
 		/// <summary>
 		/// Gets or sets the color of the break particles.
 		/// </summary>

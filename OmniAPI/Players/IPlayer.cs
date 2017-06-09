@@ -24,13 +24,13 @@
 using OmniAPI.Components;
 using OmniAPI.Entities.Living;
 using OmniAPI.Services.Recipe;
-using System.Collections.Generic;
+using OmniAPI.Services.Save;
 
 namespace OmniAPI.Players {
 	/// <summary>
 	/// Describes an individual player, a human-controller entity.
 	/// </summary>
-	public interface IPlayer : IIntelligentEntity {
+    public interface IPlayer : IIntelligentEntity, IPersistanceTarget {
 		/// <summary>
 		/// Gets the list of learned recipes.
 		/// </summary>

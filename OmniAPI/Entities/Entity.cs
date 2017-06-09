@@ -41,12 +41,6 @@ namespace OmniAPI.Entities {
 		// A unique UUID assigned to this specific entity
 		public string UniqueID = System.Guid.NewGuid().ToString();
 
-		// A convenience property caching our parent tile, if any
-		public ITile Tile;
-
-		// Cache method for entities to enable component data save
-		public bool RequiresEnhancedSave = false;
-
         // Cache list of all traits
         Dictionary<Type, ITrait> traits = new Dictionary<Type, ITrait>();
 
@@ -122,8 +116,6 @@ namespace OmniAPI.Entities {
 		/// <summary>
 		/// Called when the entity has been rendered.
 		/// </summary>
-		/// <param name="holder">Holder.</param>
-		/// <param name="cause">Spawn cause.</param>
-		public virtual void OnRender(IEntityHolder holder, Cause cause) {}
+		public virtual void OnRender() {}
 	}
 }

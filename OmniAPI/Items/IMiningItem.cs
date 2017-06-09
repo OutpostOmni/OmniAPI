@@ -25,5 +25,5 @@ namespace OmniAPI.Items {
 	/// <summary>
 	/// Represents an Item which can be used to mine world entities.
 	/// </summary>
-	public interface IMiningItem : IItem {}
+	public interface IMiningItem : IToolItem {}
 }

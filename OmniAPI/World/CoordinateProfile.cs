@@ -22,17 +22,23 @@
  * THE SOFTWARE.
  */
 using System;
+using UnityEngine;
 
 namespace OmniAPI.World {
     [Serializable]
     public class CoordinateProfile {
+        public Vector2 coordinate;
         public double height;
         public double temperature;
         public double moisture;
         public double toxicity;
         public Biome biome;
+        public string defaultTileId;
 
-        public CoordinateProfile(double height, double temperature, double moisture, double toxicity) {
+        public CoordinateProfile() {}
+
+        public CoordinateProfile(Vector2 coordinate, double height, double temperature, double moisture, double toxicity) {
+            this.coordinate = coordinate;
             this.height = height;
             this.temperature = temperature;
             this.moisture = moisture;

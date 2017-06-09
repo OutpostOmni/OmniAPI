@@ -22,6 +22,7 @@
  * THE SOFTWARE.
  */
 using OmniAPI.Components;
+using OmniAPI.Services.Save;
 using OmniAPI.Util;
 using System;
 using UnityEngine;
@@ -56,6 +57,11 @@ namespace OmniAPI.Items {
 		// Cache for this gameobject, which may hold components,
 		// and is typically not used externally
 		public GameObject gameObject = new GameObject();
+
+        //// Get the persistance type.
+        //public IPersistanceDataType PersistanceDataType {
+        //    get { return null; }
+        //}
 
 		/// <summary>
 		/// Zero-argument constructor for dynamic instantiation

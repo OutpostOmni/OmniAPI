@@ -22,12 +22,13 @@
  * THE SOFTWARE.
  */
 using OmniAPI.Services.Resource;
+using OmniAPI.Services.Save;
 
 namespace OmniAPI.Components {
 	/// <summary>
 	/// Represents a volume of a named resource.
 	/// </summary>
-	public interface IVolumeComponent {
+    public interface IVolumeComponent : IComponent, IPersistanceTarget {
 		/// <summary>
 		/// Gets or sets the capacity.
 		/// </summary>

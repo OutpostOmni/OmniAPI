@@ -22,13 +22,14 @@
  * THE SOFTWARE.
  */
 using OmniAPI.Items;
+using OmniAPI.Services.Save;
 using OmniAPI.Util;
 
 namespace OmniAPI.Components {
 	/// <summary>
 	/// Describes a container, which holds Items.
 	/// </summary>
-	public interface IContainerComponent : IComponent {
+    public interface IContainerComponent : IComponent, IPersistanceTarget {
         /// <summary>
         /// Gets or sets the number of slots.
         /// </summary>

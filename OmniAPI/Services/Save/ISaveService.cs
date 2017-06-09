@@ -22,7 +22,8 @@
  * THE SOFTWARE.
  */
 using OmniAPI.Game;
-using OmniAPI.Entities;
+using OmniAPI.Players;
+using OmniAPI.Util;
 using OmniAPI.World;
 using UnityEngine;
 
@@ -35,40 +36,81 @@ namespace OmniAPI.Services.Save {
         /// Gets the profile.
         /// </summary>
         /// <value>The profile.</value>
-        IGameProfile Profile { get; }
+        IGameProfile CurrentProfile { get; }
 
         /// <summary>
-        /// Checks if the chunk save exists.
+        /// Check if a chunk save exists.
         /// </summary>
-        /// <returns><c>true</c>, if save exists, <c>false</c> otherwise.</returns>
+        /// <returns><c>true</c>, if chunk save exists, <c>false</c> otherwise.</returns>
         /// <param name="chunkVec">Chunk vec.</param>
         bool ChunkSaveExists(Vector2 chunkVec);
 
-		/// <summary>
-		/// Deletes data for enhanced entity saves.
-		/// </summary>
-		/// <param name="entity">Entity.</param>
-		void DeleteEntity(Entity entity);
+        /// <summary>
+        /// Creates a new save.
+        /// </summary>
+        /// <param name="profile">Profile.</param>
+        void CreateNewSave(IGameProfile profile);
 
         /// <summary>
-        /// Loads a chunk.
+        /// Create or load game.
+        /// </summary>
+        /// <param name="profile">Profile.</param>
+        void CreateOrLoadGame(IGameProfile profile);
+
+        /// <summary>
+        /// Deletes a game for a given profile.
+        /// </summary>
+        /// <param name="profile">Profile.</param>
+        void DeleteGame(IGameProfile profile);
+
+        /// <summary>
+        /// Lists all saved games.
+        /// </summary>
+        /// <returns>The saved games.</returns>
+        IGameProfile[] GetSavedGames();
+
+        /// <summary>
+        /// Load a chunk.
         /// </summary>
         /// <returns>The chunk.</returns>
         /// <param name="chunkVec">Chunk vec.</param>
         IChunk LoadChunk(Vector2 chunkVec);
 
         /// <summary>
-        /// Loads an entity.
+        /// Loads a player's save file, if any.
         /// </summary>
-        /// <returns><c>true</c>, if entity was loaded, <c>false</c> otherwise.</returns>
-        /// <param name="entity">Entity.</param>
-        bool LoadEntity(Entity entity);
+        /// <returns><c>true</c>, if player was loaded, <c>false</c> otherwise.</returns>
+        /// <param name="player">Player.</param>
+        bool LoadPlayer(IPlayer player);
+
+        /// <summary>
+        /// Loads the save game.
+        /// </summary>
+        /// <param name="profile">Profile.</param>
+        void LoadSaveGame(IGameProfile profile);
+
+        /// <summary>
+        /// Reads a game profile, without loading the save.
+        /// </summary>
+        /// <returns>The game profile.</returns>
+        /// <param name="saveName">Save name.</param>
+        Optional<IGameProfile> ReadGameProfile(string saveName);
+
+        /// <summary>
+        /// Registers a new save target.
+        /// </summary>
+        /// <param name="target">Target.</param>
+        void RegisterTarget(IPersistanceTarget target);
 
         /// <summary>
         /// Saves a chunk.
         /// </summary>
         /// <param name="chunk">Chunk.</param>
-        /// <param name="async">If set to <c>true</c> async.</param>
-        void SaveChunk(IChunk chunk, bool async = true);
+        void SaveChunk(IChunk chunk);
+
+        /// <summary>
+        /// Saves the game.
+        /// </summary>
+        void SaveGame();
     }
 }

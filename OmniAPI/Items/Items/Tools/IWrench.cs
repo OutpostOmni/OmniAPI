@@ -25,6 +25,6 @@ namespace OmniAPI.Items {
     /// <summary>
     /// Represents a wrench item, for picking up placed entities.
     /// </summary>
-    public interface IWrench : IItem {
+    public interface IWrench : IToolItem {
     }
 }

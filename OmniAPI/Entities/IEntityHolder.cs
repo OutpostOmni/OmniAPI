@@ -21,10 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Items;
+
 namespace OmniAPI.Entities {
 	/// <summary>
 	/// Represents objects which are capable of holding entities.
 	/// </summary>
 	public interface IEntityHolder {
+        /// <summary>
+        /// Whether this holder accepts the entity being placed.
+        /// </summary>
+        /// <returns><c>true</c>, if placeable entity was accepted, <c>false</c> otherwise.</returns>
+        /// <param name="entity">Entity.</param>
+        bool AcceptsPlaceableEntity(IPlaceableEntity entity);
 	}
 }

@@ -29,23 +29,40 @@ namespace OmniAPI.World {
 	/// Represents a single world tile.
 	/// </summary>
 	public interface ITile : IEntityHolder {
-		/// <summary>
-		/// Gets the identifier.
-		/// </summary>
-		/// <value>The identifier.</value>
-		string id { get; }
+        /// <summary>
+        /// Gets the environment.
+        /// </summary>
+        /// <value>The environment.</value>
+        CoordinateProfile Environment { get; }
 
-		/// <summary>
-		/// Gets the world vec.
-		/// </summary>
-		/// <value>The world vec.</value>
-		Vector2 WorldVec { get; }
+        /// <summary>
+        /// Is this tile liquid.
+        /// </summary>
+        /// <returns><c>true</c>, if liquid was ised, <c>false</c> otherwise.</returns>
+        bool IsLiquid { get; }
+
+        /// <summary>
+        /// Gets the world vec.
+        /// </summary>
+        /// <value>The world vec.</value>
+        Vector2 WorldVec { get; }
+
+        /// <summary>
+        /// Gets the identifier.
+        /// </summary>
+        /// <returns>The identifier.</returns>
+        string GetId();
+
+        /// <summary>
+        /// Called when a neighbor updates and shouldNotifyNeighbors was true.
+        /// </summary>
+        void OnNeighborUpdate();
 
 		/// <summary>
 		/// Sets the type of this tile.
 		/// </summary>
 		/// <param name="id">Tile Identifier.</param>
 		/// <param name="shouldUpdateNeighbors">If set to <c>true</c> should trigger updates for neighbors.</param>
-		void SetType(string id, bool shouldUpdateNeighbors = false);
+		//void SetType(string id, bool shouldUpdateNeighbors = false);
 	}
 }

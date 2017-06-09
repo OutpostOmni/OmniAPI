@@ -23,6 +23,7 @@
  */
 using OmniAPI.Catalogues;
 using OmniAPI.Players;
+using OmniAPI.Rendering;
 using OmniAPI.Services;
 using OmniAPI.UI;
 using OmniAPI.Util;
@@ -58,6 +59,12 @@ namespace OmniAPI.Game {
         /// </summary>
         /// <value>The user interface.</value>
         IGameUI UI { get; }
+
+        /// <summary>
+        /// Gets the world renderer.
+        /// </summary>
+        /// <value>The world renderer.</value>
+        IWorldRenderer WorldRenderer { get; }
 
 		/// <summary>
 		/// Get a native game component by its interface.

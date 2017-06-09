@@ -38,6 +38,6 @@ namespace OmniAPI.Entities {
 		/// <summary>
 		/// Called when placed into the world by a player.
 		/// </summary>
-		void OnPlace(IEntityHolder holder, Cause cause);
+		void OnPlace(Cause cause);
 	}
 }

@@ -23,13 +23,13 @@
  */
 using OmniAPI.Entities;
 using OmniAPI.Items;
-using OmniAPI.Services.Event;
+using OmniAPI.Services.Save;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace OmniAPI.Components {
-	public interface IEntityHolderComponent : IComponent, IEntityHolder {
+    public interface IEntityHolderComponent : IComponent, IEntityHolder, IPersistanceTarget {
 		/// <summary>
 		/// Gets or sets the capacity of entities. No entities may be spawned if full.
 		/// </summary>
@@ -37,35 +37,28 @@ namespace OmniAPI.Components {
 		int Capacity { get; set; }
 
 		/// <summary>
-		/// Set a callback for custom verification of item.
+		/// Set a callback for custom verification of an entity.
 		/// </summary>
-		Func<IPlaceableItem, bool> VerifyItem { get; set; }
-
-		/// <summary>
-		/// Get if this holder accepts the given item.
-		/// </summary>
-		/// <returns><c>true</c>, if placeable item was accepted, <c>false</c> otherwise.</returns>
-		/// <param name="item">Item.</param>
-		bool AcceptsPlaceableItem(IPlaceableItem item);
+		Func<IPlaceableEntity, bool> VerifyEntity { get; set; }
 
 		/// <summary>
 		/// Adds a spawned entity instance.
 		/// </summary>
-		/// <param name="entityInstance">Entity instance.</param>
-		void AddEntity(GameObject entityInstance);
+        /// <param name="entity">Entity.</param>
+		void AddEntity(IEntity entity);
 
 		/// <summary>
 		/// Breaks the entity and returns any drops.
 		/// </summary>
 		/// <returns>The entity.</returns>
 		/// <param name="Entity">Entity.</param>
-		List<IItem> BreakEntity(Entity Entity);
+        List<IItem> BreakEntity(IEntity Entity);
 
 		/// <summary>
 		/// Gets the entities.
 		/// </summary>
 		/// <returns>The entities.</returns>
-		Entity[] GetEntities();
+        IEntity[] GetEntities();
 
 		/// <summary>
 		/// Determines whether this holder has an entity.

@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Entities;
 using UnityEngine;
 
 namespace OmniAPI.World.Decoration {
@@ -29,10 +30,17 @@ namespace OmniAPI.World.Decoration {
     /// </summary>
     public interface IDecorator {
         /// <summary>
-        /// Get the noise values and biome for a coordinate.
+        /// Spawn any natural entities for this tile.
         /// </summary>
-        /// <returns>The coordinate profile.</returns>
-        /// <param name="coordinate">Coordinate.</param>
-        CoordinateProfile Noise(Vector2 coordinate);
+        /// <returns>The entities spawned.</returns>
+        /// <param name="tile">Tile.</param>
+        IEntity[] DecorateTile(ITile tile);
+
+        /// <summary>
+        /// Get the noise, biome, and default tile values for a coordinate.
+        /// </summary>
+        /// <returns>The profile.</returns>
+        /// <param name="worldvec">Worldvec.</param>
+        CoordinateProfile Profile(Vector2 worldvec);
     }
 }

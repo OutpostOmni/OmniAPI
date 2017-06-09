@@ -21,11 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Services.Save;
+
 namespace OmniAPI.Components {
 	/// <summary>
 	/// Represents an entity which grows/matures through phases.
 	/// </summary>
-	public interface IGrowthComponent {
+    public interface IGrowthComponent : IComponent, IPersistanceTarget {
 		/// <summary>
 		/// Gets or sets the game seconds per phase.
 		/// </summary>

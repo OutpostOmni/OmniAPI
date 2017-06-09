@@ -27,9 +27,16 @@ namespace OmniAPI.Components {
 	/// </summary>
 	public interface IRechargeableEnergyComponent : IEnergyComponent {
 		/// <summary>
-        /// Gets or sets the charge.
+        /// Gets or sets the charge. Anything above capacity is ignored.
         /// </summary>
         /// <value>The charge.</value>
         new float Charge { get; set; }
+
+        /// <summary>
+        /// Charges with the given amount, but returns any that exceeds capacity.
+        /// </summary>
+        /// <returns>The charge.</returns>
+        /// <param name="amount">Amount.</param>
+        float TryCharge(float amount);
 	}
 }

@@ -315,6 +315,17 @@
     <Compile Include="UI\UINotifcationType.cs" />
     <Compile Include="Services\Input\IControllerService.cs" />
     <Compile Include="Services\Input\IControllerCatalogue.cs" />
+    <Compile Include="Services\Save\IPersistanceTarget.cs" />
+    <Compile Include="Services\Save\IPersistanceDataChunkWriter.cs" />
+    <Compile Include="Services\Save\IPersistanceDataType.cs" />
+    <Compile Include="Services\Save\IPersistanceDataChunkReader.cs" />
+    <Compile Include="Exceptions\ExistingProfileException.cs" />
+    <Compile Include="Exceptions\UnrecognizedDataTypeException.cs" />
+    <Compile Include="Services\Save\IKeyedPersistanceDataType.cs" />
+    <Compile Include="Rendering\IWorldRenderer.cs" />
+    <Compile Include="Items\Items\IToolItem.cs" />
+    <Compile Include="Entities\IEnergyConsumer.cs" />
+    <Compile Include="Components\IFuelComponent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -366,5 +377,6 @@
     <Folder Include="Services\Event\Services\Economy\" />
     <Folder Include="Items\Items\Upgrades\" />
     <Folder Include="Items\Items\Energy Cores\" />
+    <Folder Include="Exceptions\" />
   </ItemGroup>
 </Project>

@@ -21,44 +21,34 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Util;
-using OmniAPI.Services.Save;
-using UnityEngine;
+namespace OmniAPI.Services.Save {
+    /// <summary>
+    /// Custom read/write logic for complex objects.
+    /// </summary>
+    public interface IPersistanceDataType {
+        /// <summary>
+        /// Read data into a new object instance from the given reader.
+        /// </summary>
+        /// <returns>The read.</returns>
+        /// <param name="reader">Reader.</param>
+        /// <typeparam name="T">The 1st type parameter.</typeparam>
+        object Read(IPersistanceDataChunkReader reader);
 
-namespace OmniAPI.Services.Map {
-	/// <summary>
-	/// Represents the in-game Map.
-	/// </summary>
-    public interface IMapService : IService, IPersistanceTarget {
-		/// <summary>
-		/// Gets the active waypoint, if any.
-		/// </summary>
-		/// <value>The optional active waypoint.</value>
-		Optional<Waypoint> ActiveWaypoint { get; }
+        /// <summary>
+        /// Read data into an existing object from the given reader.
+        /// </summary>
+        /// <returns>The read.</returns>
+        /// <param name="reader">Reader.</param>
+        /// <param name="obj">Object.</param>
+        /// <typeparam name="T">The 1st type parameter.</typeparam>
+        object Read(IPersistanceDataChunkReader reader, object obj);
 
-		/// <summary>
-		/// Activates a waypoint.
-		/// </summary>
-		/// <param name="waypoint">Waypoint.</param>
-		void ActivateWaypoint(Waypoint waypoint);
-
-		/// <summary>
-		/// Adds a waypoint.
-		/// </summary>
-		/// <param name="waypoint">Waypoint.</param>
-		void AddWaypoint(Waypoint waypoint);
-
-		/// <summary>
-		/// Gets the waypoint for a given vector.
-		/// </summary>
-		/// <returns>The waypoint.</returns>
-		/// <param name="pos">Position.</param>
-		Optional<Waypoint> GetWaypointFor(Vector2 pos);
-
-		/// <summary>
-		/// Removes a waypoint.
-		/// </summary>
-		/// <param name="waypoint">Waypoint.</param>
-		void RemoveWaypoint(Waypoint waypoint);
-	}
+        /// <summary>
+        /// Write the specified obj to the writer.
+        /// </summary>
+        /// <returns>The write.</returns>
+        /// <param name="obj">Object.</param>
+        /// <param name="writer">Writer.</param>
+        void Write(object obj, IPersistanceDataChunkWriter writer);
+    }
 }

@@ -22,6 +22,7 @@
  * THE SOFTWARE.
  */
 using OmniAPI.Items;
+using OmniAPI.Services.Save;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,7 +32,7 @@ namespace OmniAPI.Components {
 	/// 
 	/// For example, a berry bush entity may hold berry items which are seen in-game.
 	/// </summary>
-	public interface IItemDisplayComponent {
+    public interface IItemDisplayComponent : IComponent, IPersistanceTarget {
 		/// <summary>
 		/// Add the item for display at the given pos.
 		/// </summary>

@@ -21,11 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Services.Save;
+
 namespace OmniAPI.World {
 	/// <summary>
 	/// Represents the current time within a game world.
 	/// </summary>
-	public interface ITime {
+    public interface ITime : IPersistanceTarget {
 		/// <summary>
 		/// Gets or sets the current time.
 		/// </summary>

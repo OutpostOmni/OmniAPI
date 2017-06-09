@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Entities;
 using OmniAPI.Services.Event;
 using UnityEngine;
 
@@ -30,10 +31,11 @@ namespace OmniAPI.Items {
 	/// </summary>
 	public interface IPlaceableEntity : IPlaceableItem {
 		/// <summary>
-		/// Spawn this item's entity at the given world vector, as a tile entity.
-		/// </summary>
-		/// <param name="cause">Cause.</param>
-		/// <param name="worldVec">World vec.</param>
-		void SpawnTileEntity(Cause cause, Vector2 worldVec);
+        /// Spawn this item's entity at the given world vector, as a tile entity.
+        /// </summary>
+        /// <param name="holder">Holder.</param>
+        /// <param name="cause">Cause.</param>
+        /// <param name="worldVec">World vec.</param>
+		void SpawnEntity(IEntityHolder holder, Cause cause, Vector2 worldVec);
 	}
 }

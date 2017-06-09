@@ -21,11 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Services.Save;
+
 namespace OmniAPI.Services.Mission {
 	/// <summary>
 	/// Represents the mission manager.
 	/// </summary>
-    public interface IMissionService : IService {
+    public interface IMissionService : IService, IPersistanceTarget {
 		/// <summary>
 		/// Activate the specified mission.
 		/// </summary>

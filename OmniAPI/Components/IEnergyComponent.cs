@@ -21,12 +21,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Services.Save;
+
 namespace OmniAPI.Components {
 	/// <summary>
 	/// Represents an energy component. Its assumed this component cannot accept new energy
 	/// post-instantiation, leaving those duties to IRechargeableEnergyComponents.
 	/// </summary>
-	public interface IEnergyComponent : IComponent {
+    public interface IEnergyComponent : IComponent, IPersistanceTarget {
+        /// <summary>
+        /// Gets the capacity.
+        /// </summary>
+        /// <value>The capacity.</value>
+        float Capacity { get; set; }
+
         /// <summary>
         /// Gets the current charge.
         /// </summary>

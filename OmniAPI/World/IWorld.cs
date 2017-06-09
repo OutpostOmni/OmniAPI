@@ -21,8 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Entities;
 using OmniAPI.Items;
 using OmniAPI.Services.Event;
+using OmniAPI.Util;
 using OmniAPI.World.Decoration;
 using OmniAPI.World.Weather;
 using System.Collections.Generic;
@@ -52,12 +54,35 @@ namespace OmniAPI.World {
         IWeather Weather { get; }
 
         /// <summary>
+        /// Check if the given coorinate accepts a placeable entity.
+        /// </summary>
+        /// <returns><c>true</c>, if placeable entity was acceptsed, <c>false</c> otherwise.</returns>
+        /// <param name="worldVec">World vec.</param>
+        /// <param name="entity">Entity.</param>
+        bool AcceptsPlaceableEntity(Vector2 worldVec, IPlaceableEntity entity);
+
+        /// <summary>
+        /// Check if the coordinate allows a placeable item (entity, tile, etc).
+        /// </summary>
+        /// <returns><c>true</c>, if placeable item was acceptsed, <c>false</c> otherwise.</returns>
+        /// <param name="worldVec">World vec.</param>
+        /// <param name="item">Item.</param>
+        bool AcceptsPlaceableItem(Vector2 worldVec, IPlaceableItem item);
+
+        /// <summary>
         /// Check if a coordinate allows tile placement, meaning there are 
         /// no non-placed entities present.
         /// </summary>
         /// <returns>True if tile may be placed.</returns>
         /// <param name="worldVec">World position.</param>
         bool AllowsTilePlacement(Vector2 worldVec);
+
+        /// <summary>
+        /// Breaks the tile entity.
+        /// </summary>
+        /// <returns>The tile entity.</returns>
+        /// <param name="entity">Entity.</param>
+        List<IItem> BreakTileEntity(IEntity entity);
 
 		/// <summary>
 		/// Drops an item into the world, with a slight animation from the base of the current tile.
@@ -111,11 +136,31 @@ namespace OmniAPI.World {
 		/// <param name="worldVec">World vec.</param>
 		double GetCurrentToxicity(Vector2 worldVec);
 
+        /// <summary>
+        /// Get all entities within the tile represented by worldVec.
+        /// </summary>
+        /// <returns>The entities.</returns>
+        /// <param name="worldVec">World vec.</param>
+        IEntity[] GetEntities(Vector2 worldVec);
+
+        /// <summary>
+        /// Gets the first available entity holder (a tile or an entity holder)
+        /// </summary>
+        /// <returns>The first available entity holder.</returns>
+        /// <param name="worldVec">World vec.</param>
+        Optional<IEntityHolder> GetFirstAvailableEntityHolder(Vector2 worldVec);
+
 		/// <summary>
 		/// Gets all items currently in-world.
 		/// </summary>
 		/// <returns>The items.</returns>
 		List<Item> GetItems();
+
+        /// <summary>
+        /// Gets the loaded chunks.
+        /// </summary>
+        /// <returns>The loaded chunks.</returns>
+        IChunk[] GetLoadedChunks();
 
 		/// <summary>
 		/// Gets a tile by its world vector.
@@ -139,15 +184,17 @@ namespace OmniAPI.World {
 		/// <param name="cause">Cause.</param>
 		/// <param name="worldVec">World vec.</param>
 		/// <param name="entityPrefabId">Entity prefab identifier.</param>
-		void SpawnEntity(Cause cause, Vector2 worldVec, string entityPrefabId);
+		IEntity SpawnEntity(Cause cause, Vector2 worldVec, string entityPrefabId);
 
-		/// <summary>
-		/// Spawn an entity.
-		/// </summary>
-		/// <param name="cause">Cause.</param>
-		/// <param name="worldVec">World vec.</param>
-		/// <param name="entityPrefabId">Entity prefab identifier.</param>
-		/// <param name="shouldNotifyNeighbors">If set to <c>true</c> should notify neighbors.</param>
-		void SpawnTileEntity(Cause cause, Vector2 worldVec, string entityPrefabId, bool shouldNotifyNeighbors);
+        /// <summary>
+        /// Spawns an entity into a given holder.
+        /// </summary>
+        /// <returns>The entity.</returns>
+        /// <param name="holder">Holder.</param>
+        /// <param name="cause">Cause.</param>
+        /// <param name="worldVec">World vec.</param>
+        /// <param name="entityId">Entity identifier.</param>
+        /// <param name="shouldNotifyNeighbors">If set to <c>true</c> should notify neighbors.</param>
+        IEntity SpawnEntity(IEntityHolder holder, Cause cause, Vector2 worldVec, string entityId, bool shouldNotifyNeighbors);
 	}
 }

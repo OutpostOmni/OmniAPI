@@ -21,44 +21,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Util;
-using OmniAPI.Services.Save;
-using UnityEngine;
+using System.IO;
 
-namespace OmniAPI.Services.Map {
-	/// <summary>
-	/// Represents the in-game Map.
-	/// </summary>
-    public interface IMapService : IService, IPersistanceTarget {
-		/// <summary>
-		/// Gets the active waypoint, if any.
-		/// </summary>
-		/// <value>The optional active waypoint.</value>
-		Optional<Waypoint> ActiveWaypoint { get; }
-
-		/// <summary>
-		/// Activates a waypoint.
-		/// </summary>
-		/// <param name="waypoint">Waypoint.</param>
-		void ActivateWaypoint(Waypoint waypoint);
-
-		/// <summary>
-		/// Adds a waypoint.
-		/// </summary>
-		/// <param name="waypoint">Waypoint.</param>
-		void AddWaypoint(Waypoint waypoint);
-
-		/// <summary>
-		/// Gets the waypoint for a given vector.
-		/// </summary>
-		/// <returns>The waypoint.</returns>
-		/// <param name="pos">Position.</param>
-		Optional<Waypoint> GetWaypointFor(Vector2 pos);
-
-		/// <summary>
-		/// Removes a waypoint.
-		/// </summary>
-		/// <param name="waypoint">Waypoint.</param>
-		void RemoveWaypoint(Waypoint waypoint);
-	}
+namespace OmniAPI.Services.Save {
+    /// <summary>
+    /// Represents an object which will be persisted across game states.
+    /// 
+    /// Note: Any targets must also have a registered IPersistanceDataType.
+    /// </summary>
+    public interface IPersistanceTarget {
+        /// <summary>
+        /// Gets the persistance data type handler.
+        /// </summary>
+        /// <value>The type of the persistance data.</value>
+        //IPersistanceDataType PersistanceDataType { get; }
+    }
 }

@@ -21,13 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Services;
+using OmniAPI.Services.Save;
 
 namespace OmniAPI.Services.Economy {
     /// <summary>
     /// Represents the in-game economy.
     /// </summary>
-    public interface IEconomyService : IService {
+    public interface IEconomyService : IService, IPersistanceTarget {
         /// <summary>
         /// Gets the or create wallet.
         /// </summary>

@@ -26,5 +26,28 @@ namespace OmniAPI.Entities {
 	/// Represents a world entity.
 	/// </summary>
 	public interface IEntity {
-	}
+        /// <summary>
+        /// Gets the components matching the given type.
+        /// </summary>
+        /// <returns>The component.</returns>
+        /// <typeparam name="T">The 1st type parameter.</typeparam>
+        T GetComponent<T>();
+
+        /// <summary>
+        /// Gets any components matching the given type.
+        /// </summary>
+        /// <returns>The components.</returns>
+        /// <typeparam name="T">The 1st type parameter.</typeparam>
+        T[] GetComponents<T>();
+
+        /// <summary>
+        /// Called when the entity is broken.
+        /// </summary>
+        void OnBreak();
+
+        /// <summary>
+        /// Called when a neighbor tile/entity has notified us.
+        /// </summary>
+        void OnNeighborUpdate();
+    }
 }

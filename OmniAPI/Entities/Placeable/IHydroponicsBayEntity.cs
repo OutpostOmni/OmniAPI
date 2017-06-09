@@ -22,6 +22,6 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI.Entities {
-	public interface IHydroponicsBayEntity : IInteractable, IItemConsumer, IPlacedEntity {
+    public interface IHydroponicsBayEntity : IInteractable, IItemConsumer, IPlacedEntity {
 	}
 }

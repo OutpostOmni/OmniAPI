@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Entities;
 using UnityEngine;
 
 namespace OmniAPI.World {
@@ -28,11 +29,31 @@ namespace OmniAPI.World {
 	/// Represents a chunk of world tiles.
 	/// </summary>
 	public interface IChunk {
+        /// <summary>
+        /// Gets the entities.
+        /// </summary>
+        /// <value>The entities.</value>
+        IEntity[] Entities { get; }
+
+        /// <summary>
+        /// Get all entities within the tile represented by worldVec.
+        /// </summary>
+        /// <returns>The entities.</returns>
+        /// <param name="worldVec">World vec.</param>
+        IEntity[] GetEntities(Vector2 worldVec);
+
 		/// <summary>
 		/// Gets a tile by its local vector.
 		/// </summary>
 		/// <returns>The tile.</returns>
 		/// <param name="localVec">Local vec.</param>
 		ITile GetTile(Vector2 localVec);
+
+        /// <summary>
+        /// Sets the tile.
+        /// </summary>
+        /// <param name="localVec">Local vec.</param>
+        /// <param name="tile">Tile.</param>
+        void SetTile(Vector2 localVec, ITile tile);
 	}
 }

@@ -21,11 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Services.Save;
+
 namespace OmniAPI.Services.Story {
 	/// <summary>
 	/// Represents the story manager.
 	/// </summary>
-    public interface IStoryService : IService {
+    public interface IStoryService : IService, IPersistanceTarget {
 		/// <summary>
 		/// Activate a story point. Will fail if a story point is already active.
 		/// </summary>

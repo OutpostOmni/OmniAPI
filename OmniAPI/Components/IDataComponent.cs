@@ -21,6 +21,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Services.Save;
+
 namespace OmniAPI.Components {
 	/// <summary>
 	/// Represents a component which contains variable typed data.
@@ -28,7 +30,7 @@ namespace OmniAPI.Components {
 	/// This primarily provides components a key/value store which
 	/// can be understood by the game's save manager. 
 	/// </summary>
-	public interface IDataComponent {
+    public interface IDataComponent : IComponent, IPersistanceTarget {
 		/// <summary>
 		/// Get the specified key.
 		/// </summary>

@@ -21,44 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Util;
-using OmniAPI.Services.Save;
-using UnityEngine;
+namespace OmniAPI.Services.Save {
+    public interface IKeyedPersistanceDataType : IPersistanceDataType {
+        /// <summary>
+        /// A unique key used to associate the save data with this class.
+        /// </summary>
+        /// <value>The key.</value>
+        string Key { get; }
 
-namespace OmniAPI.Services.Map {
-	/// <summary>
-	/// Represents the in-game Map.
-	/// </summary>
-    public interface IMapService : IService, IPersistanceTarget {
-		/// <summary>
-		/// Gets the active waypoint, if any.
-		/// </summary>
-		/// <value>The optional active waypoint.</value>
-		Optional<Waypoint> ActiveWaypoint { get; }
-
-		/// <summary>
-		/// Activates a waypoint.
-		/// </summary>
-		/// <param name="waypoint">Waypoint.</param>
-		void ActivateWaypoint(Waypoint waypoint);
-
-		/// <summary>
-		/// Adds a waypoint.
-		/// </summary>
-		/// <param name="waypoint">Waypoint.</param>
-		void AddWaypoint(Waypoint waypoint);
-
-		/// <summary>
-		/// Gets the waypoint for a given vector.
-		/// </summary>
-		/// <returns>The waypoint.</returns>
-		/// <param name="pos">Position.</param>
-		Optional<Waypoint> GetWaypointFor(Vector2 pos);
-
-		/// <summary>
-		/// Removes a waypoint.
-		/// </summary>
-		/// <param name="waypoint">Waypoint.</param>
-		void RemoveWaypoint(Waypoint waypoint);
-	}
+        /// <summary>
+        /// Gets the current schema version for this save data.
+        /// </summary>
+        /// <value>The version.</value>
+        short SchemaVersion { get; }
+    }
 }

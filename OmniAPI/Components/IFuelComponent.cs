@@ -21,44 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Util;
 using OmniAPI.Services.Save;
-using UnityEngine;
 
-namespace OmniAPI.Services.Map {
-	/// <summary>
-	/// Represents the in-game Map.
-	/// </summary>
-    public interface IMapService : IService, IPersistanceTarget {
-		/// <summary>
-		/// Gets the active waypoint, if any.
-		/// </summary>
-		/// <value>The optional active waypoint.</value>
-		Optional<Waypoint> ActiveWaypoint { get; }
-
-		/// <summary>
-		/// Activates a waypoint.
-		/// </summary>
-		/// <param name="waypoint">Waypoint.</param>
-		void ActivateWaypoint(Waypoint waypoint);
-
-		/// <summary>
-		/// Adds a waypoint.
-		/// </summary>
-		/// <param name="waypoint">Waypoint.</param>
-		void AddWaypoint(Waypoint waypoint);
-
-		/// <summary>
-		/// Gets the waypoint for a given vector.
-		/// </summary>
-		/// <returns>The waypoint.</returns>
-		/// <param name="pos">Position.</param>
-		Optional<Waypoint> GetWaypointFor(Vector2 pos);
-
-		/// <summary>
-		/// Removes a waypoint.
-		/// </summary>
-		/// <param name="waypoint">Waypoint.</param>
-		void RemoveWaypoint(Waypoint waypoint);
-	}
+namespace OmniAPI.Components {
+    /// <summary>
+    /// Represents an energy component. Its assumed this component cannot accept new energy
+    /// post-instantiation, leaving those duties to IRechargeableEnergyComponents.
+    /// </summary>
+    public interface IFuelComponent : IComponent, IPersistanceTarget {
+        float BurnTime { get; set; }
+    }
 }

@@ -21,11 +21,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Services.Save;
+using System;
+
 namespace OmniAPI.Game {
     /// <summary>
     /// Represents a game profile, essentially metadata for a save game.
     /// </summary>
-    public interface IGameProfile {
+    public interface IGameProfile : IPersistanceTarget {
+        /// <summary>
+        /// Gets the date created.
+        /// </summary>
+        /// <value>The date created.</value>
+        DateTime DateCreated { get; }
+
+        /// <summary>
+        /// Gets the date updated.
+        /// </summary>
+        /// <value>The date updated.</value>
+        DateTime DateUpdated { get; set; }
+
+        /// <summary>
+        /// Gets the name of the save.
+        /// </summary>
+        /// <value>The name of the save.</value>
+        string SaveName { get; }
+
         /// <summary>
         /// Get the game mode.
         /// </summary>
