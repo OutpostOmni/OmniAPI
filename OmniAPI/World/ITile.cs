@@ -28,12 +28,18 @@ namespace OmniAPI.World {
 	/// <summary>
 	/// Represents a single world tile.
 	/// </summary>
-	public interface ITile : IEntityHolder {
+    public interface ITile : IEntityHolder, IMovementSurface {
         /// <summary>
         /// Gets the environment.
         /// </summary>
         /// <value>The environment.</value>
         CoordinateProfile Environment { get; }
+
+        /// <summary>
+        /// Gets the entity speed modifier.
+        /// </summary>
+        /// <value>The entity speed modifier.</value>
+        float EntitySpeedModifier { get; }
 
         /// <summary>
         /// Is this tile liquid.

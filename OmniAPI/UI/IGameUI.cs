@@ -36,6 +36,11 @@ namespace OmniAPI.UI {
         IInventoryUI Hotbar { get; }
 
         /// <summary>
+        /// Clears the cursor item.
+        /// </summary>
+        void ClearCursorItem();
+
+        /// <summary>
         /// Clears any and all active modals.
         /// </summary>
         void ClearModals();
@@ -45,6 +50,12 @@ namespace OmniAPI.UI {
         /// </summary>
         /// <param name="">.</param>
         void ClearNotification(GameObject gameObject);
+
+        /// <summary>
+        /// Gets the cursor item.
+        /// </summary>
+        /// <returns>The cursor item.</returns>
+        Optional<IItem> GetCursorItem();
 
 		/// <summary>
 		/// Gets the next modal, if any.
@@ -76,6 +87,12 @@ namespace OmniAPI.UI {
         /// Hides any currently-open item popup.
         /// </summary>
         void HideItemTooltip();
+
+        /// <summary>
+        /// Sets the cursor item.
+        /// </summary>
+        /// <param name="item">Item.</param>
+        void SetCursorItem(Item item);
 
         /// <summary>
         /// Show an inventory with a custom parent prefab. Is not counted as a modal.

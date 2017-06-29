@@ -67,10 +67,10 @@ namespace OmniAPI.Rendering {
 		Func<int, bool> IsSlotInteractable { get; }
 
         /// <summary>
-        /// Whether to allow item hover menus.
+        /// Get the slot click callback.
         /// </summary>
-        /// <value><c>true</c> if show hover menus; otherwise, <c>false</c>.</value>
-        bool ShowHoverMenus { get; }
+        /// <value>The on slot click.</value>
+        Action<int> OnSlotClick { get; }
 
 		/// <summary>
 		/// Set the spacing around the background image. Used only if calculating slot positions.
@@ -89,6 +89,12 @@ namespace OmniAPI.Rendering {
         /// </summary>
         /// <value>The length of the row.</value>
         int RowLength { get; }
+
+        /// <summary>
+        /// Whether to allow item hover menus.
+        /// </summary>
+        /// <value><c>true</c> if show hover menus; otherwise, <c>false</c>.</value>
+        bool ShowHoverMenus { get; }
 
         /// <summary>
         /// Whether to show the modal header.

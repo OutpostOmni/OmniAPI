@@ -37,13 +37,6 @@ namespace OmniAPI.Rendering {
         IInventoryRenderer Build();
 
         /// <summary>
-        /// Add a custom slot execution handler.
-        /// </summary>
-        /// <returns>The builder.</returns>
-        /// <param name="cb">Execution interaction handler.</param>
-        IInventoryRendererBuilder OnSlotExecute(Action<int> cb);
-
-        /// <summary>
         /// Allow or disallow item hover menus.
         /// </summary>
         /// <returns>The builder.</returns>
@@ -71,6 +64,13 @@ namespace OmniAPI.Rendering {
         /// <param name="container">Container.</param>
         IInventoryRendererBuilder SetContainer(IContainerComponent container);
 
+        /// <summary>
+        /// Sets a callback which determines if a given slow is interactable.
+        /// </summary>
+        /// <returns>The builder.</returns>
+        /// <param name="cb">Callback</param>
+        IInventoryRendererBuilder SetIsSlotInteractable(Func<int, bool> cb);
+
 		/// <summary>
 		/// Sets the button press handler.
 		/// </summary>
@@ -78,12 +78,12 @@ namespace OmniAPI.Rendering {
 		/// <param name="cb">Cb.</param>
 		IInventoryRendererBuilder SetOnButtonPress(Func<int, bool> cb);
 
-		/// <summary>
-		/// Sets a callback which determines if a given slow is interactable.
-		/// </summary>
-		/// <returns>The builder.</returns>
-		/// <param name="cb">Callback</param>
-		IInventoryRendererBuilder SetIsSlotInteractable(Func<int, bool> cb);
+        /// <summary>
+        /// Add a custom slot execution handler.
+        /// </summary>
+        /// <returns>The builder.</returns>
+        /// <param name="cb">Execution interaction handler.</param>
+        IInventoryRendererBuilder SetOnSlotExecute(Action<int> cb);
 
 		/// <summary>
 		/// Sets the padding.

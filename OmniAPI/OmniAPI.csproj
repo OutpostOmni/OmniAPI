@@ -326,6 +326,12 @@
     <Compile Include="Items\Items\IToolItem.cs" />
     <Compile Include="Entities\IEnergyConsumer.cs" />
     <Compile Include="Components\IFuelComponent.cs" />
+    <Compile Include="Services\Event\Game\IGamePauseChangeEvent.cs" />
+    <Compile Include="Services\Event\Game\IGameUnpauseEvent.cs" />
+    <Compile Include="World\IMovementSurface.cs" />
+    <Compile Include="Entities\Placeable\IStonePathEntity.cs" />
+    <Compile Include="Services\Messaging\Message.cs" />
+    <Compile Include="Services\Messaging\MessagePage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -378,5 +384,6 @@
     <Folder Include="Items\Items\Upgrades\" />
     <Folder Include="Items\Items\Energy Cores\" />
     <Folder Include="Exceptions\" />
+    <Folder Include="Services\Messaging\" />
   </ItemGroup>
 </Project>

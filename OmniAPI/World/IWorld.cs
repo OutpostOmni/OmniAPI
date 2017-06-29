@@ -162,6 +162,13 @@ namespace OmniAPI.World {
         /// <returns>The loaded chunks.</returns>
         IChunk[] GetLoadedChunks();
 
+        /// <summary>
+        /// Get the current movement surface, if any. Entities first, tiles second.
+        /// </summary>
+        /// <returns>The movement surface.</returns>
+        /// <param name="worldVec">World vec.</param>
+        Optional<IMovementSurface> GetMovementSurface(Vector2 worldVec);
+
 		/// <summary>
 		/// Gets a tile by its world vector.
 		/// </summary>
