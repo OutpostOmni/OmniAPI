@@ -21,11 +21,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Services.Messaging;
+
 namespace OmniAPI.Services.Mission {
 	/// <summary>
 	/// Represents a mission.
 	/// </summary>
 	public interface IMission {
+        /// <summary>
+        /// Gets the message.
+        /// </summary>
+        /// <value>The message.</value>
+        Message Message { get; }
+
 		/// <summary>
 		/// Check if all objectives have been met.
 		/// </summary>

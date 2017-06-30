@@ -21,29 +21,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Services.Story {
-	public interface IStoryPoint {
-		/// <summary>
-		/// Gets the identifier.
-		/// </summary>
-		/// <value>The identifier.</value>
-		string Id { get; }
+namespace OmniAPI.Services.Messaging {
+    public class MessagePage {
+        /// <summary>
+        /// ID for the "source". Used to show source graphics, if set.
+        /// </summary>
+        public readonly string SourceId;
 
-		/// <summary>
-		/// Gets the message pages.
-		/// </summary>
-		/// <value>The messages.</value>
-		string[] Messages { get; }
+        /// <summary>
+        /// The message body.
+        /// </summary>
+        public readonly string Body;
 
-		/// <summary>
-		/// Gets the source identifier.
-		/// </summary>
-		/// <value>The source identifier.</value>
-		string SourceId { get; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:OmniAPI.Services.Messaging.MessagePage"/> class.
+        /// </summary>
+        /// <param name="body">Body.</param>
+        public MessagePage(string body) : this(null, body) {}
 
-		/// <summary>
-		/// Executed when this story point has been completed.
-		/// </summary>
-		void OnComplete();
-	}
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:OmniAPI.Services.Messaging.MessagePage"/> class.
+        /// </summary>
+        /// <param name="sourceId">Source identifier.</param>
+        /// <param name="body">Body.</param>
+        public MessagePage(string sourceId, string body) {
+            this.SourceId = sourceId;
+            this.Body = body;
+        }
+    }
 }

@@ -188,7 +188,6 @@
     <Compile Include="Items\Items\Placeable\IBeacon.cs" />
     <Compile Include="Rendering\IPoolListener.cs" />
     <Compile Include="Services\IService.cs" />
-    <Compile Include="Services\Story\IStoryPoint.cs" />
     <Compile Include="Services\Story\IStoryService.cs" />
     <Compile Include="Services\Recipe\IRecipe.cs" />
     <Compile Include="Services\Recipe\IRecipeBuilder.cs" />
@@ -332,6 +331,7 @@
     <Compile Include="Entities\Placeable\IStonePathEntity.cs" />
     <Compile Include="Services\Messaging\Message.cs" />
     <Compile Include="Services\Messaging\MessagePage.cs" />
+    <Compile Include="Rendering\ButtonMeta.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -106,7 +106,7 @@ namespace OmniAPI.Entities {
 		/// <summary>
 		/// Called when the entity is broken by a game object or player.
 		/// </summary>
-		public virtual void OnBreak() {}
+		public virtual void OnBreak(Action callback) {}
 
         /// <summary>
         /// A neighbor tile has been updated and notifications sent.

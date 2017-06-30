@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Services.Messaging;
 using OmniAPI.Services.Save;
 
 namespace OmniAPI.Services.Story {
@@ -31,23 +32,27 @@ namespace OmniAPI.Services.Story {
 		/// <summary>
 		/// Activate a story point. Will fail if a story point is already active.
 		/// </summary>
-		/// <returns>The activate.</returns>
-		/// <param name="point">Point.</param>
-		void Activate(IStoryPoint point);
+        /// <param name="message">Story message.</param>
+		void Activate(Message message);
+
+        /// <summary>
+        /// Activate the specified message after a delay.
+        /// </summary>
+        /// <returns>The activate.</returns>
+        /// <param name="message">Message.</param>
+        /// <param name="delay">Delay.</param>
+        void Activate(Message message, float delay);
 
 		/// <summary>
 		/// Complete the specified point.
 		/// </summary>
-		/// <returns>The complete.</returns>
-		/// <param name="point">Point.</param>
-		void Complete(IStoryPoint point);
+        /// <param name="message">Story Message.</param>
+        void Complete(Message message);
 
 		/// <summary>
 		/// Register a story type for the given ID. 
 		/// </summary>
-		/// <returns>The register.</returns>
-		/// <param name="pointId">Story point identifier.</param>
-		/// <typeparam name="T">The story type parameter.</typeparam>
-		void Register<T>(string pointId) where T : IStoryPoint;
+        /// <param name="message">Story Message.</param>
+        void Register(Message message);
 	}
 }

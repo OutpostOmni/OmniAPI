@@ -29,12 +29,6 @@ namespace OmniAPI.Components {
 	/// Represents a component which gives an entity a durability.
 	/// </summary>
     public interface IDurabilityComponent : IComponent, IPersistanceTarget {
-		/// <summary>
-		/// Gets or sets the color of the break particles.
-		/// </summary>
-		/// <value>The color of the break particles.</value>
-		Color BreakParticleColor { get; set; }
-
         /// <summary>
         /// Gets or sets the cold damage.
         /// </summary>

@@ -21,6 +21,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using System;
+
 namespace OmniAPI.Entities {
 	/// <summary>
 	/// Represents a world entity.
@@ -43,7 +45,8 @@ namespace OmniAPI.Entities {
         /// <summary>
         /// Called when the entity is broken.
         /// </summary>
-        void OnBreak();
+        /// <param name="callback">Callback.</param>
+        void OnBreak(Action callback);
 
         /// <summary>
         /// Called when a neighbor tile/entity has notified us.

@@ -74,6 +74,29 @@ namespace OmniAPI.Rendering {
         void RenderItem(Cause cause, GameObject itemGameObject);
 
         /// <summary>
+        /// Renders the particles.
+        /// </summary>
+        /// <returns>The particles.</returns>
+        /// <param name="prefab">Prefab.</param>
+        /// <param name="worldVec">World vec.</param>
+        /// <param name="sortingOrder">Sorting order.</param>
+        GameObject RenderParticles(GameObject prefab, Vector3 worldVec, int sortingOrder);
+
+        /// <summary>
+        /// Renders a random smoke particle prefab.
+        /// </summary>
+        /// <param name="worldVec">World vec.</param>
+        /// <param name="sortingOrder">Sorting order.</param>
+        void RenderSmokeParticles(Vector3 worldVec, int sortingOrder);
+
+        /// <summary>
+        /// Renders the spark particles.
+        /// </summary>
+        /// <param name="worldVec">World vec.</param>
+        /// <param name="sortingOrder">Sorting order.</param>
+        void RenderSparkParticles(Vector3 worldVec, int sortingOrder);
+
+        /// <summary>
         /// Renders the tile.
         /// </summary>
         /// <returns>The tile.</returns>

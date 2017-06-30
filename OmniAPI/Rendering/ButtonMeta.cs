@@ -21,40 +21,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Services.Save;
+using UnityEngine.Events;
 
-namespace OmniAPI.Services.Mission {
-	/// <summary>
-	/// Represents the mission manager.
-	/// </summary>
-    public interface IMissionService : IService, IPersistanceTarget {
-		/// <summary>
-		/// Activate the specified mission.
-		/// </summary>
-		/// <returns>The activate.</returns>
-		/// <param name="mission">Mission.</param>
-		void Activate(IMission mission);
+namespace OmniAPI.Rendering {
+    public class ButtonMeta {
+        public readonly string Text;
+        public readonly UnityAction OnClick;
+        public readonly bool Selected = false;
 
-		/// <summary>
-		/// Offer the specified mission.
-		/// </summary>
-		/// <returns>The offer.</returns>
-		/// <param name="mission">Mission.</param>
-		void Offer(IMission mission);
-
-        /// <summary>
-        /// Offer the specified mission with a delay.
-        /// </summary>
-        /// <returns>The offer.</returns>
-        /// <param name="mission">Mission.</param>
-        /// <param name="delay">Delay.</param>
-        void Offer(IMission mission, float delay);
-
-		/// <summary>
-		/// Register a mission type for the given ID. 
-		/// </summary>
-		/// <param name="missionId">Mission identifier.</param>
-		/// <typeparam name="T">The mission type parameter.</typeparam>
-		void Register<T>(string missionId) where T : IMission;
-	}
+        public ButtonMeta(string text, UnityAction onClick, bool selected) {
+            this.Text = text;
+            this.OnClick = onClick;
+            this.Selected = selected;
+        }
+    }
 }

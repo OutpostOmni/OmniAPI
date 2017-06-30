@@ -24,6 +24,7 @@
 using OmniAPI.Items;
 using OmniAPI.Players;
 using OmniAPI.Rendering;
+using OmniAPI.Services.Messaging;
 using OmniAPI.Util;
 using UnityEngine;
 
@@ -95,6 +96,19 @@ namespace OmniAPI.UI {
         void SetCursorItem(Item item);
 
         /// <summary>
+        /// Show an incoming message.
+        /// </summary>
+        /// <param name="message">Message.</param>
+        void ShowIncomingMessage(Message message);
+
+        /// <summary>
+        /// Shows the incoming message, only after a delay.
+        /// </summary>
+        /// <param name="message">Message.</param>
+        /// <param name="delay">Delay.</param>
+        void ShowIncomingMessage(Message message, float delay);
+
+        /// <summary>
         /// Show an inventory with a custom parent prefab. Is not counted as a modal.
         /// </summary>
         /// <returns>The inventory.</returns>
@@ -122,6 +136,12 @@ namespace OmniAPI.UI {
         /// <param name="item">Item.</param>
         /// <param name="pos">Position.</param>
         void ShowItemTooltip(IItem item, Vector2 pos);
+
+        /// <summary>
+        /// Show a message immediately, without an incoming transmission UI.
+        /// </summary>
+        /// <param name="message">Message.</param>
+        void ShowMessage(Message message);
 
         /// <summary>
         /// Show a modal.
