@@ -85,6 +85,13 @@ namespace OmniAPI.Rendering {
         /// <param name="cb">Execution interaction handler.</param>
         IInventoryRendererBuilder SetOnSlotExecute(Action<int> cb);
 
+        /// <summary>
+        /// Sets the on slot selection change callback.
+        /// </summary>
+        /// <returns>The builder.</returns>
+        /// <param name="cb">Cb.</param>
+        IInventoryRendererBuilder SetOnSlotSelectionChange(Action<int> cb);
+
 		/// <summary>
 		/// Sets the padding.
 		/// </summary>

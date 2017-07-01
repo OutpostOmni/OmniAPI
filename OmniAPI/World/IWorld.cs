@@ -110,17 +110,21 @@ namespace OmniAPI.World {
 		/// Gets a chunk.
 		/// 
 		/// If it doesn't exist, it will be created.
+        /// 
+        /// Returns empty if this chunk is actively queued for load.
 		/// </summary>
 		/// <returns>The chunk.</returns>
 		/// <param name="chunkVec">Chunk vec.</param>
-		IChunk GetChunk(Vector2 chunkVec);
+        Optional<IChunk> GetChunk(Vector2 chunkVec);
 
 		/// <summary>
 		/// Gets the chunk containing a world coordinate.
+        /// 
+        /// Returns empty if this chunk is actively queued for load.
 		/// </summary>
 		/// <returns>The chunk for world coordinate.</returns>
 		/// <param name="worldVec">World vec.</param>
-		IChunk GetChunkForWorldCoord(Vector2 worldVec);
+        Optional<IChunk> GetChunkForWorldCoord(Vector2 worldVec);
 
 		/// <summary>
 		/// Gets the current temperature.
@@ -177,13 +181,16 @@ namespace OmniAPI.World {
 		ITile GetTile(Vector2 worldVec);
 
 		/// <summary>
-		/// Loads the chunk for a given chunk vec. Will not load an already-loaded chunk.
+		/// Loads the chunk for a given chunk vec. 
+        /// 
+        /// Will not load an already-loaded chunk.
+        /// Returns empty if chunk is actively queued to load.
 		/// 
 		/// If saved, will load from disk, otherwise it will generate the chunk for the first time.
 		/// </summary>
-		/// <returns>The chunk.</returns>
+		/// <returns>The chunk, if it could be loaded.</returns>
 		/// <param name="chunkVec">Chunk vec.</param>
-		IChunk LoadChunk(Vector2 chunkVec);
+        Optional<IChunk> LoadChunk(Vector2 chunkVec);
 
 		/// <summary>
 		/// Spawn an entity.

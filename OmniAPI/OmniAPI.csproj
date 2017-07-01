@@ -332,6 +332,10 @@
     <Compile Include="Services\Messaging\Message.cs" />
     <Compile Include="Services\Messaging\MessagePage.cs" />
     <Compile Include="Rendering\ButtonMeta.cs" />
+    <Compile Include="Services\Random\RandomService.cs" />
+    <Compile Include="Services\Random\INoise.cs" />
+    <Compile Include="World\IChunkChild.cs" />
+    <Compile Include="Entities\Plants\IPlant.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -385,5 +389,6 @@
     <Folder Include="Items\Items\Energy Cores\" />
     <Folder Include="Exceptions\" />
     <Folder Include="Services\Messaging\" />
+    <Folder Include="Services\Random\" />
   </ItemGroup>
 </Project>

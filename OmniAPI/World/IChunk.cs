@@ -30,6 +30,12 @@ namespace OmniAPI.World {
 	/// </summary>
 	public interface IChunk {
         /// <summary>
+        /// Gets current children.
+        /// </summary>
+        /// <value>The children.</value>
+        IChunkChild[] Children { get; }
+
+        /// <summary>
         /// Gets the entities.
         /// </summary>
         /// <value>The entities.</value>

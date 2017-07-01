@@ -25,6 +25,6 @@ namespace OmniAPI.Entities {
     /// <summary>
     /// Represents a tomo plant.
     /// </summary>
-    public interface ITomoPlant : IPlacedEntity {
+    public interface ITomoPlant : IPlant, IPlacedEntity {
     }
 }

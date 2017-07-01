@@ -23,12 +23,13 @@
  */
 using OmniAPI.Items;
 using OmniAPI.Services.Event;
+using OmniAPI.World;
 
 namespace OmniAPI.Entities {
 	/// <summary>
 	/// Represents entities placed by a player or a non-decoration process.
 	/// </summary>
-	public interface IPlacedEntity {
+    public interface IPlacedEntity : IChunkChild {
         /// <summary>
         /// Gets the original item which can place this entity.
         /// </summary>

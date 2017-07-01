@@ -28,7 +28,7 @@ namespace OmniAPI.World {
 	/// <summary>
 	/// Represents a single world tile.
 	/// </summary>
-    public interface ITile : IEntityHolder, IMovementSurface {
+    public interface ITile : IEntityHolder, IMovementSurface, IChunkChild {
         /// <summary>
         /// Gets the environment.
         /// </summary>
@@ -39,7 +39,7 @@ namespace OmniAPI.World {
         /// Gets the entity speed modifier.
         /// </summary>
         /// <value>The entity speed modifier.</value>
-        float EntitySpeedModifier { get; }
+        new float EntitySpeedModifier { get; }
 
         /// <summary>
         /// Is this tile liquid.

@@ -24,6 +24,9 @@
 using OmniAPI.World;
 
 namespace OmniAPI.Entities {
-    public interface IDirtPileEntity : IInteractable, IChunkChild {
-	}
+    /// <summary>
+    /// Represents a plant entity.
+    /// </summary>
+    public interface IPlant : IChunkChild {
+    }
 }

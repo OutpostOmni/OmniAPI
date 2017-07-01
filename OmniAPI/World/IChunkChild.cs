@@ -21,9 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.World;
-
-namespace OmniAPI.Entities {
-    public interface IDirtPileEntity : IInteractable, IChunkChild {
-	}
+namespace OmniAPI.World {
+    public interface IChunkChild {
+        /// <summary>
+        /// Called when the parent chunk has finished loading.
+        /// 
+        /// Primarily useful when we have to make calls to neighboring tiles
+        /// but can't since they may not exist on "start".
+        /// </summary>
+        void OnChunkLoad();
+    }
 }

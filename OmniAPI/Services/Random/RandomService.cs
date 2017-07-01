@@ -21,9 +21,44 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.World;
+using UnityEngine;
 
-namespace OmniAPI.Entities {
-    public interface IDirtPileEntity : IInteractable, IChunkChild {
-	}
+namespace OmniAPI.Services.Random {
+    /// <summary>
+    /// Manages seeded random number generators.
+    /// </summary>
+    public interface IRandomService : IService {
+        /// <summary>
+        /// Gets the noise lib with the current seed.
+        /// </summary>
+        /// <value>The noise.</value>
+        INoise Noise { get; }
+
+        /// <summary>
+        /// Gets the RNG.
+        /// </summary>
+        /// <value>The random.</value>
+        System.Random Random { get; }
+
+        /// <summary>
+        /// Gets or sets the seed.
+        /// </summary>
+        /// <value>The seed.</value>
+        int Seed { get; set; }
+
+        /// <summary>
+        /// Get a noise generator for a specific chunk.
+        /// </summary>
+        /// <returns>The for chunk.</returns>
+        /// <param name="chunkVec">Chunk vec.</param>
+        INoise NoiseForChunk(Vector2 chunkVec);
+
+
+        ///// <summary>
+        ///// Gets the seeded RNG for a chunk.
+        ///// </summary>
+        ///// <returns>The seeded RNGF or chunk.</returns>
+        ///// <param name="chunkVec">Chunk vec.</param>
+        //System.Random GetSeededRNGForChunk(Vector2 chunkVec);
+    }
 }

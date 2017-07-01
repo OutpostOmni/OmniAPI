@@ -31,7 +31,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace OmniAPI.Entities {
-	abstract public class Entity : MonoBehaviour, IEntity {
+    abstract public class Entity : MonoBehaviour, IEntity, IPoolListener {
+        // Entity is in the process of being removed
+        public bool expired;
+
 		// An ID of the current prefab
 		public string PrefabId;
 
@@ -109,6 +112,13 @@ namespace OmniAPI.Entities {
 		public virtual void OnBreak(Action callback) {}
 
         /// <summary>
+        /// On despawn.
+        /// </summary>
+        public virtual void OnDespawn() {
+            expired = false;
+        }
+
+        /// <summary>
         /// A neighbor tile has been updated and notifications sent.
         /// </summary>
         public virtual void OnNeighborUpdate() {}
@@ -117,5 +127,10 @@ namespace OmniAPI.Entities {
 		/// Called when the entity has been rendered.
 		/// </summary>
 		public virtual void OnRender() {}
+
+        /// <summary>
+        /// On spawn.
+        /// </summary>
+        public virtual void OnSpawn() {}
 	}
 }

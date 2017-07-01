@@ -21,9 +21,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.World;
+using UnityEngine;
 
-namespace OmniAPI.Entities {
-    public interface IDirtPileEntity : IInteractable, IChunkChild {
-	}
+namespace OmniAPI.Services.Random {
+    /// <summary>
+    /// Manages seeded random number generators.
+    /// </summary>
+    public interface INoise {
+        /// <summary>
+        /// 2D Noise.
+        /// </summary>
+        /// <returns>The noise.</returns>
+        /// <param name="x">The x coordinate.</param>
+        /// <param name="y">The y coordinate.</param>
+        double Noise(double x, double y);
+
+        /// <summary>
+        /// 2D Noise.
+        /// </summary>
+        /// <returns>The noise.</returns>
+        /// <param name="xin">Xin.</param>
+        /// <param name="yin">Yin.</param>
+        /// <param name="zin">Zin.</param>
+        double Noise(double xin, double yin, double zin);
+    }
 }

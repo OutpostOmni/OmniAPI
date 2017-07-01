@@ -72,6 +72,12 @@ namespace OmniAPI.Rendering {
         /// <value>The on slot click.</value>
         Action<int> OnSlotClick { get; }
 
+        /// <summary>
+        /// Gets the on slot selection change.
+        /// </summary>
+        /// <value>The on slot selection change.</value>
+        Action<int> OnSlotSelectionChange { get; }
+
 		/// <summary>
 		/// Set the spacing around the background image. Used only if calculating slot positions.
 		/// </summary>
