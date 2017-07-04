@@ -138,12 +138,23 @@ namespace OmniAPI.Items {
 		/// </summary>
 		/// <returns>A hash code for this instance that is suitable for use in hashing algorithms and data structures such as a hash table.</returns>
 		public override int GetHashCode() {
-			return GetId().GetHashCode();
+            return GetId().GetHashCode();
 		}
+
+        /// <summary>
+        /// Notify the item it's being destroyed (inventory destruction, etc)
+        /// </summary>
+        public virtual void OnDestroy() {}
 
 		/// <summary>
 		/// Raises the expiration event.
 		/// </summary>
 		public virtual void OnExpiration(IContainerComponent container) {}
+
+        /// <summary>
+        /// Called when this item is selected in a container.
+        /// </summary>
+        /// <param name="selected">If set to <c>true</c> selected.</param>
+        public virtual void OnSelectionChange(bool selected) {}
 	}
 }

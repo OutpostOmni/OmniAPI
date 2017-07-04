@@ -54,22 +54,6 @@ namespace OmniAPI.World {
         IWeather Weather { get; }
 
         /// <summary>
-        /// Check if the given coorinate accepts a placeable entity.
-        /// </summary>
-        /// <returns><c>true</c>, if placeable entity was acceptsed, <c>false</c> otherwise.</returns>
-        /// <param name="worldVec">World vec.</param>
-        /// <param name="entity">Entity.</param>
-        bool AcceptsPlaceableEntity(Vector2 worldVec, IPlaceableEntity entity);
-
-        /// <summary>
-        /// Check if the coordinate allows a placeable item (entity, tile, etc).
-        /// </summary>
-        /// <returns><c>true</c>, if placeable item was acceptsed, <c>false</c> otherwise.</returns>
-        /// <param name="worldVec">World vec.</param>
-        /// <param name="item">Item.</param>
-        bool AcceptsPlaceableItem(Vector2 worldVec, IPlaceableItem item);
-
-        /// <summary>
         /// Check if a coordinate allows tile placement, meaning there are 
         /// no non-placed entities present.
         /// </summary>
@@ -81,8 +65,9 @@ namespace OmniAPI.World {
         /// Breaks the tile entity.
         /// </summary>
         /// <returns>The tile entity.</returns>
+        /// <param name="cause">Cause.</param>
         /// <param name="entity">Entity.</param>
-        List<IItem> BreakTileEntity(IEntity entity);
+        List<IItem> BreakTileEntity(Cause cause, IEntity entity);
 
 		/// <summary>
 		/// Drops an item into the world, with a slight animation from the base of the current tile.
@@ -173,6 +158,12 @@ namespace OmniAPI.World {
         /// <param name="worldVec">World vec.</param>
         Optional<IMovementSurface> GetMovementSurface(Vector2 worldVec);
 
+        /// <summary>
+        /// Gets the rocks catalogue.
+        /// </summary>
+        /// <returns>The rocks catalogue.</returns>
+        IWeightedCatalogue<Tuple<string, string>> GetRocksCatalogue();
+
 		/// <summary>
 		/// Gets a tile by its world vector.
 		/// </summary>
@@ -191,6 +182,13 @@ namespace OmniAPI.World {
 		/// <returns>The chunk, if it could be loaded.</returns>
 		/// <param name="chunkVec">Chunk vec.</param>
         Optional<IChunk> LoadChunk(Vector2 chunkVec);
+    
+        /// <summary>
+        /// Set the tile type of a given vector.
+        /// </summary>
+        /// <param name="worldVec">World vec.</param>
+        /// <param name="tileId">Tile identifier.</param>
+        void SetTile(Vector2 worldVec, string tileId);
 
 		/// <summary>
 		/// Spawn an entity.

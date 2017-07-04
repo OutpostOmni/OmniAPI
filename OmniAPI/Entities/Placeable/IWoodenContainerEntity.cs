@@ -21,12 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.World;
-
-namespace OmniAPI.Items {
-	/// <summary>
-    /// Represents an item which may be placed into the world as a tile, entity, etc.
-    /// </summary>
-	public interface IPlaceableItem : IItem {
-	}
+namespace OmniAPI.Entities {
+    public interface IWoodenContainerEntity : IInteractable, IPlacedEntity {
+    }
 }

@@ -38,6 +38,14 @@ namespace OmniAPI.Items {
 		Item Create<T>(int quantity = 1) where T : IItem;
 
         /// <summary>
+        /// Create the specified item by its ID.
+        /// </summary>
+        /// <returns>The create.</returns>
+        /// <param name="itemId">Item identifier.</param>
+        /// <param name="quantity">Quantity.</param>
+        Item Create(string itemId, int quantity = 1);
+
+        /// <summary>
         /// Create the specified item and quantity.
         /// </summary>
         /// <returns>The item.</returns>

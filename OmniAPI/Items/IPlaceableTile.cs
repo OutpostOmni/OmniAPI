@@ -25,7 +25,7 @@ namespace OmniAPI.Items {
 	/// <summary>
 	/// Represents an item which may be placed as a tile.
 	/// </summary>
-	public interface IPlaceableTile : IPlaceableItem {
+    public interface IPlaceableTile : IItemPlaceable {
 		/// <summary>
 		/// Get the ID of the tile this item will place.
 		/// </summary>

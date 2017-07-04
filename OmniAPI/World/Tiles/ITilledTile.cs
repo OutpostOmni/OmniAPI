@@ -21,14 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Items {
+namespace OmniAPI.World.Tiles {
     /// <summary>
-    /// Represents an Item which can be used as a tool.
+    /// Represents a generic tilled tile, which supports farming.
     /// </summary>
-    public interface IToolItem : IItem {
-        /// <summary>
-        /// Called every frame when this item is held.
-        /// </summary>
-        void OnHeldUpdate();
+    public interface ITilledTile : ITile {
     }
 }

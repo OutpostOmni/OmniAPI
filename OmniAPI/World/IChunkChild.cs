@@ -24,11 +24,12 @@
 namespace OmniAPI.World {
     public interface IChunkChild {
         /// <summary>
-        /// Called when the parent chunk has finished loading.
+        /// Called when the parent chunk has finished loading, or when
+        /// a neighboring chunk has been loaded.
         /// 
         /// Primarily useful when we have to make calls to neighboring tiles
         /// but can't since they may not exist on "start".
         /// </summary>
-        void OnChunkLoad();
+        void OnChunkUpdate();
     }
 }

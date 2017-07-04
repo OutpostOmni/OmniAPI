@@ -107,9 +107,11 @@ namespace OmniAPI.Entities {
         }
 
 		/// <summary>
-		/// Called when the entity is broken by a game object or player.
-		/// </summary>
-		public virtual void OnBreak(Action callback) {}
+        /// Called when the entity is broken by a game object or player.
+        /// </summary>
+        /// <param name="cause">Cause.</param>
+        /// <param name="callback">Callback.</param>
+		public virtual void OnBreak(Cause cause, Action callback) {}
 
         /// <summary>
         /// On despawn.

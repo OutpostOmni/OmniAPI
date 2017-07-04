@@ -21,38 +21,17 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Services.Event;
-using System;
+using UnityEngine;
 
 namespace OmniAPI.Entities {
-	/// <summary>
-	/// Represents a world entity.
-	/// </summary>
-	public interface IEntity {
+    /// <summary>
+    /// Represents an entity that can hold/use tools.
+    /// </summary>
+    public interface IToolHolder {
         /// <summary>
-        /// Gets the components matching the given type.
+        /// Get the world vector being targeted by this tool.
         /// </summary>
-        /// <returns>The component.</returns>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        T GetComponent<T>();
-
-        /// <summary>
-        /// Gets any components matching the given type.
-        /// </summary>
-        /// <returns>The components.</returns>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        T[] GetComponents<T>();
-
-        /// <summary>
-        /// Called when the entity is broken.
-        /// </summary>
-        /// <param name="cause">Cause.</param>
-        /// <param name="callback">Callback.</param>
-        void OnBreak(Cause cause, Action callback);
-
-        /// <summary>
-        /// Called when a neighbor tile/entity has notified us.
-        /// </summary>
-        void OnNeighborUpdate();
+        /// <value>The targeting.</value>
+        Vector2 Targeting { get; }
     }
 }

@@ -44,6 +44,13 @@ namespace OmniAPI.Components {
 		int Add(Item item);
 
         /// <summary>
+        /// Clear the specified slot.
+        /// </summary>
+        /// <returns>The clear.</returns>
+        /// <param name="slot">Slot.</param>
+        void Clear(int slot);
+
+        /// <summary>
         /// Count total quantity of a given item.
         /// </summary>
         /// <returns>The count.</returns>
@@ -107,5 +114,13 @@ namespace OmniAPI.Components {
         /// <param name="slot">Slot.</param>
         /// <param name="item">Item.</param>
         void Set(int slot, IItem item);
+
+        /// <summary>
+        /// Take a specific quantity from a slot.
+        /// </summary>
+        /// <returns>The take.</returns>
+        /// <param name="slot">Slot.</param>
+        /// <param name="quantity">Quantity.</param>
+        Optional<IItem> Take(int slot, int quantity);
 	}
 }

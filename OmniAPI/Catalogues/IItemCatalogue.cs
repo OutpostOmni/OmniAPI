@@ -39,6 +39,13 @@ namespace OmniAPI.Catalogues {
 		/// <param name="id">Identifier.</param>
 		Optional<IItem> FindById(string id);
 
+        /// <summary>
+        /// Finds the type by identifier.
+        /// </summary>
+        /// <returns>The type by identifier.</returns>
+        /// <param name="id">Identifier.</param>
+        Optional<Type> FindTypeById(string id);
+
 		/// <summary>
 		/// Gets the sprite registered for a specific Item.
 		/// </summary>

@@ -56,6 +56,12 @@ namespace OmniAPI.World {
 		ITile GetTile(Vector2 localVec);
 
         /// <summary>
+        /// Called when this chunk has been loaded, or a neighbor has
+        /// been loaded. This call will also call any Children#OnChunkUpdate
+        /// </summary>
+        void OnUpdate();
+
+        /// <summary>
         /// Sets the tile.
         /// </summary>
         /// <param name="localVec">Local vec.</param>

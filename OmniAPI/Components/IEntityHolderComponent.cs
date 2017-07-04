@@ -23,10 +23,10 @@
  */
 using OmniAPI.Entities;
 using OmniAPI.Items;
+using OmniAPI.Services.Event;
 using OmniAPI.Services.Save;
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace OmniAPI.Components {
     public interface IEntityHolderComponent : IComponent, IEntityHolder, IPersistanceTarget {
@@ -48,11 +48,12 @@ namespace OmniAPI.Components {
 		void AddEntity(IEntity entity);
 
 		/// <summary>
-		/// Breaks the entity and returns any drops.
-		/// </summary>
-		/// <returns>The entity.</returns>
-		/// <param name="Entity">Entity.</param>
-        List<IItem> BreakEntity(IEntity Entity);
+        /// Breaks the entity and returns any drops.
+        /// </summary>
+        /// <returns>The entity.</returns>
+        /// <param name="cause">Cause.</param>
+        /// <param name="Entity">Entity.</param>
+        List<IItem> BreakEntity(Cause cause, IEntity Entity);
 
 		/// <summary>
 		/// Gets the entities.

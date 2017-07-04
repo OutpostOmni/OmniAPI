@@ -21,38 +21,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Services.Event;
-using System;
-
-namespace OmniAPI.Entities {
-	/// <summary>
-	/// Represents a world entity.
-	/// </summary>
-	public interface IEntity {
+namespace OmniAPI.Util {
+    /// <summary>
+    /// Represents a catalogue of weighted items.
+    /// </summary>
+    public interface IWeightedCatalogue<T> {
         /// <summary>
-        /// Gets the components matching the given type.
+        /// Add the specified t and weight.
         /// </summary>
-        /// <returns>The component.</returns>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        T GetComponent<T>();
+        /// <returns>The add.</returns>
+        /// <param name="t">T.</param>
+        /// <param name="weight">Weight.</param>
+        void Add(T t, int weight);
 
         /// <summary>
-        /// Gets any components matching the given type.
+        /// Picks a weighted random entry.
         /// </summary>
-        /// <returns>The components.</returns>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        T[] GetComponents<T>();
-
-        /// <summary>
-        /// Called when the entity is broken.
-        /// </summary>
-        /// <param name="cause">Cause.</param>
-        /// <param name="callback">Callback.</param>
-        void OnBreak(Cause cause, Action callback);
-
-        /// <summary>
-        /// Called when a neighbor tile/entity has notified us.
-        /// </summary>
-        void OnNeighborUpdate();
+        /// <returns>The random.</returns>
+        T PickRandom();
     }
 }

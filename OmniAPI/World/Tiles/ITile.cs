@@ -42,12 +42,6 @@ namespace OmniAPI.World {
         new float EntitySpeedModifier { get; }
 
         /// <summary>
-        /// Is this tile liquid.
-        /// </summary>
-        /// <returns><c>true</c>, if liquid was ised, <c>false</c> otherwise.</returns>
-        bool IsLiquid { get; }
-
-        /// <summary>
         /// Gets the world vec.
         /// </summary>
         /// <value>The world vec.</value>

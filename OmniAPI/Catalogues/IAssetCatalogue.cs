@@ -1,4 +1,4 @@
-﻿/**
+﻿﻿/**
  * This file is part of OmniAPI, licensed under the MIT License (MIT).
  *
  * Copyright (c) 2017 Helion3 http://helion3.com/
@@ -21,38 +21,27 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Services.Event;
-using System;
+using OmniAPI.Util;
+using UnityEngine;
 
-namespace OmniAPI.Entities {
-	/// <summary>
-	/// Represents a world entity.
-	/// </summary>
-	public interface IEntity {
+namespace OmniAPI.Catalogues {
+    /// <summary>
+    /// Audio catalogue.
+    /// </summary>
+    public interface IAssetCatalogue : ICatalogue {
         /// <summary>
-        /// Gets the components matching the given type.
+        /// Get a game object for the given ID.
         /// </summary>
-        /// <returns>The component.</returns>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        T GetComponent<T>();
-
-        /// <summary>
-        /// Gets any components matching the given type.
-        /// </summary>
-        /// <returns>The components.</returns>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        T[] GetComponents<T>();
+        /// <returns>The game object.</returns>
+        /// <param name="id">Identifier.</param>
+        Optional<GameObject> Get(string id);
 
         /// <summary>
-        /// Called when the entity is broken.
+        /// Register a game object which doesn't belong in another other catalogue.
         /// </summary>
-        /// <param name="cause">Cause.</param>
-        /// <param name="callback">Callback.</param>
-        void OnBreak(Cause cause, Action callback);
-
-        /// <summary>
-        /// Called when a neighbor tile/entity has notified us.
-        /// </summary>
-        void OnNeighborUpdate();
+        /// <returns>The register.</returns>
+        /// <param name="gameObject">Game object.</param>
+        /// <param name="id">Identifier.</param>
+        void Register(GameObject gameObject, string id);
     }
 }

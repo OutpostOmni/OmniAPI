@@ -29,7 +29,14 @@ namespace OmniAPI.Items {
 	/// <summary>
 	/// Represents an item which may be placed as an entity.
 	/// </summary>
-	public interface IPlaceableEntity : IPlaceableItem {
+    public interface IPlaceableEntity : IItemPlaceable {
+        /// <summary>
+        /// Check if the entity can be placed into the target holder.
+        /// </summary>
+        /// <returns><c>true</c>, if holder is acceptable, <c>false</c> otherwise.</returns>
+        /// <param name="holder">Holder.</param>
+        bool AcceptsHolder(IEntityHolder holder);
+
 		/// <summary>
         /// Spawn this item's entity at the given world vector, as a tile entity.
         /// </summary>

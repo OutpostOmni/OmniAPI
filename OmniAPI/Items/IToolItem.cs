@@ -21,38 +21,39 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Services.Event;
-using System;
+using OmniAPI.Entities;
 
-namespace OmniAPI.Entities {
-	/// <summary>
-	/// Represents a world entity.
-	/// </summary>
-	public interface IEntity {
+namespace OmniAPI.Items {
+    /// <summary>
+    /// Represents an Item which can be used as a tool.
+    /// </summary>
+    public interface IToolItem : IItem, IWorldTargeter {
         /// <summary>
-        /// Gets the components matching the given type.
+        /// Check if this tool is usable on the current target.
         /// </summary>
-        /// <returns>The component.</returns>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        T GetComponent<T>();
-
-        /// <summary>
-        /// Gets any components matching the given type.
-        /// </summary>
-        /// <returns>The components.</returns>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        T[] GetComponents<T>();
+        /// <returns><c>true</c>, if on was usabled, <c>false</c> otherwise.</returns>
+        /// <param name="target">Target.</param>
+        bool UsableOn(object target);
 
         /// <summary>
-        /// Called when the entity is broken.
+        /// Called when the item holder uses the tool on target.
         /// </summary>
-        /// <param name="cause">Cause.</param>
-        /// <param name="callback">Callback.</param>
-        void OnBreak(Cause cause, Action callback);
+        /// <param name="holder">Holder.</param>
+        /// <param name="target">Target.</param>
+        void OnUse(IToolHolder holder, object target);
 
         /// <summary>
-        /// Called when a neighbor tile/entity has notified us.
+        /// When the use has ended.
         /// </summary>
-        void OnNeighborUpdate();
+        /// <param name="holder">Holder.</param>
+        /// <param name="target">Target.</param>
+        void OnUseEnd(IToolHolder holder, object target);
+
+        /// <summary>
+        /// Called every frame this tool is being used.
+        /// </summary>
+        /// <param name="holder">Holder.</param>
+        /// <param name="target">Target.</param>
+        void OnUseUpdate(IToolHolder holder, object target);
     }
 }

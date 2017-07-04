@@ -21,38 +21,24 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Services.Event;
-using System;
+namespace OmniAPI.Util {
+    public class Tuple<T1, T2>
+    {
+        public T1 First { get; private set; }
+        public T2 Second { get; private set; }
+        internal Tuple(T1 first, T2 second)
+        {
+            First = first;
+            Second = second;
+        }
+    }
 
-namespace OmniAPI.Entities {
-	/// <summary>
-	/// Represents a world entity.
-	/// </summary>
-	public interface IEntity {
-        /// <summary>
-        /// Gets the components matching the given type.
-        /// </summary>
-        /// <returns>The component.</returns>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        T GetComponent<T>();
-
-        /// <summary>
-        /// Gets any components matching the given type.
-        /// </summary>
-        /// <returns>The components.</returns>
-        /// <typeparam name="T">The 1st type parameter.</typeparam>
-        T[] GetComponents<T>();
-
-        /// <summary>
-        /// Called when the entity is broken.
-        /// </summary>
-        /// <param name="cause">Cause.</param>
-        /// <param name="callback">Callback.</param>
-        void OnBreak(Cause cause, Action callback);
-
-        /// <summary>
-        /// Called when a neighbor tile/entity has notified us.
-        /// </summary>
-        void OnNeighborUpdate();
+    public static class Tuple
+    {
+        public static Tuple<T1, T2> New<T1, T2>(T1 first, T2 second)
+        {
+            var tuple = new Tuple<T1, T2>(first, second);
+            return tuple;
+        }
     }
 }
