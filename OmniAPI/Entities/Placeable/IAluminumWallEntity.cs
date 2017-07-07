@@ -22,7 +22,6 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI.Entities {
-    public interface IAluminumContainerEntity : IInteractable, IPlacedEntity, IReturnable {
+    public interface IAluminumWallEntity : INeighborConnector, IPlacedEntity, IReturnable {
     }
 }
-

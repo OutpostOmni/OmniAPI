@@ -27,7 +27,7 @@ namespace OmniAPI.Entities {
 	/// <summary>
 	/// Represents a player-placed beacon.
 	/// </summary>
-	public interface IBeaconEntity : IPlacedEntity {
+    public interface IBeaconEntity : IPlacedEntity, IReturnable {
 		/// <summary>
 		/// Gets the waypoint associated with this beacon.
 		/// </summary>

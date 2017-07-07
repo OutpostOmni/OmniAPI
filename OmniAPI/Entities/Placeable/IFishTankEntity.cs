@@ -25,6 +25,6 @@ namespace OmniAPI.Entities {
 	/// <summary>
 	/// Represents a fish tank.
 	/// </summary>
-	public interface IFishTankEntity : IPlacedEntity {
+    public interface IFishTankEntity : IPlacedEntity, IReturnable {
 	}
 }

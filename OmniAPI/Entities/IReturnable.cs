@@ -21,8 +21,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Items;
+
 namespace OmniAPI.Entities {
-    public interface IAluminumContainerEntity : IInteractable, IPlacedEntity, IReturnable {
+    /// <summary>
+    /// Represent an entity that can be "returned" to the player, typically
+    /// while using a special tool.
+    /// 
+    /// For example, a wrench can return certain placed entities.
+    /// </summary>
+    public interface IReturnable {
+        /// <summary>
+        /// Gets the original item which can place this entity.
+        /// </summary>
+        /// <returns>The placeable entity.</returns>
+        IPlaceableEntity GetSourceItem();
     }
 }
-

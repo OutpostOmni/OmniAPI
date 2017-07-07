@@ -45,26 +45,29 @@ namespace OmniAPI.Rendering {
         /// </summary>
         /// <returns>The entity.</returns>
         /// <param name="entityPrefabId">Entity prefab identifier.</param>
+        /// <param name="variantId">Variant identifier.</param>
         /// <param name="worldVec">World vec.</param>
-        IEntity RenderEntity(string entityPrefabId, Vector2 worldVec);
+        IEntity RenderEntity(string entityPrefabId, byte variantId, Vector2 worldVec);
 
         /// <summary>
         /// Renders the entity.
         /// </summary>
         /// <returns>The entity.</returns>
         /// <param name="entityPrefabId">Entity prefab identifier.</param>
+        /// <param name="variantId">Variant identifier.</param>
         /// <param name="worldVec">World vec.</param>
         /// <param name="holder">Holder.</param>
-        IEntity RenderEntity(string entityPrefabId, Vector2 worldVec, IEntityHolder holder);
+        IEntity RenderEntity(string entityPrefabId, byte variantId, Vector2 worldVec, IEntityHolder holder);
    
         /// <summary>
         /// Renders the entity.
         /// </summary>
         /// <returns>The entity.</returns>
         /// <param name="entityPrefabId">Entity prefab identifier.</param>
+        /// <param name="variantId">Variant identifier.</param>
         /// <param name="worldVec">World vec.</param>
         /// <param name="parentTransform">Parent transform.</param>
-        IEntity RenderEntity(string entityPrefabId, Vector2 worldVec, Transform parentTransform);
+        IEntity RenderEntity(string entityPrefabId, byte variantId, Vector2 worldVec, Transform parentTransform);
 
         /// <summary>
         /// Render an item in the world.

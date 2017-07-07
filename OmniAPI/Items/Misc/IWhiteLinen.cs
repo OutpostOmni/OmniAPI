@@ -21,8 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Entities {
-    public interface IAluminumContainerEntity : IInteractable, IPlacedEntity, IReturnable {
-    }
+namespace OmniAPI.Items {
+    /// <summary>
+    /// Represents a white linen item.
+    /// </summary>
+    public interface IWhiteLinen : IItem {}
 }
-

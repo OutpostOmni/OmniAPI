@@ -22,6 +22,6 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI.Entities {
-    public interface IWoodenContainerEntity : IInteractable, IPlacedEntity {
+    public interface IWoodenContainerEntity : IInteractable, IPlacedEntity, IReturnable {
     }
 }

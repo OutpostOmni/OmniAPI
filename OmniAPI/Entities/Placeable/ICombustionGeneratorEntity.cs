@@ -25,6 +25,6 @@ namespace OmniAPI.Entities {
     /// <summary>
     /// Represents a combustion generator.
     /// </summary>
-    public interface ICombustionGeneratorEntity : IInteractable, IPlacedEntity {
+    public interface ICombustionGeneratorEntity : IInteractable, IPlacedEntity, IReturnable {
     }
 }

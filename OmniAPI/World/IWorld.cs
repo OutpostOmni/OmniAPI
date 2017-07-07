@@ -54,14 +54,6 @@ namespace OmniAPI.World {
         IWeather Weather { get; }
 
         /// <summary>
-        /// Check if a coordinate allows tile placement, meaning there are 
-        /// no non-placed entities present.
-        /// </summary>
-        /// <returns>True if tile may be placed.</returns>
-        /// <param name="worldVec">World position.</param>
-        bool AllowsTilePlacement(Vector2 worldVec);
-
-        /// <summary>
         /// Breaks the tile entity.
         /// </summary>
         /// <returns>The tile entity.</returns>
@@ -182,6 +174,12 @@ namespace OmniAPI.World {
 		/// <returns>The chunk, if it could be loaded.</returns>
 		/// <param name="chunkVec">Chunk vec.</param>
         Optional<IChunk> LoadChunk(Vector2 chunkVec);
+
+        /// <summary>
+        /// Removes an entity without "breaking" it or cause.
+        /// </summary>
+        /// <param name="entity">Entity.</param>
+        void RemoveEntity(IEntity entity);
     
         /// <summary>
         /// Set the tile type of a given vector.
@@ -190,13 +188,21 @@ namespace OmniAPI.World {
         /// <param name="tileId">Tile identifier.</param>
         void SetTile(Vector2 worldVec, string tileId);
 
+        /// <summary>
+        /// Spawn an entity.
+        /// </summary>
+        /// <param name="cause">Cause.</param>
+        /// <param name="worldVec">World vec.</param>
+        /// <param name="entityPrefabId">Entity prefab identifier.</param>
+        IEntity SpawnEntity(Cause cause, Vector2 worldVec, string entityPrefabId);
+
 		/// <summary>
 		/// Spawn an entity.
 		/// </summary>
 		/// <param name="cause">Cause.</param>
 		/// <param name="worldVec">World vec.</param>
 		/// <param name="entityPrefabId">Entity prefab identifier.</param>
-		IEntity SpawnEntity(Cause cause, Vector2 worldVec, string entityPrefabId);
+		IEntity SpawnEntity(Cause cause, Vector2 worldVec, string entityPrefabId, byte variantId);
 
         /// <summary>
         /// Spawns an entity into a given holder.
@@ -207,6 +213,17 @@ namespace OmniAPI.World {
         /// <param name="worldVec">World vec.</param>
         /// <param name="entityId">Entity identifier.</param>
         /// <param name="shouldNotifyNeighbors">If set to <c>true</c> should notify neighbors.</param>
-        IEntity SpawnEntity(IEntityHolder holder, Cause cause, Vector2 worldVec, string entityId, bool shouldNotifyNeighbors);
+        IEntity SpawnEntity(IEntityHolder holder, Cause cause, Vector2 worldVec, string entityPrefabId, bool shouldNotifyNeighbors);
+
+        /// <summary>
+        /// Spawns an entity into a given holder.
+        /// </summary>
+        /// <returns>The entity.</returns>
+        /// <param name="holder">Holder.</param>
+        /// <param name="cause">Cause.</param>
+        /// <param name="worldVec">World vec.</param>
+        /// <param name="entityId">Entity identifier.</param>
+        /// <param name="shouldNotifyNeighbors">If set to <c>true</c> should notify neighbors.</param>
+        IEntity SpawnEntity(IEntityHolder holder, Cause cause, Vector2 worldVec, string entityPrefabId, byte variantId, bool shouldNotifyNeighbors);
 	}
 }

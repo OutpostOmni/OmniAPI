@@ -25,6 +25,6 @@ namespace OmniAPI.Entities {
     /// <summary>
     /// Represents a basic mining machine using a stone drill.
     /// </summary>
-    public interface IStoneMinerEntity : IEnergyConsumer, IInteractable, IPlacedEntity {
+    public interface IStoneMinerEntity : IEnergyConsumer, IInteractable, IPlacedEntity, IReturnable {
     }
 }

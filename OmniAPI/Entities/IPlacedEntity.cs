@@ -29,13 +29,7 @@ namespace OmniAPI.Entities {
 	/// <summary>
 	/// Represents entities placed by a player or a non-decoration process.
 	/// </summary>
-    public interface IPlacedEntity : IChunkChild {
-        /// <summary>
-        /// Gets the original item which can place this entity.
-        /// </summary>
-        /// <returns>The placeable entity.</returns>
-        IPlaceableEntity GetSourceItem();
-
+    public interface IPlacedEntity : IEntity, IChunkChild {
 		/// <summary>
 		/// Called when placed into the world by a player.
 		/// </summary>

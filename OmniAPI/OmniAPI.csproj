@@ -371,6 +371,17 @@
     <Compile Include="World\Tiles\ILiquidTile.cs" />
     <Compile Include="World\Tiles\ITile.cs" />
     <Compile Include="Catalogues\IAssetCatalogue.cs" />
+    <Compile Include="Items\Placeable\Seeds\ITrilokFlowerSeed.cs" />
+    <Compile Include="Entities\Plants\ITrilokFlowerEntity.cs" />
+    <Compile Include="Items\Misc\IWhiteLinen.cs" />
+    <Compile Include="Entities\Placeable\IAluminumWallEntity.cs" />
+    <Compile Include="Entities\Placeable\IAluminumDoorEntity.cs" />
+    <Compile Include="Entities\IDoor.cs" />
+    <Compile Include="Items\Placeable\IAluminumDoor.cs" />
+    <Compile Include="Entities\INeighborConnector.cs" />
+    <Compile Include="Entities\ConnectionType.cs" />
+    <Compile Include="Entities\ConnectionPosition.cs" />
+    <Compile Include="Entities\IReturnable.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

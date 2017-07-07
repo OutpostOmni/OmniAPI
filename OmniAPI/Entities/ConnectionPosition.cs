@@ -22,7 +22,20 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI.Entities {
-    public interface IAluminumContainerEntity : IInteractable, IPlacedEntity, IReturnable {
+    /// <summary>
+    /// Represents a generic connection position.
+    /// </summary>
+    public enum ConnectionPosition {
+        CENTERED,
+        FLUSH_NORTH,
+        FLUSH_SOUTH,
+        FLUSH_EAST,
+        FLUSH_WEST,
+
+        // Corners
+        FLUSH_NORTH_WEST,
+        FLUSH_NORTH_EAST,
+        FLUSH_SOUTH_WEST,
+        FLUSH_SOUTH_EAST
     }
 }
-

@@ -21,8 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Entities {
-    public interface IAluminumContainerEntity : IInteractable, IPlacedEntity, IReturnable {
+namespace OmniAPI.Items.Seeds {
+    /// <summary>
+    ///Represents an item which places a trilok flower.
+    /// </summary>
+    public interface ITrilokFlowerSeed : ISeed {
     }
 }
-

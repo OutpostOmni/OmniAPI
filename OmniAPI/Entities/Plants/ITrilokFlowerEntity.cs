@@ -22,7 +22,9 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI.Entities {
-    public interface IAluminumContainerEntity : IInteractable, IPlacedEntity, IReturnable {
+    /// <summary>
+    /// Represents a trilok flower.
+    /// </summary>
+    public interface ITrilokFlowerEntity : IPlant, IPlacedEntity {
     }
 }
-

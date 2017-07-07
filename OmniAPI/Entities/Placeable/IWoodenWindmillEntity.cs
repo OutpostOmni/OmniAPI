@@ -25,6 +25,6 @@ namespace OmniAPI.Entities {
     /// <summary>
     /// Represents a wooden windmill entity.
     /// </summary>
-    public interface IWoodenWindmillEntity : IPlacedEntity {
+    public interface IWoodenWindmillEntity : IPlacedEntity, IReturnable {
     }
 }

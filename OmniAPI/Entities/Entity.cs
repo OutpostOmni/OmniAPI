@@ -25,7 +25,6 @@ using OmniAPI.Entities.Traits;
 using OmniAPI.Rendering;
 using OmniAPI.Services.Event;
 using OmniAPI.Util;
-using OmniAPI.World;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,6 +36,11 @@ namespace OmniAPI.Entities {
 
 		// An ID of the current prefab
 		public string PrefabId;
+
+        // An ID of the current variant. Not all entities will use
+        // variants, but it's common enough and minor enough to 
+        // warrant just storing here.
+        public byte VariantId;
 
 		// Sets the rendering layer.
 		public RenderLayer RenderLayer = RenderLayer.Entities;
@@ -87,15 +91,6 @@ namespace OmniAPI.Entities {
                 return Optional<T>.Empty();
             }
         }
-
-		/// <summary>
-		/// Get a new variant, if any. Useful if this entity has to change
-		/// based on updates to neighboring tiles.
-		/// </summary>
-		/// <returns>The variant.</returns>
-		public virtual string GetVariant() {
-			return null;
-		}
 
         /// <summary>
         /// Get whether this entity has the given trait.

@@ -25,6 +25,6 @@ namespace OmniAPI.Entities {
     /// <summary>
     /// Represents a stone path.
     /// </summary>
-    public interface IStonePathEntity : IPlacedEntity, IMovementSurface {
+    public interface IStonePathEntity : IPlacedEntity, IMovementSurface, IReturnable {
     }
 }

@@ -22,7 +22,21 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI.Entities {
-    public interface IAluminumContainerEntity : IInteractable, IPlacedEntity, IReturnable {
+    /// <summary>
+    /// Represents an entity which connects to valid neighbor connectors.
+    /// </summary>
+    public interface INeighborConnector {
+        /// <summary>
+        /// Gets the connection position.
+        /// </summary>
+        /// <value>The connection position.</value>
+        ConnectionPosition ConnectionPosition { get; }
+
+        /// <summary>
+        /// Get the connection type of this object. This can help
+        /// neighboring connectors match our connection.
+        /// </summary>
+        /// <value>The type of the connection.</value>
+        ConnectionType ConnectionType { get; }
     }
 }
-

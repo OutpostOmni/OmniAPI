@@ -49,6 +49,14 @@ namespace OmniAPI.Services.Recipe {
         Optional<Item> Construct(IContainerComponent[] sourceContainers);
 
         /// <summary>
+        /// Construct the specified quantity of the product.
+        /// </summary>
+        /// <returns>The construct.</returns>
+        /// <param name="quantity">Quantity.</param>
+        /// <param name="sourceContainers">Source containers.</param>
+        Optional<Item> Construct(int quantity, IContainerComponent[] sourceContainers);
+
+        /// <summary>
         /// Counts the max constructable.
         /// </summary>
         /// <returns>The max constructable.</returns>

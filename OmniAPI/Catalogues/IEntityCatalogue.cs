@@ -22,6 +22,7 @@
  * THE SOFTWARE.
  */
 using OmniAPI.Services.Mod;
+using OmniAPI.Util;
 using UnityEngine;
 
 namespace OmniAPI.Catalogues {
@@ -29,6 +30,21 @@ namespace OmniAPI.Catalogues {
 	/// Entity catalogue.
 	/// </summary>
     public interface IEntityCatalogue : ICatalogue {
+        /// <summary>
+        /// Get an entity asset by ID.
+        /// </summary>
+        /// <returns>The entity, if any.</returns>
+        /// <param name="id">Identifier.</param>
+        Optional<GameObject> Get(string id);
+
+        /// <summary>
+        /// Get an entity asset by the ID and variant ID.
+        /// </summary>
+        /// <returns>The get.</returns>
+        /// <param name="id">Identifier.</param>
+        /// <param name="variantId">Variant identifier.</param>
+        Optional<GameObject> Get(string id, byte variantId);
+
 		/// <summary>
 		/// Register a prefab asset with the given ID. At this time only Prefabs are supported.
 		/// </summary>

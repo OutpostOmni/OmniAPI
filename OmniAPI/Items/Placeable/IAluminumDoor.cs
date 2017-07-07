@@ -21,8 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Entities {
-    public interface IAluminumContainerEntity : IInteractable, IPlacedEntity, IReturnable {
+namespace OmniAPI.Items {
+    /// <summary>
+    /// Represents an item which may be placed as an aluminum door entity.
+    /// </summary>
+    public interface IAluminumDoor : IPlaceableEntity {
     }
 }
-

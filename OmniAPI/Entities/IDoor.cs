@@ -21,8 +21,31 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Items;
+using OmniAPI.Services.Event;
+using OmniAPI.World;
+
 namespace OmniAPI.Entities {
-    public interface IAluminumContainerEntity : IInteractable, IPlacedEntity, IReturnable {
+    /// <summary>
+    /// Represents entities placed by a player or a non-decoration process.
+    /// </summary>
+    public interface IDoor : IInteractable, INeighborConnector, IPlacedEntity, IReturnable {
+        /// <summary>
+        /// Check if this door is currently open.
+        /// 
+        /// If set without using the Open/Close methods, the animation will be skipped.
+        /// </summary>
+        /// <value><c>true</c> if is open; otherwise, <c>false</c>.</value>
+        bool IsOpen { get; set; }
+
+        /// <summary>
+        /// Closes this door.
+        /// </summary>
+        void Close();
+
+        /// <summary>
+        /// Opens this door.
+        /// </summary>
+        void Open();
     }
 }
-

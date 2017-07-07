@@ -22,7 +22,9 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI.Entities {
-    public interface IAluminumContainerEntity : IInteractable, IPlacedEntity, IReturnable {
+    /// <summary>
+    /// Represents an aluminum door.
+    /// </summary>
+    public interface IAluminumDoorEntity : IDoor {
     }
 }
-

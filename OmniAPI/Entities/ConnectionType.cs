@@ -22,7 +22,30 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI.Entities {
-    public interface IAluminumContainerEntity : IInteractable, IPlacedEntity, IReturnable {
+    /// <summary>
+    /// Describes various connection types.
+    /// </summary>
+    public enum ConnectionType {
+        NONE,
+
+        NORTH_SOUTH,
+        EAST_WEST,
+
+        // Top Corners
+        EAST_SOUTH,
+        WEST_SOUTH,
+
+        // Bottom Corners
+        EAST_NORTH,
+        WEST_NORTH,
+
+        // 4-way Intersection
+        NORTH_SOUTH_EAST_WEST,
+
+        // 3-way Intersections
+        NORTH_SOUTH_EAST,
+        NORTH_SOUTH_WEST,
+        EAST_WEST_NORTH,
+        EAST_WEST_SOUTH
     }
 }
-

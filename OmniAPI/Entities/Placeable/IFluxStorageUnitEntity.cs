@@ -25,6 +25,6 @@ namespace OmniAPI.Entities {
     /// <summary>
     /// Represents a flux storage unit entity.
     /// </summary>
-    public interface IFluxStorageUnitEntity : IEnergyConsumer, IInteractable, IPlacedEntity {
+    public interface IFluxStorageUnitEntity : IEnergyConsumer, IInteractable, IPlacedEntity, IReturnable {
     }
 }

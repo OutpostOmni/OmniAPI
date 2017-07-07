@@ -25,6 +25,6 @@ namespace OmniAPI.Entities {
     /// <summary>
     /// Represents a copper wire.
     /// </summary>
-    public interface ICopperWireEntity : IPlacedEntity {
+    public interface ICopperWireEntity : IPlacedEntity, IReturnable {
     }
 }
