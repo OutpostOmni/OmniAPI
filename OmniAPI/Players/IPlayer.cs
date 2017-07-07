@@ -31,7 +31,7 @@ namespace OmniAPI.Players {
 	/// <summary>
 	/// Describes an individual player, a human-controller entity.
 	/// </summary>
-    public interface IPlayer : IIntelligentEntity, IPersistanceTarget, IToolHolder {
+    public interface IPlayer : IIntelligentEntity, IPersistanceTarget, IItemHolder {
 		/// <summary>
 		/// Gets the list of learned recipes.
 		/// </summary>

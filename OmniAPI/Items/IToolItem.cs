@@ -40,20 +40,20 @@ namespace OmniAPI.Items {
         /// </summary>
         /// <param name="holder">Holder.</param>
         /// <param name="target">Target.</param>
-        void OnUse(IToolHolder holder, object target);
+        void OnUse(IItemHolder holder, object target);
 
         /// <summary>
         /// When the use has ended.
         /// </summary>
         /// <param name="holder">Holder.</param>
         /// <param name="target">Target.</param>
-        void OnUseEnd(IToolHolder holder, object target);
+        void OnUseEnd(IItemHolder holder, object target);
 
         /// <summary>
         /// Called every frame this tool is being used.
         /// </summary>
         /// <param name="holder">Holder.</param>
         /// <param name="target">Target.</param>
-        void OnUseUpdate(IToolHolder holder, object target);
+        void OnUseUpdate(IItemHolder holder, object target);
     }
 }

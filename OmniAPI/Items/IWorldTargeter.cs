@@ -21,14 +21,27 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Entities;
+using OmniAPI.Util;
 using OmniAPI.World;
 
 namespace OmniAPI.Items {
+    /// <summary>
+    /// Represents an item which targets something in the world. 
+    /// For example, a tool might target a tile or entity.
+    /// </summary>
     public interface IWorldTargeter {
         /// <summary>
-        /// Get the targeting mode for this object.
+        /// Basic method to determine how this tool will target objects.
         /// </summary>
         /// <value>The target mode.</value>
         TargetMode TargetMode { get; }
+
+        /// <summary>
+        /// Gets the target.
+        /// </summary>
+        /// <returns>The target.</returns>
+        /// <param name="holder">Holder.</param>
+        Optional<object> GetTarget(IItemHolder holder);
     }
 }

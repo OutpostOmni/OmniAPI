@@ -25,13 +25,25 @@ using UnityEngine;
 
 namespace OmniAPI.Entities {
     /// <summary>
-    /// Represents an entity that can hold/use tools.
+    /// Represents an entity that can "hold"/use an item.
     /// </summary>
-    public interface IToolHolder {
+    public interface IItemHolder {
+        /// <summary>
+        /// Get the "facing" direction of the holder.
+        /// </summary>
+        /// <value>The facing.</value>
+        Vector2 Facing { get; }
+
         /// <summary>
         /// Get the world vector being targeted by this tool.
         /// </summary>
         /// <value>The targeting.</value>
         Vector2 Targeting { get; }
+
+        /// <summary>
+        /// Get the current world vector of the holder.
+        /// </summary>
+        /// <value>The world vec.</value>
+        Vector2 WorldVec { get; }
     }
 }

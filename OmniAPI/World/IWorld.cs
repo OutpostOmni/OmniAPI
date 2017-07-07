@@ -27,6 +27,7 @@ using OmniAPI.Services.Event;
 using OmniAPI.Util;
 using OmniAPI.World.Decoration;
 using OmniAPI.World.Weather;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -60,6 +61,24 @@ namespace OmniAPI.World {
         /// <param name="cause">Cause.</param>
         /// <param name="entity">Entity.</param>
         List<IItem> BreakTileEntity(Cause cause, IEntity entity);
+
+        /// <summary>
+        /// Finds the closest entity of a given type.
+        /// </summary>
+        /// <returns>The entity of type.</returns>
+        /// <param name="worldVec">World vec.</param>
+        /// <param name="facing">Facing.</param>
+        /// <param name="type">Type.</param>
+        IEntity ClosestEntityOfType(Vector2 worldVec, Vector2 facing, Type type);
+
+        /// <summary>
+        /// Finds the closest entities matching the given types.
+        /// </summary>
+        /// <returns>The entity of types.</returns>
+        /// <param name="worldVec">World vec.</param>
+        /// <param name="facing">Facing.</param>
+        /// <param name="types">Types.</param>
+        IEntity ClosestEntityOfTypes(Vector2 worldVec, Vector2 facing, Type[] types);
 
 		/// <summary>
 		/// Drops an item into the world, with a slight animation from the base of the current tile.

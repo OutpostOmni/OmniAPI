@@ -367,7 +367,7 @@
     <Compile Include="World\TargetMode.cs" />
     <Compile Include="World\Tiles\ITilledTile.cs" />
     <Compile Include="World\Tiles\ISoilTile.cs" />
-    <Compile Include="Entities\IToolHolder.cs" />
+    <Compile Include="Entities\IItemHolder.cs" />
     <Compile Include="World\Tiles\ILiquidTile.cs" />
     <Compile Include="World\Tiles\ITile.cs" />
     <Compile Include="Catalogues\IAssetCatalogue.cs" />

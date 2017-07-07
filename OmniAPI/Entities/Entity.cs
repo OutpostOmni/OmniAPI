@@ -34,6 +34,12 @@ namespace OmniAPI.Entities {
         // Entity is in the process of being removed
         public bool expired;
 
+        /// <summary>
+        /// Determine a "facing" direction for this entity.
+        /// </summary>
+        /// <value>The facing.</value>
+        public Vector2 Facing { get; set; }
+
 		// An ID of the current prefab
 		public string PrefabId;
 
@@ -47,6 +53,14 @@ namespace OmniAPI.Entities {
 
 		// A unique UUID assigned to this specific entity
 		public string UniqueID = System.Guid.NewGuid().ToString();
+
+        /// <summary>
+        /// Access property to the 2D world vec.
+        /// </summary>
+        /// <value>The world vec.</value>
+        public Vector2 WorldVec {
+            get { return GetTileCoordinate(); }
+        }
 
         // Cache list of all traits
         Dictionary<Type, ITrait> traits = new Dictionary<Type, ITrait>();
@@ -106,7 +120,9 @@ namespace OmniAPI.Entities {
         /// </summary>
         /// <param name="cause">Cause.</param>
         /// <param name="callback">Callback.</param>
-		public virtual void OnBreak(Cause cause, Action callback) {}
+		public virtual void OnBreak(Cause cause, Action callback) {
+            callback();
+        }
 
         /// <summary>
         /// On despawn.
