@@ -104,7 +104,8 @@ namespace OmniAPI.Rendering {
         /// </summary>
         /// <returns>The tile.</returns>
         /// <param name="tilePrefabId">Tile prefab identifier.</param>
+        /// <param name="variantId">Variant identifier.</param>
         /// <param name="worldVec">World vec.</param>
-        ITile RenderTile(string tilePrefabId, Vector2 worldVec);
+        ITile RenderTile(string tilePrefabId, byte variantId, Vector2 worldVec);
     }
 }

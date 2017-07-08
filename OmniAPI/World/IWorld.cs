@@ -205,7 +205,16 @@ namespace OmniAPI.World {
         /// </summary>
         /// <param name="worldVec">World vec.</param>
         /// <param name="tileId">Tile identifier.</param>
-        void SetTile(Vector2 worldVec, string tileId);
+        void SetTile(Vector2 worldVec, string tileId, byte variantId);
+
+        /// <summary>
+        /// Sets the tile and optionally notifies neighbors.
+        /// </summary>
+        /// <param name="worldVec">World vec.</param>
+        /// <param name="tileId">Tile identifier.</param>
+        /// <param name="variantId">Variant identifier.</param>
+        /// <param name="shouldNotifyNeighbors">If set to <c>true</c> should notify neighbors.</param>
+        void SetTile(Vector2 worldVec, string tileId, byte variantId, bool shouldNotifyNeighbors);
 
         /// <summary>
         /// Spawn an entity.

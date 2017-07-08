@@ -21,10 +21,27 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Util;
+using UnityEngine;
+
 namespace OmniAPI.Catalogues {
     /// <summary>
     /// Tile catalogue.
     /// </summary>
     public interface ITileCatalogue : ICatalogue {
+        /// <summary>
+        /// Get a tile prefab by ID.
+        /// </summary>
+        /// <returns>The prefab, if any.</returns>
+        /// <param name="id">Identifier.</param>
+        Optional<GameObject> Get(string id);
+
+        /// <summary>
+        /// Get a tile prefab by id and variant.
+        /// </summary>
+        /// <returns>The prefab, if any.</returns>
+        /// <param name="id">Identifier.</param>
+        /// <param name="variantId">Variant identifier.</param>
+        Optional<GameObject> Get(string id, byte variantId);
     }
 }

@@ -36,10 +36,16 @@ namespace OmniAPI.World {
         CoordinateProfile Environment { get; }
 
         /// <summary>
-        /// Gets the entity speed modifier.
+        /// Cache value indicating this tile is indoors.
         /// </summary>
-        /// <value>The entity speed modifier.</value>
-        new float EntitySpeedModifier { get; }
+        /// <value><c>true</c> if indoors; otherwise, <c>false</c>.</value>
+        bool Indoors { get; }
+
+        /// <summary>
+        /// Gets the variant identifier.
+        /// </summary>
+        /// <value>The variant identifier.</value>
+        byte VariantId { get; }
 
         /// <summary>
         /// Gets the world vec.
