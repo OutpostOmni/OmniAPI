@@ -58,11 +58,6 @@ namespace OmniAPI.Items {
 		// and is typically not used externally
 		public GameObject gameObject = new GameObject();
 
-        //// Get the persistance type.
-        //public IPersistanceDataType PersistanceDataType {
-        //    get { return null; }
-        //}
-
 		/// <summary>
 		/// Zero-argument constructor for dynamic instantiation
 		/// </summary>

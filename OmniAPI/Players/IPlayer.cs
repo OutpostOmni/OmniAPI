@@ -24,8 +24,10 @@
 using OmniAPI.Components;
 using OmniAPI.Entities;
 using OmniAPI.Entities.Living;
+using OmniAPI.Items;
 using OmniAPI.Services.Recipe;
 using OmniAPI.Services.Save;
+using OmniAPI.Util;
 
 namespace OmniAPI.Players {
 	/// <summary>
@@ -49,6 +51,18 @@ namespace OmniAPI.Players {
         /// </summary>
         /// <returns>The container.</returns>
         IContainerComponent GetElementInventory();
+
+        /// <summary>
+        /// Gets the held item, if any.
+        /// </summary>
+        /// <returns>The held item.</returns>
+        Optional<IItem> GetHeldItem();
+
+        /// <summary>
+        /// Gets the held item slot.
+        /// </summary>
+        /// <returns>The held item slot.</returns>
+        int GetHeldItemSlot();
 
 		/// <summary>
 		/// Get the player's primary container, a.k.a. their inventory.

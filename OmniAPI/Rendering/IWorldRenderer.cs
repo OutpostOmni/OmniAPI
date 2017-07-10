@@ -100,6 +100,20 @@ namespace OmniAPI.Rendering {
         void RenderSparkParticles(Vector3 worldVec, int sortingOrder);
 
         /// <summary>
+        /// Renders a sprite bubble.
+        /// </summary>
+        /// <returns>The sprite bubble.</returns>
+        /// <param name="parentTransform">Parent transform.</param>
+        GameObject RenderSpriteBubble(Transform parentTransform);
+
+        /// <summary>
+        /// Renders the text bubble.
+        /// </summary>
+        /// <returns>The text bubble.</returns>
+        /// <param name="parentTransform">Parent transform.</param>
+        GameObject RenderTextBubble(Transform parentTransform);
+
+        /// <summary>
         /// Renders the tile.
         /// </summary>
         /// <returns>The tile.</returns>

@@ -108,6 +108,15 @@ namespace OmniAPI.Components {
         bool RemoveAtLeast(Item item, int minQuantity = 1);
 
         /// <summary>
+        /// Remove the specified quantity of the item in a given slot.
+        /// If the user doesn't have enough, none are removed.
+        /// </summary>
+        /// <returns><c>true</c>, if at least was removed, <c>false</c> otherwise.</returns>
+        /// <param name="slot">Slot.</param>
+        /// <param name="quantity">Quantity.</param>
+        bool RemoveAtLeast(int slot, int quantity = 1);
+
+        /// <summary>
         /// Place an item at the specified slot.
         /// </summary>
         /// <returns>The set.</returns>

@@ -113,6 +113,14 @@ namespace OmniAPI.World {
 		/// <param name="chunkVec">Chunk vec.</param>
         Optional<IChunk> GetChunk(Vector2 chunkVec);
 
+        /// <summary>
+        /// Gets the chunk.
+        /// </summary>
+        /// <returns>The chunk.</returns>
+        /// <param name="chunkVec">Chunk vec.</param>
+        /// <param name="autoLoad">If set to <c>true</c> auto load.</param>
+        Optional<IChunk> GetChunk(Vector2 chunkVec, bool autoLoad);
+
 		/// <summary>
 		/// Gets the chunk containing a world coordinate.
         /// 
@@ -142,6 +150,15 @@ namespace OmniAPI.World {
         /// <returns>The entities.</returns>
         /// <param name="worldVec">World vec.</param>
         IEntity[] GetEntities(Vector2 worldVec);
+
+        /// <summary>
+        /// Gets the entities within range.
+        /// </summary>
+        /// <returns>The entities within range.</returns>
+        /// <param name="worldVec">World vec.</param>
+        /// <param name="radius">Radius.</param>
+        /// <param name="types">Types.</param>
+        IEntity[] GetEntitiesWithinRange(Vector2 worldVec, int radius, Type[] types);
 
         /// <summary>
         /// Gets the first available entity holder (a tile or an entity holder)
@@ -181,6 +198,14 @@ namespace OmniAPI.World {
 		/// <returns>The tile.</returns>
 		/// <param name="worldVec">World vec.</param>
 		ITile GetTile(Vector2 worldVec);
+
+        /// <summary>
+        /// Gets the tile.
+        /// </summary>
+        /// <returns>The tile.</returns>
+        /// <param name="worldVec">World vec.</param>
+        /// <param name="autoLoadChunk">If set to <c>true</c> auto load chunk.</param>
+        Optional<ITile> GetTile(Vector2 worldVec, bool autoLoadChunk);
 
 		/// <summary>
 		/// Loads the chunk for a given chunk vec. 

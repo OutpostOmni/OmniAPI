@@ -235,8 +235,6 @@
     <Compile Include="Services\Audio\IAtmosphericAudioBuilder.cs" />
     <Compile Include="Services\Audio\IAtmosphericAudio.cs" />
     <Compile Include="Services\Audio\ClipPlayMode.cs" />
-    <Compile Include="Entities\Traits\ITrait.cs" />
-    <Compile Include="Entities\Traits\IMerchantTrait.cs" />
     <Compile Include="UI\IGameUI.cs" />
     <Compile Include="Rendering\IInventoryRenderer.cs" />
     <Compile Include="Rendering\IInventoryRendererBuilder.cs" />
@@ -387,6 +385,9 @@
     <Compile Include="Entities\Placeable\ITeleporterEntity.cs" />
     <Compile Include="Items\Placeable\ITeleporter.cs" />
     <Compile Include="Items\Cells\ISeedOilCell.cs" />
+    <Compile Include="Services\Event\Entities\ITeleportCompletedEvent.cs" />
+    <Compile Include="Components\NPC\NPCTraderComponent.cs" />
+    <Compile Include="Services\Economy\Trade.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -413,7 +414,6 @@
     <Folder Include="Services\Map\" />
     <Folder Include="Services\Mod\" />
     <Folder Include="World\Decoration\" />
-    <Folder Include="Entities\Traits\" />
     <Folder Include="UI\" />
     <Folder Include="Services\Event\UI\" />
     <Folder Include="Services\Input\" />
@@ -442,5 +442,7 @@
     <Folder Include="Items\Upgrades\" />
     <Folder Include="Items\Rocks\" />
     <Folder Include="World\Tiles\" />
+    <Folder Include="Services\Event\Entities\" />
+    <Folder Include="Components\NPC\" />
   </ItemGroup>
 </Project>

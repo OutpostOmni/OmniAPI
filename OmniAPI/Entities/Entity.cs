@@ -21,7 +21,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Entities.Traits;
 using OmniAPI.Rendering;
 using OmniAPI.Services.Event;
 using OmniAPI.Util;
@@ -62,18 +61,6 @@ namespace OmniAPI.Entities {
             get { return GetTileCoordinate(); }
         }
 
-        // Cache list of all traits
-        Dictionary<Type, ITrait> traits = new Dictionary<Type, ITrait>();
-
-        /// <summary>
-        /// Adds a trait.
-        /// </summary>
-        /// <param name="trait">Trait.</param>
-        /// <typeparam name="T">The trait type parameter.</typeparam>
-        public void AddTrait<T>(ITrait trait) where T : ITrait {
-            traits.Add(typeof(T), trait);
-        }
-
 		/// <summary>
 		/// Gets the identifier.
 		/// </summary>
@@ -92,28 +79,6 @@ namespace OmniAPI.Entities {
 			// Round, because tiles are positioned via the center pivot, so tile 2,0 includes 1.5,0 - 2.5,0
 			return new Vector2(Mathf.RoundToInt(pos.x), Mathf.RoundToInt(pos.y));
 		}
-
-        /// <summary>
-        /// Gets the trait.
-        /// </summary>
-        /// <returns>The trait.</returns>
-        /// <typeparam name="T">The trait type parameter.</typeparam>
-        public Optional<T> GetTrait<T>() where T : ITrait {
-            if (HasTrait<T>()) {
-                return Optional<T>.From((T) traits[typeof(T)]);
-            } else {
-                return Optional<T>.Empty();
-            }
-        }
-
-        /// <summary>
-        /// Get whether this entity has the given trait.
-        /// </summary>
-        /// <returns><c>true</c>, if has the trait, <c>false</c> otherwise.</returns>
-        /// <typeparam name="T">The trait type parameter.</typeparam>
-        public bool HasTrait<T>() where T : ITrait {
-            return traits.ContainsKey(typeof(T));
-        }
 
 		/// <summary>
         /// Called when the entity is broken by a game object or player.

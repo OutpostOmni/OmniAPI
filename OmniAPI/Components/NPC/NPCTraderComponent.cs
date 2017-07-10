@@ -21,11 +21,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Entities.Living {
-	/// <summary>
-	/// Represents an intelligent entity.
-	/// </summary>
-	public interface IIntelligentEntity : ILivingEntity {
-	}
-}
+using OmniAPI.Entities;
+using OmniAPI.Services.Economy;
+using OmniAPI.Services.Save;
 
+namespace OmniAPI.Components {
+    /// <summary>
+    /// Represents "trader" NPCs.
+    /// </summary>
+    public interface INPCTraderComponent : IComponent, IInteractable, IPersistanceTarget {
+        /// <summary>
+        /// Describes the active trade.
+        /// </summary>
+        /// <value>The trade.</value>
+        Trade Trade { get; }
+    }
+}

@@ -21,7 +21,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Entities.Traits {
-    public interface IMerchantTrait : ITrait, IInteractable {
+using OmniAPI.Items;
+
+namespace OmniAPI.Services.Economy {
+    public class Trade {
+        public readonly Item RequestedItem;
+        public readonly object Offer;
+
+        public Trade(Item requestedItem, Item offer) {
+            this.RequestedItem = requestedItem;
+            this.Offer = offer;
+        }
+
+        public Trade(Item requestedItem, float offer) {
+            this.RequestedItem = requestedItem;
+            this.Offer = offer;
+        }
     }
 }

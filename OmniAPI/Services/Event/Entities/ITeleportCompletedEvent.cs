@@ -21,10 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Entities.Traits {
+namespace OmniAPI.Services.Event.Entities {
     /// <summary>
-    /// Describes an optional trait belonging to any entity.
+    /// Called when an object has been teleported and the teleportation
+    /// process/effects has been completed.
     /// </summary>
-    public interface ITrait {
+    public interface ITeleportCompletedEvent : IEvent {
     }
 }
