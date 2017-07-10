@@ -384,6 +384,8 @@
     <Compile Include="Entities\IReturnable.cs" />
     <Compile Include="Entities\Placeable\IPresserEntity.cs" />
     <Compile Include="Items\Placeable\IPresser.cs" />
+    <Compile Include="Entities\Placeable\ITeleporterEntity.cs" />
+    <Compile Include="Items\Placeable\ITeleporter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
