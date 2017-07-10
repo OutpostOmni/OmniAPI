@@ -37,6 +37,13 @@ namespace OmniAPI.Services.Recipe {
 		/// <returns>All recipes.</returns>
 		List<IRecipe> All();
 
+        /// <summary>
+        /// All the specified recipes from the given table.
+        /// </summary>
+        /// <returns>The all.</returns>
+        /// <param name="recipeTable">Recipe table.</param>
+        List<IRecipe> All(string recipeTable);
+
 		/// <summary>
 		/// Gets a blueprint holding the recipe for the given item.
 		/// </summary>
@@ -64,6 +71,14 @@ namespace OmniAPI.Services.Recipe {
 		/// </summary>
 		/// <param name="recipe">The recipe.</param>
 		void Register(IRecipe recipe);
+
+        /// <summary>
+        /// Register the specified recipe for the specific recipe table.
+        /// </summary>
+        /// <returns>The register.</returns>
+        /// <param name="recipeTable">Recipe table.</param>
+        /// <param name="recipe">Recipe.</param>
+        void Register(string recipeTable, IRecipe recipe);
 
 		/// <summary>
 		/// Register a recipe, player immediately "learns" it.

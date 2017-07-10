@@ -36,11 +36,25 @@ namespace OmniAPI.Services.Recipe {
 		/// <value>The identifier.</value>
 		string Id { get; }
 
+        /// <summary>
+        /// Can this recipe be constructed.
+        /// </summary>
+        /// <returns><c>true</c>, if construct was caned, <c>false</c> otherwise.</returns>
+        /// <param name="sourceContainer">Source container.</param>
+        bool CanConstruct(IContainerComponent sourceContainer);
+
 		/// <summary>
-		/// Can the player construct this recipe.
+		/// Can this recipe be constructed.
 		/// </summary>
 		/// <returns><c>true</c>, if constructable, <c>false</c> otherwise.</returns>
         bool CanConstruct(IContainerComponent[] sourceContainers);
+
+        /// <summary>
+        /// Construct the product using the given source container.
+        /// </summary>
+        /// <returns>The construct.</returns>
+        /// <param name="sourceContainer">Source container.</param>
+        Optional<Item> Construct(IContainerComponent sourceContainer);
 
 		/// <summary>
 		/// Construct the product.

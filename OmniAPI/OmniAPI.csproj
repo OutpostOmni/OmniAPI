@@ -386,6 +386,7 @@
     <Compile Include="Items\Placeable\IPresser.cs" />
     <Compile Include="Entities\Placeable\ITeleporterEntity.cs" />
     <Compile Include="Items\Placeable\ITeleporter.cs" />
+    <Compile Include="Items\Cells\ISeedOilCell.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
