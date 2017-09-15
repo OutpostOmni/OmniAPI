@@ -190,7 +190,7 @@ namespace OmniAPI.World {
         /// Gets the rocks catalogue.
         /// </summary>
         /// <returns>The rocks catalogue.</returns>
-        IWeightedCatalogue<Tuple<string, string>> GetRocksCatalogue();
+        IWeightedCatalogue<Tuple<string, string, byte>> GetRocksCatalogue();
 
 		/// <summary>
 		/// Gets a tile by its world vector.
