@@ -27,11 +27,17 @@ namespace OmniAPI.Services.Mod {
     /// </summary>
     public interface IModMeta {
         /// <summary>
-        /// Finds an asse by name.
+        /// Finds an asset by name.
         /// </summary>
         /// <returns>The asset.</returns>
         /// <param name="assetName">Asset name.</param>
         /// <typeparam name="T">The asset type parameter.</typeparam>
         T FindAsset<T>(string assetName) where T : UnityEngine.Object;
+
+        /// <summary>
+        /// Gets the mod attribute.
+        /// </summary>
+        /// <value>The mod attribute.</value>
+        ModAttribute ModAttribute { get; }
     }
 }

@@ -52,6 +52,6 @@ namespace OmniAPI.Catalogues {
 		/// <param name="owner">Owner.</param>
 		/// <param name="id">Identifier.</param>
 		/// <param name="assetName">Prefab asset name.</param>
-		GameObject RegisterAsset(Mod owner, string id, string assetName);
+		GameObject RegisterAsset(IMod owner, string id, string assetName);
 	}
 }

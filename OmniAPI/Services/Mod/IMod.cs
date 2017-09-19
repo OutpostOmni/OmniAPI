@@ -1,4 +1,4 @@
-﻿/**
+﻿﻿/**
  * This file is part of OmniAPI, licensed under the MIT License (MIT).
  *
  * Copyright (c) 2017 Helion3 http://helion3.com/
@@ -21,34 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-namespace OmniAPI.Services.Event {
-	/// <summary>
-	/// An event delegate which accepts the event object as a parameter.
-	/// </summary>
-    public delegate void EventDelegate<T> (T e) where T : IEvent;
-
-	/// <summary>
-	/// Represents the event manager.
-	/// </summary>
-    public interface IEventService : IService {
-		/// <summary>
-		/// Add a new listener
-		/// </summary>
-		/// <param name="del">Delegate.</param>
-		/// <typeparam name="T">The event type.</typeparam>
-        void AddListener<T>(EventDelegate<T> del) where T : IEvent;
-
-        /// <summary>
-        /// Removes the listener.
-        /// </summary>
-        /// <param name="del">Delegate.</param>
-        /// <typeparam name="T">The event type.</typeparam>
-        void RemoveListener<T>(EventDelegate<T> del) where T : IEvent;
-
-		/// <summary>
-		/// Triggers a new event.
-		/// </summary>
-		/// <param name="ev">Event</param>
-		void Trigger(IEvent ev);
+namespace OmniAPI.Services.Mod {
+	public interface IMod {
 	}
 }

@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using log4net;
 using OmniAPI.Catalogues;
 using OmniAPI.Game;
 using OmniAPI.Services;
@@ -37,6 +38,12 @@ namespace OmniAPI {
         /// </summary>
         /// <value>The game.</value>
         IGame Game { get; }
+
+        /// <summary>
+        /// Gets the logger.
+        /// </summary>
+        /// <value>The logger.</value>
+        ILog Logger { get; }
 
         /// <summary>
         /// Get an application-level catalogue, or a game-level catalogue if a game is loaded.

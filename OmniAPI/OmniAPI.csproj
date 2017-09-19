@@ -33,6 +33,9 @@
       <HintPath>..\..\..\..\..\Applications\Unity\Unity.app\Contents\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.8\lib\net35-full\log4net.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -227,7 +230,7 @@
     <Compile Include="Catalogues\ITileCatalogue.cs" />
     <Compile Include="Catalogues\IAudioCatalogue.cs" />
     <Compile Include="Services\Mod\IModMeta.cs" />
-    <Compile Include="Services\Mod\Mod.cs" />
+    <Compile Include="Services\Mod\IMod.cs" />
     <Compile Include="World\Decoration\IDecorator.cs" />
     <Compile Include="World\CoordinateProfile.cs" />
     <Compile Include="World\Biome.cs" />
@@ -388,6 +391,8 @@
     <Compile Include="Services\Event\Entities\ITeleportCompletedEvent.cs" />
     <Compile Include="Components\NPC\NPCTraderComponent.cs" />
     <Compile Include="Services\Economy\Trade.cs" />
+    <Compile Include="Services\Mod\ModAttribute.cs" />
+    <Compile Include="Services\Event\Game\IGameInitializeEvent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -444,5 +449,8 @@
     <Folder Include="World\Tiles\" />
     <Folder Include="Services\Event\Entities\" />
     <Folder Include="Components\NPC\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

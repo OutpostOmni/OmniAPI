@@ -26,6 +26,6 @@ namespace OmniAPI.Services.Mod {
     /// Represents the mod management service.
     /// </summary>
     public interface IModService : IService {
-        IModMeta GetMeta(Mod mod);
+        IModMeta GetMeta(IMod mod);
     }
 }
