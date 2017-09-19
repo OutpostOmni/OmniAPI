@@ -393,6 +393,9 @@
     <Compile Include="Services\Economy\Trade.cs" />
     <Compile Include="Services\Mod\ModAttribute.cs" />
     <Compile Include="Services\Event\Game\IGameInitializeEvent.cs" />
+    <Compile Include="ModTest.cs" />
+    <Compile Include="Services\Event\Application\IApplicationInitializeEvent.cs" />
+    <Compile Include="Services\Event\Application\IApplicationQuitEvent.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -449,6 +452,7 @@
     <Folder Include="World\Tiles\" />
     <Folder Include="Services\Event\Entities\" />
     <Folder Include="Components\NPC\" />
+    <Folder Include="Services\Event\Application\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
