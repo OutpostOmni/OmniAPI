@@ -393,7 +393,6 @@
     <Compile Include="Services\Economy\Trade.cs" />
     <Compile Include="Services\Mod\ModAttribute.cs" />
     <Compile Include="Services\Event\Game\IGameInitializeEvent.cs" />
-    <Compile Include="ModTest.cs" />
     <Compile Include="Services\Event\Application\IApplicationInitializeEvent.cs" />
     <Compile Include="Services\Event\Application\IApplicationQuitEvent.cs" />
   </ItemGroup>

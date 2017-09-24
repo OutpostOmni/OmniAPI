@@ -25,6 +25,7 @@ using OmniAPI.Items;
 using OmniAPI.Services.Mod;
 using OmniAPI.Util;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace OmniAPI.Catalogues {
@@ -32,6 +33,24 @@ namespace OmniAPI.Catalogues {
 	/// Item catalogue.
 	/// </summary>
     public interface IItemCatalogue : ICatalogue {
+        /// <summary>
+        /// Get all items.
+        /// </summary>
+        /// <value>All.</value>
+        List<Type> All { get; }
+
+        /// <summary>
+        /// Get all element items.
+        /// </summary>
+        /// <value>The elements.</value>
+        List<Type> Elements { get; }
+
+        /// <summary>
+        /// Get all non-element items.
+        /// </summary>
+        /// <value>The items.</value>
+        List<Type> Items { get; }
+
 		/// <summary>
 		/// Finds an item by the identifier.
 		/// </summary>
