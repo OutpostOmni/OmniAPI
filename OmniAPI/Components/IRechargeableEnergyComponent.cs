@@ -37,6 +37,6 @@ namespace OmniAPI.Components {
         /// </summary>
         /// <returns>The charge.</returns>
         /// <param name="amount">Amount.</param>
-        float TryCharge(float amount);
+        float OfferCharge(float amount);
 	}
 }

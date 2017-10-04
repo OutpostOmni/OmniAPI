@@ -45,14 +45,32 @@ namespace OmniAPI.Components {
 		/// The charge percentage.
 		/// </summary>
 		/// <returns>The charge percent.</returns>
-		float ChargePercent();
+        float ChargePercent { get; }
+
+        /// <summary>
+        /// Gets the charge difference between now and last frame.
+        /// </summary>
+        /// <value>The charge difference from last frame.</value>
+        float DifferenceLastFrame { get; }
 
 		/// <summary>
-		/// Draw charge limited by the specified max (and any internal maximums).
+		/// Get how much of the max capacity is empty.
 		/// </summary>
-		/// <returns>The draw charge.</returns>
-		/// <param name="max">Max.</param>
-		float Draw(float max);
+		/// <returns>The empty capacity.</returns>
+        float EmptyCapacity { get; }
+
+		/// <summary>
+		/// Get if the charge is at max capacity.
+		/// </summary>
+		/// <returns><c>true</c>, if full, <c>false</c> otherwise.</returns>
+        bool IsFull { get; }
+
+        /// <summary>
+        /// Draw charge limited by the specified max (and any internal maximums).
+        /// </summary>
+        /// <returns>The draw charge.</returns>
+        /// <param name="max">Max.</param>
+        float Draw(float max);
 
         /// <summary>
         /// Draws a required amount of energy. If there's not enough to satisfy
@@ -62,29 +80,17 @@ namespace OmniAPI.Components {
         /// <param name="min">Minimum.</param>
         bool DrawAtLeast(float min);
 
-		/// <summary>
-		/// Get how much of the max capacity is empty.
-		/// </summary>
-		/// <returns>The empty capacity.</returns>
-		float EmptyCapacity();
+        /// <summary>
+        /// Get if any charge exists.
+        /// </summary>
+        /// <returns><c>true</c>, if charge exists, <c>false</c> otherwise.</returns>
+        bool HasCharge();
 
-		/// <summary>
-		/// Get if any charge exists.
-		/// </summary>
-		/// <returns><c>true</c>, if charge exists, <c>false</c> otherwise.</returns>
-		bool HasCharge();
-
-		/// <summary>
-		/// Get if there's at least x units of charge.
-		/// </summary>
-		/// <returns><c>true</c>, if charge exists, <c>false</c> otherwise.</returns>
-		/// <param name="units">Units.</param>
-		bool HasCharge(float units);
-
-		/// <summary>
-		/// Get if the charge is at max capacity.
-		/// </summary>
-		/// <returns><c>true</c>, if full, <c>false</c> otherwise.</returns>
-		bool IsFull();
+        /// <summary>
+        /// Get if there's at least x units of charge.
+        /// </summary>
+        /// <returns><c>true</c>, if charge exists, <c>false</c> otherwise.</returns>
+        /// <param name="units">Units.</param>
+        bool HasCharge(float units);
 	}
 }
