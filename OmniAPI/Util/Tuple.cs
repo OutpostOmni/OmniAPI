@@ -31,6 +31,10 @@ namespace OmniAPI.Util {
             First = first;
             Second = second;
         }
+
+        public override string ToString() {
+            return First + " " + Second;
+        }
     }
 
     public class Tuple<T1, T2, T3>
@@ -43,6 +47,10 @@ namespace OmniAPI.Util {
             First = first;
             Second = second;
             Third = third;
+        }
+
+        public override string ToString() {
+            return First + " " + Second + " " + Third;
         }
     }
 

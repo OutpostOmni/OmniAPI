@@ -22,6 +22,7 @@
  * THE SOFTWARE.
  */
 using OmniAPI.Entities;
+using OmniAPI.World.Generation;
 using UnityEngine;
 
 namespace OmniAPI.World {

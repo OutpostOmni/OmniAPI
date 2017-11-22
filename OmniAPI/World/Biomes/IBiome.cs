@@ -21,48 +21,58 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using log4net;
-using OmniAPI.Catalogues;
-using OmniAPI.Game;
-using OmniAPI.Services;
 using OmniAPI.Util;
+using OmniAPI.World.Generation;
+using UnityEngine;
 
-namespace OmniAPI {
+namespace OmniAPI.World.Biomes {
     /// <summary>
-    /// The primary application interface.
+    /// Represents a biome.
     /// </summary>
-    public interface IOmni {
+    public interface IBiome {
         /// <summary>
-        /// Gets the game.
-        /// If the game scene is not currently loaded, returns null.
+        /// Gets the color to be used with mapping.
         /// </summary>
-        /// <value>The game.</value>
-        IGame Game { get; }
+        /// <value>The map color.</value>
+        Color MapColor { get; }
 
         /// <summary>
-        /// Gets the logger.
+        /// Biome priority ranks it above or below others when multiple biomes apply.
         /// </summary>
-        /// <value>The logger.</value>
-        ILog Logger { get; }
+        /// <value>The priority.</value>
+        int Priority { get; set; }
 
         /// <summary>
-        /// Get an application-level catalogue, or a game-level catalogue if a game is loaded.
+        /// Indicates this biome accepts a coordinate profile (terrain gen).
         /// </summary>
-        /// <returns>The optional catalogue.</returns>
-        /// <typeparam name="T">The catalogue type.</typeparam>
-        Optional<T> GetCatalogue<T>() where T : ICatalogue;
+        /// <returns>The accepts.</returns>
+        /// <param name="profile">Profile.</param>
+        bool Accepts(CoordinateProfile profile);
 
         /// <summary>
-        /// Get an application-level service, or a game-level service if a game is loaded.
+        /// Determine a tile type for the given coordinate.
         /// </summary>
-        /// <returns>The optional service.</returns>
-        /// <typeparam name="T">The service type.</typeparam>
-        Optional<T> GetService<T>() where T : IService;
+        /// <param name="chunkProfile">Chunk profile.</param>
+        /// <param name="profile">Profile.</param>
+        void GenerateCoordinateTile(ChunkProfile chunkProfile, CoordinateProfile profile);
 
         /// <summary>
-        /// Register a new catalogue.
+        /// Gets the identifier.
         /// </summary>
-        /// <param name="catalogue">Catalogue.</param>
-        void RegisterCatalogue(ICatalogue catalogue);
+        /// <returns>The identifier.</returns>
+        string GetId();
+
+        /// <summary>
+        /// Get populator catalogues.
+        /// </summary>
+        /// <returns>The populator catalogues.</returns>
+        IPopulatorCatalogues GetPopulatorCatalogues();
+
+        /// <summary>
+        /// Populates the chunk.
+        /// </summary>
+        /// <param name="chunk">Chunk.</param>
+        /// <param name="population">Population.</param>
+        void PopulateChunk(IChunk chunk, ChunkPopulation population);
     }
 }

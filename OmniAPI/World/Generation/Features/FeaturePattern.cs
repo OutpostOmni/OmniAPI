@@ -21,33 +21,33 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.Util;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace OmniAPI.Services.Random {
+namespace OmniAPI.World.Generation.Features {
     /// <summary>
-    /// Manages seeded random number generators.
+    /// Caches features/structures after their first generation for better performance.
     /// </summary>
-    public interface IRandomService : IService {
-        /// <summary>
-        /// Gets the RNG.
-        /// 
-        /// Note: generators will often use their own RNGs with the current seed.
-        /// </summary>
-        /// <value>The random.</value>
-        System.Random Random { get; }
+    public class FeaturePattern {
+        public readonly Dictionary<Vector2, Tuple<string, byte>> Tiles = new Dictionary<Vector2, Tuple<string, byte>>();
+        public readonly Dictionary<Vector2, List<EntityPopulationQueueEntry>> Entities = new Dictionary<Vector2, List<EntityPopulationQueueEntry>>();
 
         /// <summary>
-        /// Gets or sets the seed.
+        /// Add multiple entities for a specific world coordinate.
         /// </summary>
-        /// <value>The seed.</value>
-        int Seed { get; set; }
+        /// <param name="worldVec">World vec.</param>
+        /// <param name="entityEntry">Entity entry.</param>
+        public void AddEntity(Vector2 worldVec, EntityPopulationQueueEntry entityEntry) {
+            List<EntityPopulationQueueEntry> entityList;
 
-        /// <summary>
-        /// Calculates a chunk seed.
-        /// </summary>
-        /// <returns>The chunk seed.</returns>
-        /// <param name="chunkX">Chunk X.</param>
-        /// <param name="chunkY">Chunk Y.</param>
-        int CalculateChunkSeed(int chunkX, int chunkY);
+            if (!Entities.TryGetValue(worldVec, out entityList)) {
+                entityList = new List<EntityPopulationQueueEntry>();
+            }
+
+            entityList.Add(entityEntry);
+
+            Entities[worldVec] = entityList;
+        }
     }
 }

@@ -21,6 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using OmniAPI.World.Tiles;
 using OmniAPI.Util;
 using UnityEngine;
 
@@ -43,5 +44,19 @@ namespace OmniAPI.Catalogues {
         /// <param name="id">Identifier.</param>
         /// <param name="variantId">Variant identifier.</param>
         Optional<GameObject> Get(string id, byte variantId);
+
+        /// <summary>
+        /// Get a tile prefab by id and variant
+        /// </summary>
+        /// <returns>The prefab, if any.</returns>
+        /// <param name="">.</param>
+        Optional<GameObject> Get(Tuple<string, byte> tuple);
+
+        /// <summary>
+        /// Get a tile catalogue entry by an id/variant tuple
+        /// </summary>
+        /// <returns>The prefab, if any.</returns>
+        /// <param name="">.</param>
+        Optional<ITileCatalogueEntry> GetEntry(Tuple<string, byte> tuple);
     }
 }

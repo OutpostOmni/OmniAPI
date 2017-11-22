@@ -25,7 +25,7 @@ using OmniAPI.Entities;
 using OmniAPI.Items;
 using OmniAPI.Services.Event;
 using OmniAPI.Util;
-using OmniAPI.World.Decoration;
+using OmniAPI.World.Generation;
 using OmniAPI.World.Weather;
 using System;
 using System.Collections.Generic;
@@ -35,12 +35,12 @@ namespace OmniAPI.World {
 	/// <summary>
 	/// Represents the game world.
 	/// </summary>
-	public interface IWorld {
+    public interface IWorld {
         /// <summary>
         /// Gets or sets the decorator.
         /// </summary>
         /// <value>The decorator.</value>
-        IDecorator Decorator { get; set; }
+        ITerrainGenerator Generator { get; set; }
 
         /// <summary>
         /// Gets the time.
@@ -185,12 +185,6 @@ namespace OmniAPI.World {
         /// <returns>The movement surface.</returns>
         /// <param name="worldVec">World vec.</param>
         Optional<IMovementSurface> GetMovementSurface(Vector2 worldVec);
-
-        /// <summary>
-        /// Gets the rocks catalogue.
-        /// </summary>
-        /// <returns>The rocks catalogue.</returns>
-        IWeightedCatalogue<Tuple<string, string, byte>> GetRocksCatalogue();
 
 		/// <summary>
 		/// Gets a tile by its world vector.

@@ -21,33 +21,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using UnityEngine;
+using OmniAPI.Util;
 
-namespace OmniAPI.Services.Random {
-    /// <summary>
-    /// Manages seeded random number generators.
-    /// </summary>
-    public interface IRandomService : IService {
+namespace OmniAPI.World.Generation {
+    public interface IPopulatorCatalogues {
         /// <summary>
-        /// Gets the RNG.
-        /// 
-        /// Note: generators will often use their own RNGs with the current seed.
+        /// Get a populator catalogue by key, if any.
         /// </summary>
-        /// <value>The random.</value>
-        System.Random Random { get; }
+        /// <returns>The populator catalogue, if any.</returns>
+        /// <param name="key">Key.</param>
+        Optional<IWeightedCatalogue<PopulatorEntry>> Get(string key);
 
         /// <summary>
-        /// Gets or sets the seed.
+        /// Get a populator catalogue by key, or create it.
         /// </summary>
-        /// <value>The seed.</value>
-        int Seed { get; set; }
+        /// <returns>The populator catalogue.</returns>
+        /// <param name="key">Key.</param>
+        IWeightedCatalogue<PopulatorEntry> GetOrCreate(string key);
 
         /// <summary>
-        /// Calculates a chunk seed.
+        /// Register a new populator catalogue.
         /// </summary>
-        /// <returns>The chunk seed.</returns>
-        /// <param name="chunkX">Chunk X.</param>
-        /// <param name="chunkY">Chunk Y.</param>
-        int CalculateChunkSeed(int chunkX, int chunkY);
+        /// <param name="key">Key.</param>
+        /// <param name="catalogue">Catalogue.</param>
+        void Register(string key, IWeightedCatalogue<PopulatorEntry> catalogue);
     }
 }

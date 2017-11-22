@@ -23,31 +23,25 @@
  */
 using UnityEngine;
 
-namespace OmniAPI.Services.Random {
+namespace OmniAPI.World.Generation {
     /// <summary>
-    /// Manages seeded random number generators.
+    /// Holds metadata needed to populate a world coordinate with an entity.
     /// </summary>
-    public interface IRandomService : IService {
-        /// <summary>
-        /// Gets the RNG.
-        /// 
-        /// Note: generators will often use their own RNGs with the current seed.
-        /// </summary>
-        /// <value>The random.</value>
-        System.Random Random { get; }
+    public struct EntityPopulationQueueEntry {
+        public string EntityId;
+        public byte VariantId;
+        public Vector2 Offset;
 
-        /// <summary>
-        /// Gets or sets the seed.
-        /// </summary>
-        /// <value>The seed.</value>
-        int Seed { get; set; }
+        public EntityPopulationQueueEntry(string EntityId, byte VariantId) {
+            this.EntityId = EntityId;
+            this.VariantId = VariantId;
+            this.Offset = Vector2.zero;
+        }
 
-        /// <summary>
-        /// Calculates a chunk seed.
-        /// </summary>
-        /// <returns>The chunk seed.</returns>
-        /// <param name="chunkX">Chunk X.</param>
-        /// <param name="chunkY">Chunk Y.</param>
-        int CalculateChunkSeed(int chunkX, int chunkY);
+        public EntityPopulationQueueEntry(string EntityId, byte VariantId, Vector2 Offset) {
+            this.EntityId = EntityId;
+            this.VariantId = VariantId;
+            this.Offset = Offset;
+        }
     }
 }

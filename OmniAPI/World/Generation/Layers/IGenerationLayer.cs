@@ -21,33 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using UnityEngine;
-
-namespace OmniAPI.Services.Random {
-    /// <summary>
-    /// Manages seeded random number generators.
-    /// </summary>
-    public interface IRandomService : IService {
+namespace OmniAPI.World.Generation.Layers {
+    public interface IGenerationLayer {
         /// <summary>
-        /// Gets the RNG.
-        /// 
-        /// Note: generators will often use their own RNGs with the current seed.
+        /// Perform further generation for this coordinate.
         /// </summary>
-        /// <value>The random.</value>
-        System.Random Random { get; }
-
-        /// <summary>
-        /// Gets or sets the seed.
-        /// </summary>
-        /// <value>The seed.</value>
-        int Seed { get; set; }
-
-        /// <summary>
-        /// Calculates a chunk seed.
-        /// </summary>
-        /// <returns>The chunk seed.</returns>
-        /// <param name="chunkX">Chunk X.</param>
-        /// <param name="chunkY">Chunk Y.</param>
-        int CalculateChunkSeed(int chunkX, int chunkY);
+        /// <returns>The coordinate profile.</returns>
+        /// <param name="profile">Coordinate profile.</param>
+        CoordinateProfile Generate(CoordinateProfile profile);
     }
 }

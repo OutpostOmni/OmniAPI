@@ -231,9 +231,7 @@
     <Compile Include="Catalogues\IAudioCatalogue.cs" />
     <Compile Include="Services\Mod\IModMeta.cs" />
     <Compile Include="Services\Mod\IMod.cs" />
-    <Compile Include="World\Decoration\IDecorator.cs" />
-    <Compile Include="World\CoordinateProfile.cs" />
-    <Compile Include="World\Biome.cs" />
+    <Compile Include="World\Generation\ITerrainGenerator.cs" />
     <Compile Include="Services\Audio\IAtmosphericAudioFactory.cs" />
     <Compile Include="Services\Audio\IAtmosphericAudioBuilder.cs" />
     <Compile Include="Services\Audio\IAtmosphericAudio.cs" />
@@ -395,6 +393,23 @@
     <Compile Include="Services\Event\Game\IGameInitializeEvent.cs" />
     <Compile Include="Services\Event\Application\IApplicationInitializeEvent.cs" />
     <Compile Include="Services\Event\Application\IApplicationQuitEvent.cs" />
+    <Compile Include="World\Generation\ChunkProfile.cs" />
+    <Compile Include="World\Generation\CoordinateProfile.cs" />
+    <Compile Include="World\Tiles\IVoidTile.cs" />
+    <Compile Include="World\Biomes\IBiome.cs" />
+    <Compile Include="World\Biomes\IBiomeCatalogue.cs" />
+    <Compile Include="World\Generation\Features\IFeatureGenerator.cs" />
+    <Compile Include="World\Generation\Features\IFeatureCatalogue.cs" />
+    <Compile Include="World\IRegion.cs" />
+    <Compile Include="World\Tiles\ITileCatalogueEntry.cs" />
+    <Compile Include="World\Generation\Layers\IGenerationLayer.cs" />
+    <Compile Include="World\Generation\Features\FeaturePattern.cs" />
+    <Compile Include="World\Generation\IPopulatorCatalogues.cs" />
+    <Compile Include="World\Generation\PopulatorEntry.cs" />
+    <Compile Include="Entities\Terrain\IScorchedGroundEntity.cs" />
+    <Compile Include="World\Generation\ChunkPopulation.cs" />
+    <Compile Include="World\Generation\EntityPopulationQueueEntry.cs" />
+    <Compile Include="Items\Ores\IDirtyZinc.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -420,7 +435,7 @@
     <Folder Include="Services\Save\" />
     <Folder Include="Services\Map\" />
     <Folder Include="Services\Mod\" />
-    <Folder Include="World\Decoration\" />
+    <Folder Include="World\Generation\" />
     <Folder Include="UI\" />
     <Folder Include="Services\Event\UI\" />
     <Folder Include="Services\Input\" />
@@ -452,6 +467,11 @@
     <Folder Include="Services\Event\Entities\" />
     <Folder Include="Components\NPC\" />
     <Folder Include="Services\Event\Application\" />
+    <Folder Include="World\Biomes\" />
+    <Folder Include="World\Generation\Features\" />
+    <Folder Include="World\Generation\Layers\" />
+    <Folder Include="Entities\Terrain\" />
+    <Folder Include="Items\Ores\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

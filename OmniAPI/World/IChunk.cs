@@ -22,6 +22,7 @@
  * THE SOFTWARE.
  */
 using OmniAPI.Entities;
+using OmniAPI.World.Generation;
 using UnityEngine;
 
 namespace OmniAPI.World {
@@ -42,6 +43,12 @@ namespace OmniAPI.World {
         IEntity[] Entities { get; }
 
         /// <summary>
+        /// Gets the profile.
+        /// </summary>
+        /// <value>The profile.</value>
+        ChunkProfile Profile { get; }
+
+        /// <summary>
         /// Get all entities within the tile represented by worldVec.
         /// </summary>
         /// <returns>The entities.</returns>
@@ -54,6 +61,13 @@ namespace OmniAPI.World {
 		/// <returns>The tile.</returns>
 		/// <param name="localVec">Local vec.</param>
 		ITile GetTile(Vector2 localVec);
+
+        /// <summary>
+        /// Gets a tile by its index.
+        /// </summary>
+        /// <returns>The tile.</returns>
+        /// <param name="index">Index.</param>
+        ITile GetTile(int index);
 
         /// <summary>
         /// Called when this chunk has been loaded, or a neighbor has

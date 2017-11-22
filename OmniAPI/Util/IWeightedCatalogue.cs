@@ -21,6 +21,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+using System;
+
 namespace OmniAPI.Util {
     /// <summary>
     /// Represents a catalogue of weighted items.
@@ -37,7 +39,14 @@ namespace OmniAPI.Util {
         /// <summary>
         /// Picks a weighted random entry.
         /// </summary>
-        /// <returns>The random.</returns>
-        T PickRandom();
+        /// <returns>The random entry.</returns>
+        T PickRandom(Random random);
+
+        /// <summary>
+        /// Picks a weighted random entity but also returns its weight.
+        /// </summary>
+        /// <returns>The full random.</returns>
+        /// <param name="rng">Rng.</param>
+        Tuple<T, int> PickFullRandom(Random rng);
     }
 }

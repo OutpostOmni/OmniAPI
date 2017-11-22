@@ -43,7 +43,7 @@ namespace OmniAPI.Util {
 		/// </summary>
 		/// <returns><c>true</c>, if value is present, <c>false</c> otherwise.</returns>
 		public bool IsPresent {
-			get { return !IsEmpty; }
+            get { return !EqualityComparer<T>.Default.Equals(val, default(T)); }
 		}
 
 		/// <summary>

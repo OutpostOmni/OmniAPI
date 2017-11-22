@@ -21,33 +21,10 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using UnityEngine;
-
-namespace OmniAPI.Services.Random {
+namespace OmniAPI.Entities.Terrain {
     /// <summary>
-    /// Manages seeded random number generators.
+    /// A "scorched" tile covering.
     /// </summary>
-    public interface IRandomService : IService {
-        /// <summary>
-        /// Gets the RNG.
-        /// 
-        /// Note: generators will often use their own RNGs with the current seed.
-        /// </summary>
-        /// <value>The random.</value>
-        System.Random Random { get; }
-
-        /// <summary>
-        /// Gets or sets the seed.
-        /// </summary>
-        /// <value>The seed.</value>
-        int Seed { get; set; }
-
-        /// <summary>
-        /// Calculates a chunk seed.
-        /// </summary>
-        /// <returns>The chunk seed.</returns>
-        /// <param name="chunkX">Chunk X.</param>
-        /// <param name="chunkY">Chunk Y.</param>
-        int CalculateChunkSeed(int chunkX, int chunkY);
+    public interface IScorchedGroundEntity : IMovementSurface {
     }
 }

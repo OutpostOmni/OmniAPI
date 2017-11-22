@@ -21,26 +21,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using OmniAPI.Entities;
+using OmniAPI.Util;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace OmniAPI.World.Decoration {
+namespace OmniAPI.World.Generation.Features {
     /// <summary>
-    /// Represents a world decorator.
+    /// Generate world feature.
     /// </summary>
-    public interface IDecorator {
+    public interface IFeatureGenerator {
         /// <summary>
-        /// Spawn any natural entities for this tile.
+        /// Accept or reject the given basis coordinate.
         /// </summary>
-        /// <returns>The entities spawned.</returns>
-        /// <param name="tile">Tile.</param>
-        IEntity[] DecorateTile(ITile tile);
+        /// <param name="chunkProfile">Chunk Profile.</param>
+        /// <param name="profile">Profile.</param>
+        bool Accepts(ChunkProfile chunkProfile, CoordinateProfile profile);
 
         /// <summary>
-        /// Get the noise, biome, and default tile values for a coordinate.
+        /// Generate this feature at the given coordinate.
         /// </summary>
-        /// <returns>The profile.</returns>
-        /// <param name="worldvec">Worldvec.</param>
-        CoordinateProfile Profile(Vector2 worldvec);
+        /// <param name="chunkProfile">Chunk Profile.</param>
+        /// <param name="profile">Profile.</param>
+        /// <param name="region">Region cache of chunk profiles.</param>
+        FeaturePattern Generate(ChunkProfile chunkProfile, CoordinateProfile profile, IRegion region);
     }
 }

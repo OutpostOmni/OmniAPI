@@ -21,33 +21,35 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using UnityEngine;
+using OmniAPI.Catalogues;
+using OmniAPI.World.Generation;
+using OmniAPI.Util;
 
-namespace OmniAPI.Services.Random {
+namespace OmniAPI.World.Biomes {
     /// <summary>
-    /// Manages seeded random number generators.
+    /// A catalogue of biomes.
     /// </summary>
-    public interface IRandomService : IService {
+    public interface IBiomeCatalogue : ICatalogue {
         /// <summary>
-        /// Gets the RNG.
+        /// Get a biome using its identifier.
+        /// </summary>
+        /// <returns>The biome, if any.</returns>
+        /// <param name="id">Identifier.</param>
+        Optional<IBiome> Get(string id);
+
+        /// <summary>
+        /// Get a biome for a specific coordinate profile.
         /// 
-        /// Note: generators will often use their own RNGs with the current seed.
+        /// Returns a VoidBiome if none matched.
         /// </summary>
-        /// <value>The random.</value>
-        System.Random Random { get; }
+        /// <returns>The biome.</returns>
+        /// <param name="profile">Profile.</param>
+        IBiome Get(CoordinateProfile profile);
 
         /// <summary>
-        /// Gets or sets the seed.
+        /// Register a biome.
         /// </summary>
-        /// <value>The seed.</value>
-        int Seed { get; set; }
-
-        /// <summary>
-        /// Calculates a chunk seed.
-        /// </summary>
-        /// <returns>The chunk seed.</returns>
-        /// <param name="chunkX">Chunk X.</param>
-        /// <param name="chunkY">Chunk Y.</param>
-        int CalculateChunkSeed(int chunkX, int chunkY);
+        /// <param name="biome">Biome.</param>
+        void Register(IBiome biome);
     }
 }

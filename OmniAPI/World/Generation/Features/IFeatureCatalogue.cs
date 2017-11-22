@@ -21,33 +21,25 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using UnityEngine;
+using OmniAPI.Catalogues;
+using OmniAPI.Util;
 
-namespace OmniAPI.Services.Random {
+namespace OmniAPI.World.Generation.Features {
     /// <summary>
-    /// Manages seeded random number generators.
+    /// A catalogue of world features.
     /// </summary>
-    public interface IRandomService : IService {
+    public interface IFeatureCatalogue : ICatalogue {
         /// <summary>
-        /// Gets the RNG.
-        /// 
-        /// Note: generators will often use their own RNGs with the current seed.
+        /// Get a feature generator for the given coordinate, if any.
         /// </summary>
-        /// <value>The random.</value>
-        System.Random Random { get; }
+        /// <returns>The biome.</returns>
+        /// <param name="profile">Profile.</param>
+        Optional<IFeatureGenerator> Get(ChunkProfile chunkProfile, CoordinateProfile profile);
 
         /// <summary>
-        /// Gets or sets the seed.
+        /// Register a feature generator.
         /// </summary>
-        /// <value>The seed.</value>
-        int Seed { get; set; }
-
-        /// <summary>
-        /// Calculates a chunk seed.
-        /// </summary>
-        /// <returns>The chunk seed.</returns>
-        /// <param name="chunkX">Chunk X.</param>
-        /// <param name="chunkY">Chunk Y.</param>
-        int CalculateChunkSeed(int chunkX, int chunkY);
+        /// <param name="generator">Generator.</param>
+        void Register(IFeatureGenerator generator);
     }
 }

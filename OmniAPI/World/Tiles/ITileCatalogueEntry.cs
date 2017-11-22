@@ -21,28 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-using System;
 using UnityEngine;
 
-namespace OmniAPI.World {
-    [Serializable]
-    public class CoordinateProfile {
-        public Vector2 coordinate;
-        public double height;
-        public double temperature;
-        public double moisture;
-        public double toxicity;
-        public Biome biome;
-        public string defaultTileId;
+namespace OmniAPI.World.Tiles {
+    public interface ITileCatalogueEntry {
+        string Id { get; }
 
-        public CoordinateProfile() {}
+        byte VariantId { get; }
 
-        public CoordinateProfile(Vector2 coordinate, double height, double temperature, double moisture, double toxicity) {
-            this.coordinate = coordinate;
-            this.height = height;
-            this.temperature = temperature;
-            this.moisture = moisture;
-            this.toxicity = toxicity;
-        }
+        Color MapColor { get; }
     }
 }
