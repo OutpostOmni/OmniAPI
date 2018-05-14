@@ -82,10 +82,9 @@ namespace OmniAPI.Catalogues {
 		void RegisterAsset(IMod owner, string id, string assetName);
 
 		/// <summary>
-		/// Register an item type and a reference interface.
+		/// Register an item type.
 		/// </summary>
-		/// <param name="t">Type of the item class.</param>
 		/// <typeparam name="T">The representative interface</typeparam>
-		void RegisterItem<T>(Type t) where T : IItem;
+		void RegisterItem<T>() where T : IItem;
 	}
 }

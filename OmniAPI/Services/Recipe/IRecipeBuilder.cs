@@ -44,9 +44,9 @@ namespace OmniAPI.Services.Recipe {
 		/// Adds an ingredient.
 		/// </summary>
 		/// <returns>The recipe builder.</returns>
+		/// <param name="id">Item id.</param>
 		/// <param name="quantity">Quantity.</param>
-		/// <typeparam name="T">The item type parameter.</typeparam>
-		IRecipeBuilder AddIngredient<T>(int quantity) where T : IItem;
+		IRecipeBuilder AddIngredient(string id, int quantity);
 
 		/// <summary>
 		/// Set the product item this recipe will produce.
@@ -59,7 +59,7 @@ namespace OmniAPI.Services.Recipe {
 		/// Set the product item this recipe will produce.
 		/// </summary>
 		/// <returns>The recipe builder.</returns>
-		/// <typeparam name="T">The item type parameter.</typeparam>
-		IRecipeBuilder Produce<T>() where T : IItem;
+		/// <param name="id">Item id.</param>
+		IRecipeBuilder Produce(string id);
 	}
 }

@@ -22,9 +22,6 @@
  * THE SOFTWARE.
  */
 namespace OmniAPI.Items {
-	/// <summary>
-	/// Represents an item which may be placed as an aluminum wall entity.
-	/// </summary>
-	public interface IAluminumWall : IPlaceableEntity {
+	public interface ISeed : IPlaceableEntity {
 	}
 }
